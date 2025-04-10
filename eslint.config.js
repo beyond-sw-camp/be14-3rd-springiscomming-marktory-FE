@@ -27,9 +27,21 @@ export default defineConfig([
       prettier: eslintPluginPrettier,
     },
     rules: {
+      // JS, Vue 권장 규칙 적용
       ...js.configs.recommended.rules,
       ...pluginVue.configs['flat/essential'].rules,
-      'prettier/prettier': 'warn',
+
+      // prettier 포맷 규칙과 충돌 방지
+      'prettier/prettier': [
+        'warn',
+        {
+          semi: false,
+          singleQuote: true,
+          tabWidth: 2,
+          useTabs: false,
+          endOfLine: 'auto',
+        },
+      ],
     },
   },
 ])
