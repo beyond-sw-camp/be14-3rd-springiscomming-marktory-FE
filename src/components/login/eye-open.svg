@@ -1,0 +1,18 @@
+<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 아몬드 모양 눈 테두리 -->
+  <path
+    d="M2 15C5.5 8.5 10.5 5 15 5C19.5 5 24.5 8.5 28 15C24.5 21.5 19.5 25 15 25C10.5 25 5.5 21.5 2 15Z"
+    stroke="#FF7433"
+    stroke-width="2"
+    fill="none"
+  />
+  <!-- 동공 (circle) -->
+  <circle
+    cx="15"
+    cy="15"
+    r="4"
+    stroke="#FF7433"
+    stroke-width="2"
+    fill="none"
+  />
+</svg>
