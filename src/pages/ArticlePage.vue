@@ -74,6 +74,8 @@ const postData = {
 }
 
 .right-sidebar {
+  position: sticky;
+  top: 2rem;
   width: 160px;
 }
 </style>
