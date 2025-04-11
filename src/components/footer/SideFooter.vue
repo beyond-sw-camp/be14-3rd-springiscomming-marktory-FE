@@ -1,3 +1,6 @@
+<!--
+    사이드에 있는 Footer
+-->
 <template>
     <footer class="footer">
         <div class="footer-info">
@@ -13,6 +16,9 @@
         </div>
     </footer>
 </template>
+
+<script setup>
+</script>
 
 <style scoped>
 .footer {
