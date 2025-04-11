@@ -5,21 +5,21 @@
         <!-- 왼쪽 -->
         <div class="welcome-section">
           <h1 class="welcome-title">환영해요!</h1>
-          <img src="/marktory_cat.png" alt="고양이" class="cat-image" />
+          <img src="../assets/icons/marktory-cat.svg" alt="고양이" class="cat-image" />
           <p class="welcome-text">Marktory는 모든 사람의<br />이야기를 기다립니다.</p>
         </div>
 
         <!-- 오른쪽 -->
         <div class="login-section">
-          <img src="/marktory_logo.png" alt="로고" class="logo" />
+          <img src="../assets/icons/marktory-logo.svg" alt="로고" class="logo" />
           <InputField v-model="email" placeholder="아이디(이메일)" type="text" />
           <InputField v-model="password" placeholder="비밀번호" type="password" />
           <LoginButton @click="handleLogin" />
           <div class="login-links">
-            <a href="#">회원가입</a>
+            <router-link to="/signup">회원가입</router-link>
             <span class="find-links">
               <router-link to="/findid">아이디</router-link>
-             / <a href="#">비밀번호</a> 찾기
+              / <a href="#">비밀번호</a> 찾기
             </span>
           </div>
         </div>
@@ -136,7 +136,6 @@ onBeforeUnmount(() => {
   gap: 24px;
   padding: 40px;
   box-sizing: border-box;
-  background: #111;
 }
 
 .welcome-title {
