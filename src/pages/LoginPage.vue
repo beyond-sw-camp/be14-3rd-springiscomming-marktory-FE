@@ -32,6 +32,40 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import InputField from '../components/login/InputField.vue'
 import LoginButton from '../components/login/LoginButton.vue'
 
+/* 복호화 */
+import bcrypt from 'bcryptjs'
+
+// 로그인 처리 함수
+const handleLogin = async () => {
+  if (!email.value || !password.value) {
+    alert('이메일과 비밀번호를 입력해주세요.')
+    return
+  }
+
+  try {
+    const res = await fetch(`http://localhost:3000/members?email=${encodeURIComponent(email.value)}`)
+    const members = await res.json()
+
+    if (members.length === 0) {
+      alert('존재하지 않는 이메일입니다.')
+      return
+    }
+
+    const member = members[0]
+    const isMatch = await bcrypt.compare(password.value, member.password)
+
+    if (isMatch) {
+      alert('✅ 로그인 성공!')
+      // TODO: 로그인 성공 후 처리 (페이지 이동, 토큰 저장 등)
+    } else {
+      alert('❌ 비밀번호가 일치하지 않습니다.')
+    }
+  } catch (err) {
+    console.error('로그인 중 오류 발생:', err)
+    alert('로그인 중 오류가 발생했습니다.')
+  }
+}
+
 const email = ref('')
 const password = ref('')
 const scaleStyle = ref({})
@@ -65,9 +99,9 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', updateScale)
 })
 
-const handleLogin = () => {
-  console.log('로그인 시도:', email.value, password.value)
-}
+// const handleLogin = () => {
+//   console.log('로그인 시도:', email.value, password.value)
+// }
 </script>
 
 <style>
