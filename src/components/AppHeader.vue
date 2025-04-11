@@ -76,14 +76,15 @@
 }
 
 .login-btn{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 16px;
-    border-radius: 20px;
-    background: #FD6F22;
-    color: white;
+    background-color: #FD6F22;   /* 주황색 */
+    color: white;                /* 글자색 흰색 */
+    padding: 6px 20px;
+    border: none;
+    border-radius: 9999px;       /* pill 형태 */
     font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .write-icon {
