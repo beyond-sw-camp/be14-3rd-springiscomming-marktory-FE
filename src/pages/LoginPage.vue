@@ -1,4 +1,9 @@
 <template>
+  
+  <header> 
+    <Header /> 
+  </header>
+
   <div class="wrapper">
     <div class="scaler" :style="scaleStyle">
       <div class="login-container">
@@ -16,7 +21,7 @@
           <InputField v-model="password" placeholder="비밀번호" type="password" />
           <LoginButton @click="handleLogin" />
           <div class="login-links">
-            <router-link to="/signup">회원가입</router-link>
+            <router-link to="/presignup">회원가입</router-link>
             <span class="find-links">
               <router-link to="/findid">아이디</router-link>
               / <a href="#">비밀번호</a> 찾기
@@ -26,12 +31,18 @@
       </div>
     </div>
   </div>
+
+  <Footer>
+    <Footer/>
+  </Footer>    
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import InputField from '../components/login/InputField.vue'
 import LoginButton from '../components/login/LoginButton.vue'
+import Header from '../components/AppHeader.vue'
+import Footer from '../components/footer/AppFooter.vue'
 
 /* 복호화 */
 import bcrypt from 'bcryptjs'
@@ -79,8 +90,7 @@ const updateScale = () => {
   const scaleY = window.innerHeight / baseHeight
   const scale = Math.min(scaleX, scaleY)
   const offsetX = (window.innerWidth - baseWidth * scale) / 2
-  const offsetY = (window.innerHeight - baseHeight * scale) / 2
-
+  const offsetY = (window.innerHeight - baseHeight * scale) / 2 - 60
   scaleStyle.value = {
     transform: `translate(${offsetX}px, ${offsetY}px) scale(${scale})`,
     transformOrigin: 'top left',
@@ -108,10 +118,11 @@ onBeforeUnmount(() => {
 <style>
 .wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   background-color: #000;
   overflow: hidden;
   position: relative;
+
 }
 
 .scaler {
