@@ -8,7 +8,7 @@
         <!-- 오른쪽: 메뉴들 -->
         <div class="right">
             <button class="icon-btn">
-                <img src="../assets/icons/searchIcon.svg" alt="검색" class="icon" />
+                <img src="../assets/icons/search.svg" alt="검색" class="icon" />
             </button>
             <button class="icon-btn">
                 <img src="../assets/icons/notification.svg" alt="알림" class="icon" />
@@ -34,7 +34,6 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 24px;
-    background-color: black;
 }
 
 .left .logo {
