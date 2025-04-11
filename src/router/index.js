@@ -14,7 +14,11 @@ const router = createRouter({
         {
             path: '/login',
             component: () => import('../pages/LoginPage.vue')
-        }
+        },
+        {
+            path: '/findid',
+            component: () => import('../pages/FindIdPage.vue')
+        },
     ],
 });
 

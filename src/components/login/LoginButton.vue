@@ -1,8 +1,14 @@
 <template>
-  <button class="login-button" @click="handleClick">로그인</button>
+  <button class="login-button" @click="handleClick">{{ text }}</button>
 </template>
 
 <script setup>
+defineProps({
+  text: {
+    type: String,
+    default: '로그인'
+  }
+})
 const emit = defineEmits(['click'])
 const handleClick = () => emit('click')
 </script>

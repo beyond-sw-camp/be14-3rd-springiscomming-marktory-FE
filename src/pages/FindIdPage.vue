@@ -12,16 +12,8 @@
         <!-- 오른쪽 -->
         <div class="login-section">
           <img src="/marktory_logo.png" alt="로고" class="logo" />
-          <InputField v-model="email" placeholder="아이디(이메일)" type="text" />
-          <InputField v-model="password" placeholder="비밀번호" type="password" />
-          <LoginButton @click="handleLogin" />
-          <div class="login-links">
-            <a href="#">회원가입</a>
-            <span class="find-links">
-              <router-link to="/findid">아이디</router-link>
-             / <a href="#">비밀번호</a> 찾기
-            </span>
-          </div>
+          <InputField v-model="email" placeholder="이메일을 입력하세요" type="email" />
+          <LoginButton @click="sendEmail" text="이메일 전송" />
         </div>
       </div>
     </div>
@@ -33,42 +25,7 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import InputField from '../components/login/InputField.vue'
 import LoginButton from '../components/login/LoginButton.vue'
 
-/* 복호화 */
-import bcrypt from 'bcryptjs'
-
-// 로그인 처리 함수
-const handleLogin = async () => {
-  if (!email.value || !password.value) {
-    alert('이메일과 비밀번호를 입력해주세요.')
-    return
-  }
-
-  try {
-    const res = await fetch(`http://localhost:3000/members?email=${encodeURIComponent(email.value)}`)
-    const members = await res.json()
-
-    if (members.length === 0) {
-      alert('존재하지 않는 이메일입니다.')
-      return
-    }
-
-    const member = members[0]
-    const isMatch = await bcrypt.compare(password.value, member.password)
-
-    if (isMatch) {
-      alert('✅ 로그인 성공!')
-      // TODO: 로그인 성공 후 처리 (페이지 이동, 토큰 저장 등)
-    } else {
-      alert('❌ 비밀번호가 일치하지 않습니다.')
-    }
-  } catch (err) {
-    console.error('로그인 중 오류 발생:', err)
-    alert('로그인 중 오류가 발생했습니다.')
-  }
-}
-
 const email = ref('')
-const password = ref('')
 const scaleStyle = ref({})
 
 const baseWidth = 1920
@@ -96,16 +53,22 @@ onMounted(() => {
   updateScale()
   window.addEventListener('resize', updateScale)
 })
+
 onBeforeUnmount(() => {
   window.removeEventListener('resize', updateScale)
 })
 
-// const handleLogin = () => {
-//   console.log('로그인 시도:', email.value, password.value)
-// }
+const sendEmail = () => {
+  if (!email.value) {
+    alert('이메일을 입력해주세요.')
+    return
+  }
+
+  alert(`이메일이 전송되었습니다. ${email.value}`)
+}
 </script>
 
-<style>
+<style scoped>
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -170,28 +133,5 @@ onBeforeUnmount(() => {
 .logo {
   width: 500px;
   margin-bottom: 16px;
-}
-
-.login-links {
-  width: 500px;
-  font-size: 20px;
-  display: flex;
-  justify-content: space-between;
-  font-family: "Noto Sans KR", sans-serif;
-  color: #fd6f22;
-}
-
-.login-links a {
-  color: #fd6f22;
-  text-decoration: none;
-}
-
-.find-links a {
-  margin: 0 2px;
-}
-
-.login-links a:hover,
-.find-links a:hover {
-  color: white;
 }
 </style>
