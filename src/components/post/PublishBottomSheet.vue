@@ -104,7 +104,7 @@ const description = ref('');
 
 const descriptionLen = computed(() => description.value.trim().length);
 
-const categoryList = ['프론트엔드', '백엔드', 'AI', '모바일'];
+const categoryList = ['프론트엔드', '백엔드', 'AI', '모바일', '프론트엔드', '백엔드', 'AI', '모바일'];
 const selectedCategory = ref('');
 const dropdownOpen = ref(false);
 
@@ -174,6 +174,8 @@ const publish = () => {
     border-radius: 16px 16px 0 0;
     transform: translateY(0);
     max-width: 100%;
+    min-height: 60vh;
+    /* 화면 높이의 60% */
     margin: 0 auto;
 }
 
@@ -184,7 +186,7 @@ const publish = () => {
 }
 
 .section {
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.rem;
 }
 
 .label {
@@ -279,6 +281,7 @@ textarea {
 }
 
 .btn {
+    margin-top: 100px;
     padding: 0.6rem 2rem;
     border: none;
     border-radius: 10px;
@@ -375,8 +378,6 @@ textarea {
 
 .category-dropdown .chevron {
     font-size: 0.9rem;
-    /* transform: translateY(0px); */
-    /* 살짝 아래로 */
 }
 
 .dropdown-wrapper {
@@ -384,7 +385,6 @@ textarea {
 }
 
 .dropdown-menu {
-    /* all: unset; */
     /* 모든 기본 스타일 제거 */
     display: block !important;
     opacity: 1 !important;
@@ -392,6 +392,11 @@ textarea {
     background: #222;
     position: absolute;
     z-index: 1;
+
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 
