@@ -7,9 +7,9 @@
 
   </header>
   
-  <div id="app" class="theme-dark">
+  <main id="app" class="theme-dark">
     <RouterView />
-  </div>
+  </main>
 </template>
 
 <script setup>

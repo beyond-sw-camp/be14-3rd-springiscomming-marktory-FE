@@ -1,37 +1,48 @@
 <template>
+  
+  <header> 
+    <Header /> 
+  </header>
+
   <div class="wrapper">
     <div class="scaler" :style="scaleStyle">
       <div class="login-container">
         <!-- 왼쪽 -->
         <div class="welcome-section">
           <h1 class="welcome-title">환영해요!</h1>
-          <img src="/marktory_cat.png" alt="고양이" class="cat-image" />
+          <img src="../assets/icons/marktory-cat.svg" alt="고양이" class="cat-image" />
           <p class="welcome-text">Marktory는 모든 사람의<br />이야기를 기다립니다.</p>
         </div>
 
         <!-- 오른쪽 -->
         <div class="login-section">
-          <img src="/marktory_logo.png" alt="로고" class="logo" />
+          <img src="../assets/icons/marktory-logo.svg" alt="로고" class="logo" />
           <InputField v-model="email" placeholder="아이디(이메일)" type="text" />
           <InputField v-model="password" placeholder="비밀번호" type="password" />
           <LoginButton @click="handleLogin" />
           <div class="login-links">
-            <a href="#">회원가입</a>
+            <router-link to="/presignup">회원가입</router-link>
             <span class="find-links">
               <router-link to="/findid">아이디</router-link>
-            / <a href="#">비밀번호</a> 찾기
+              / <a href="#">비밀번호</a> 찾기
             </span>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <Footer>
+    <Footer/>
+  </Footer>    
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import InputField from '../components/login/InputField.vue'
 import LoginButton from '../components/login/LoginButton.vue'
+import Header from '../components/AppHeader.vue'
+import Footer from '../components/footer/AppFooter.vue'
 
 /* 복호화 */
 import bcrypt from 'bcryptjs'
@@ -79,8 +90,7 @@ const updateScale = () => {
   const scaleY = window.innerHeight / baseHeight
   const scale = Math.min(scaleX, scaleY)
   const offsetX = (window.innerWidth - baseWidth * scale) / 2
-  const offsetY = (window.innerHeight - baseHeight * scale) / 2
-
+  const offsetY = (window.innerHeight - baseHeight * scale) / 2 - 60
   scaleStyle.value = {
     transform: `translate(${offsetX}px, ${offsetY}px) scale(${scale})`,
     transformOrigin: 'top left',
@@ -108,10 +118,11 @@ onBeforeUnmount(() => {
 <style>
 .wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   background-color: #000;
   overflow: hidden;
   position: relative;
+
 }
 
 .scaler {
@@ -136,7 +147,6 @@ onBeforeUnmount(() => {
   gap: 24px;
   padding: 40px;
   box-sizing: border-box;
-  background: #111;
 }
 
 .welcome-title {

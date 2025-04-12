@@ -19,6 +19,24 @@ const router = createRouter({
             path: '/findid',
             component: () => import('../pages/FindIdPage.vue')
         },
+        {
+            path: '/mypage',
+            component: () => import('../pages/MyPage.vue'),
+            children: [
+                {
+                    path: '/mypage',
+                    redirect: '/mypage/post'
+                },
+                {
+                    path: 'post',
+                    component: () => import('../components/mypage/PostCardList.vue')
+                },
+                {
+                    path: 'temp',
+                    component: () => import('../components/mypage/TempCardList.vue')
+                }
+            ]
+        }
     ],
 });
 
