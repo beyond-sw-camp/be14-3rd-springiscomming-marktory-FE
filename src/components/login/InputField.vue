@@ -6,6 +6,7 @@
       v-model="modelValueProxy"
       @focus="isFocused = true"
       @blur="handleBlur"
+      :readonly="readonly"
       :autocomplete="type === 'password' ? 'current-password' : 'on'"
     />
     <img
@@ -30,6 +31,7 @@ const props = defineProps({
     type: String,
     default: 'text',
   },
+  readonly: Boolean,
 })
 
 const emit = defineEmits(['update:modelValue'])
@@ -68,7 +70,6 @@ const togglePasswordVisible = () => {
   padding: 0 20px;
   display: flex;
   align-items: center;
-  background-color: #1e1e1e;
   transition: border-color 0.2s ease;
 }
 
