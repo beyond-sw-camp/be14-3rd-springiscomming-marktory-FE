@@ -11,7 +11,7 @@
   </template>
     
   <script setup>
-    import imgage from '../icons/D_profile_IMG.png';
+    import imgage from './D_profile_IMG.png';
   
     const profileImg = imgage;
     const nickname = 'D';

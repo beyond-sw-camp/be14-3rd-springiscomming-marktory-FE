@@ -13,7 +13,7 @@
     
   <script setup>
     import PostCard from './PostCard.vue';
-    import imgage from '../icons/D_profile_IMG.png';
+    import imgage from './D_profile_IMG.png';
     
     const postList = [
       {
