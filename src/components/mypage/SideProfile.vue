@@ -1,6 +1,6 @@
 <template>
   <div class="profile-card">
-    <img class="profile-img" :src="member.image" alt="프로필 이미지"/>
+    <img class="profile-img" :src="member.image" alt="프로필 이미지" @error="(e) => console.error('이미지 로드 실패:', e.target.src)"/>
     <div class="nickname">{{ member.nickname }}</div>
     <div class="email">{{ member.email }}</div>
     <div class="follow-info">
@@ -17,14 +17,15 @@
 
   onMounted(async () => {
     try {
-      const res = await fetch('http://localhost:3001/members/11');
-
+      const res = await fetch('http://localhost:3001/members?id=11');
+      
       if (!res.ok) {
         throw new Error('서버 응답 실패');
       }
 
       const data = await res.json();
       member.value = data;
+      member.value = data[0]
     } catch (err) {
       console.error('Fetch 실패:', err);
     }
@@ -39,7 +40,7 @@
     margin-top: 404px;
     padding-top: 19px;
     background-color: black;
-    position: fixed;
+    /* position: fixed; */
     text-align: center;
   }
 

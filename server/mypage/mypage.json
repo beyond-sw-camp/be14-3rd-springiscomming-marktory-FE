@@ -174,7 +174,7 @@
       "id": 11,
       "email": "D1112@mail.com",
       "password": "$2a$12$qRN4y0dTIAyPnLdFzTAIXOnD5HDFXjrXo7MKgzz2YNyss2FjDLbyq",
-      "name": "강이도은은",
+      "name": "강이도은",
       "nickname": "D",
       "birthday": "2001-11-12",
       "image": "/src/components/mypage/D_profile_IMG.png",
@@ -187,5 +187,34 @@
       "followerCount": 122,
       "followingCount": 32
     }
-  ]
+  ],
+  "posts": [
+  { "id": 100, "title": "게시글 제목 1", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 23, "likeCount": 54, "nickname": "D", "date": "2025-04-12", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 101, "title": "게시글 제목 2", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 0, "likeCount": 13, "nickname": "D", "date": "2025-04-11", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 102, "title": "게시글 제목 3", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 15, "likeCount": 36, "nickname": "D", "date": "2025-04-10", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 103, "title": "게시글 제목 4", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 36, "likeCount": 68, "nickname": "D", "date": "2025-04-09", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 104, "title": "게시글 제목 5", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 40, "likeCount": 38, "nickname": "D", "date": "2025-04-08", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 105, "title": "게시글 제목 6", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 29, "likeCount": 95, "nickname": "D", "date": "2025-04-07", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 106, "title": "게시글 제목 7", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 33, "likeCount": 57, "nickname": "D", "date": "2025-04-06", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 107, "title": "게시글 제목 8", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 16, "likeCount": 72, "nickname": "D", "date": "2025-04-05", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 108, "title": "게시글 제목 9", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 26, "likeCount": 76, "nickname": "D", "date": "2025-04-04", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 109, "title": "게시글 제목 10", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 48, "likeCount": 96, "nickname": "D", "date": "2025-04-03", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 110, "title": "게시글 제목 11", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 48, "likeCount": 19, "nickname": "D", "date": "2025-04-02", "profileImg": "/src/components/mypage/D_profile_IMG.png" }
+],
+
+"templates": [
+  { "id": 200, "title": "템플릿 제목 1", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 130, "nickname": "D", "date": "2025-04-01", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 201, "title": "템플릿 제목 2", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 7, "nickname": "D", "date": "2025-03-31", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 202, "title": "템플릿 제목 3", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 20, "nickname": "D", "date": "2025-03-30", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 203, "title": "템플릿 제목 4", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 14, "nickname": "D", "date": "2025-03-29", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 204, "title": "템플릿 제목 5", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 300, "nickname": "D", "date": "2025-03-28", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 205, "title": "템플릿 제목 6", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 234, "nickname": "D", "date": "2025-03-27", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 206, "title": "템플릿 제목 7", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 62, "nickname": "D", "date": "2025-03-26", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 207, "title": "템플릿 제목 8", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 0, "nickname": "D", "date": "2025-03-25", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 208, "title": "템플릿 제목 9", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 225, "nickname": "D", "date": "2025-03-24", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 209, "title": "템플릿 제목 10", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 195, "nickname": "D", "date": "2025-03-23", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
+  { "id": 210, "title": "템플릿 제목 11", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 26, "nickname": "D", "date": "2025-03-22", "profileImg": "/src/components/mypage/D_profile_IMG.png" }
+]
+
+
 }

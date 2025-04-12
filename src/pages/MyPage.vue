@@ -124,8 +124,13 @@
     }
 
     .mypage-left {
+        position: fixed;
+        top: 30px;
+        margin: 0 auto;
+        width: 262px;
         display: flex;
         flex-direction: column;
+        /* align-items: center; */
     }
 
     .tab {
