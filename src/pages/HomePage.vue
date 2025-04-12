@@ -1,9 +1,6 @@
 <template>
   <div>
     <AppHeader/>
-    <h1>홈화면</h1>
-    <SideFooter/>
-    <AppFooter/>
     <SideFooter/>
     <AppFooter/>
   </div>

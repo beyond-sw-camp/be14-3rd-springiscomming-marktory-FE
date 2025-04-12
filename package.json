@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "bcryptjs": "^3.0.2",
     "bootstrap": "^5.3.5",
     "bootstrap-vue-3": "^0.3.12",
