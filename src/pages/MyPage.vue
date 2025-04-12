@@ -30,13 +30,17 @@
                 </div>
             </div>
         </main>
+        <footer>
+            <SideFooter/>
+        </footer>
     </div>
 </template>
 
 <script setup>
     import AppHeader from '../components/AppHeader.vue';
-    import SideProfile from '../components/SideProfile.vue';
-    import Category from '../components/Category.vue';
+    import SideFooter from '../components/footer/SideFooter.vue';
+    import SideProfile from '../components/mypage/SideProfile.vue';
+    import Category from '../components/post/Category.vue';
     import { RouterLink, RouterView } from 'vue-router';
 </script>
 
