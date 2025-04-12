@@ -12,6 +12,32 @@ const router = createRouter({
             component: () => import('@/pages/ArticlePage.vue')
         },
         {
+            path: '/login',
+            component: () => import('../pages/LoginPage.vue')
+        },
+        {
+            path: '/findid',
+            component: () => import('../pages/FindIdPage.vue')
+        },
+        {
+            path: '/mypage',
+            component: () => import('../pages/MyPage.vue'),
+            children: [
+                {
+                    path: '/mypage',
+                    redirect: '/mypage/post'
+                },
+                {
+                    path: 'post',
+                    component: () => import('../components/mypage/PostCardList.vue')
+                },
+                {
+                    path: 'temp',
+                    component: () => import('../components/mypage/TempCardList.vue')
+                }
+            ]
+        },
+        {
             path: '/editor',
             component: () => import('@/pages/EditorPage.vue')
         }

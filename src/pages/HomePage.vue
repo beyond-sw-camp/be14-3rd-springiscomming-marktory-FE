@@ -1,9 +1,17 @@
 <template>
   <div>
-    <h1>홈화면</h1>
+    <AppHeader/>
+    <SideFooter/>
+    <AppFooter/>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+  import AppHeader from "../components/AppHeader.vue";
+  import SideFooter from "../components/footer/SideFooter.vue";
+  import AppFooter from "../components/footer/AppFooter.vue";
+</script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
