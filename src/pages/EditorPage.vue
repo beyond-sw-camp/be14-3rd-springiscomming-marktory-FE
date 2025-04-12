@@ -6,7 +6,7 @@
             <div class="editor-preview-wrap">
                 <!-- ✍️ 에디터 섹션 -->
                 <div class="editor-left">
-                    <MarkdownEditor v-model="content" :title.sync="form.title" :tags.sync="form.tags"
+                    <MarkdownEditor v-model="content" v-model:title="form.title" v-model:tags="form.tags"
                         @publish-click="showSheet = true" />
                 </div>
 
@@ -24,14 +24,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import MarkdownEditor from '../components/post/MarkdownEditor.vue'
 import MarkdownViewer from '../components/post/MarkdownViewer.vue'
 import PublishBottomSheet from '../components/post/PublishBottomSheet.vue'
 
 const showSheet = ref(false)
 const content = ref('# 시작해볼까요?')
-const form = ref({ title: '', tags: '' })
+const form = reactive({
+    title: '', tags: ''
+})
 
 const handlePublish = (data) => {
     console.log('출간 데이터:', data)
