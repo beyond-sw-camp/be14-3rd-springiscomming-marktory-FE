@@ -19,7 +19,7 @@
             <a href="#">회원가입</a>
             <span class="find-links">
               <router-link to="/findid">아이디</router-link>
-             / <a href="#">비밀번호</a> 찾기
+            / <a href="#">비밀번호</a> 찾기
             </span>
           </div>
         </div>
