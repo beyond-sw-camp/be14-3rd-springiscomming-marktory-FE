@@ -6,13 +6,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
 
   </header>
-  <main>
+  
+  <main id="app" class="theme-dark">
     <RouterView />
   </main>
-  
-  <div id="app" class="theme-dark">
-    <RouterView />
-  </div>
 </template>
 
 <script setup>

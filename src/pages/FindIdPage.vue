@@ -5,13 +5,13 @@
         <!-- 왼쪽 -->
         <div class="welcome-section">
           <h1 class="welcome-title">환영해요!</h1>
-          <img src="/marktory_cat.png" alt="고양이" class="cat-image" />
+          <img src="../assets/icons/marktory-cat.svg" alt="고양이" class="cat-image" />
           <p class="welcome-text">Marktory는 모든 사람의<br />이야기를 기다립니다.</p>
         </div>
 
         <!-- 오른쪽 -->
         <div class="login-section">
-          <img src="/marktory_logo.png" alt="로고" class="logo" />
+          <img src="../assets/icons/marktory-logo.svg" alt="로고" class="logo" />
           <InputField v-model="email" placeholder="이메일을 입력하세요" type="email" />
           <LoginButton @click="sendEmail" text="이메일 전송" />
         </div>
@@ -99,7 +99,6 @@ const sendEmail = () => {
   gap: 24px;
   padding: 40px;
   box-sizing: border-box;
-  background: #111;
 }
 
 .welcome-title {
