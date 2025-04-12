@@ -1,12 +1,15 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import BootstrapVue3 from 'bootstrap-vue-3';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue-3/dist/bootstrap-vue-3.css';
-import router from './router';
+import router from './router'
+import BootstrapVue3 from 'bootstrap-vue-3'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue-3/dist/bootstrap-vue-3.css'
 
-const app = createApp(App);
+import VueEasymde from 'vue3-easymde'
+import 'easymde/dist/easymde.min.css'
 
-app.use(router);
-app.use(BootstrapVue3);
-app.mount('#app');
+const app = createApp(App)
+app.use(router)
+app.use(BootstrapVue3)
+app.use(VueEasymde)
+app.mount('#app')
