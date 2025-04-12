@@ -20,6 +20,14 @@ const router = createRouter({
             component: () => import('../pages/FindIdPage.vue')
         },
         {
+            path: '/signup',
+            component: () => import('../pages/SignupPage.vue')
+        },
+        {
+            path: '/presignup',
+            component: () => import('../pages/PreSignupPage.vue')
+        },
+        {
             path: '/mypage',
             component: () => import('../pages/MyPage.vue'),
             children: [
