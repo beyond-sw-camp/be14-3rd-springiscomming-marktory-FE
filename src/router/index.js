@@ -5,11 +5,11 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            component: () => import('../pages/HomePage.vue')
+            component: () => import('@/pages/HomePage.vue')
         },
         {
             path: '/article',
-            component: () => import('../pages/ArticlePage.vue')
+            component: () => import('@/pages/ArticlePage.vue')
         },
         {
             path: '/login',
@@ -44,6 +44,10 @@ const router = createRouter({
                     component: () => import('../components/mypage/TempCardList.vue')
                 }
             ]
+        },
+        {
+            path: '/editor',
+            component: () => import('@/pages/EditorPage.vue')
         }
     ],
 });

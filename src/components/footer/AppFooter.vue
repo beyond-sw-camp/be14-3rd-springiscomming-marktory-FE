@@ -1,54 +1,61 @@
-<!--
-    중앙 메인 아래에 있는 Footer
--->
+<!-- 중앙 메인 아래에 있는 Footer -->
 <template>
     <footer class="footer-container">
         <div class="footer-links">
-        <router-link to="/terms" class="footer-link">이용약관</router-link>
-        <router-link to="/privacy" class="footer-link">개인정보 처리방침</router-link>
-        <router-link to="/notice" class="footer-link">공지사항</router-link>
+            <router-link to="/terms" class="footer-link">이용약관</router-link>
+            <router-link to="/privacy" class="footer-link">개인정보 처리방침</router-link>
+            <router-link to="/notice" class="footer-link">공지사항</router-link>
         </div>
-    <div class="footer-logo">
-    <img src="../../assets/icons/marktory-logo-gray.svg" alt="Marktory-logo" />
-    </div>
+        <div class="footer-logo">
+            <img src="../../assets/icons/marktory-logo-gray.svg" alt="Marktory-logo" />
+        </div>
     </footer>
 </template>
-<script setup>
 
+<script setup>
 </script>
 
 <style scoped>
 .footer-container {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 62px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px 0;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    color: #808080;
     z-index: 100;
 }
 
 .footer-links {
-    display: flex;
-    gap: 60px; /* 👉 글자 사이 간격 넓게 */
-    margin-bottom: 8px;
+width: 400px;
+height: 22px;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
 
 .footer-link {
-    font-weight: 700;
-    font-size: 15px; /* 👉 글자 크기 키우기 */
-    cursor: pointer;
-    color: #888888; /* 이미지처럼 회색 톤 */
-    text-decoration: none;
+font-size: 22px;
+font-weight: 500;
+color: #888888;
+text-decoration: none;
 }
 
 .footer-link:hover {
-  color: #444; /* 살짝 어두워지게 */
+color: #444;
 }
 
 .footer-logo img {
-    transform-origin: top center; /* 위에서 아래로 확장되게 */
+width: 120px;
+height: 20px;
+object-fit: contain;
 }
 </style>
