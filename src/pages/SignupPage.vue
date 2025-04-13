@@ -1,7 +1,6 @@
 <template>
-  <header>
-    <Header />
-  </header>
+
+  <AppHeader />
 
   <div class="wrapper">
     <div class="scaler" :style="scaleStyle">
@@ -47,7 +46,7 @@
     </div>
   </div>
 
-  <Footer><Footer /></Footer>
+  <AppFooter />   
 
 	<BaseModal v-if="showModal" title="운영정책" @close="showModal = false">
 		<!-- 약관 내용 -->
@@ -83,8 +82,8 @@
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import InputField from '../components/login/InputField.vue'
 import LoginButton from '../components/login/LoginButton.vue'
-import Header from '../components/AppHeader.vue'
-import Footer from '../components/footer/AppFooter.vue'
+import AppHeader from '../components/AppHeader.vue'
+import AppFooter from '../components/footer/AppFooter.vue'
 import BirthDateField from '../components/login/BirthDateField.vue'
 import BaseModal from '../components/BaseModal.vue'
 

@@ -51,9 +51,12 @@ const router = createRouter({
         },
         {
             path: '/findid/result',
-            name: 'FindIdResult',
             component: () => import('@/pages/FindIdResultPage.vue')
         },
+        {
+            path: '/signup/result',
+            component: () => import('@/pages/SignupResultPage.vue')
+        }
     ],
 });
 
