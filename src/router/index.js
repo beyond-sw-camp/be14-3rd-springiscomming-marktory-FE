@@ -56,6 +56,10 @@ const router = createRouter({
         {
             path: '/signup/result',
             component: () => import('@/pages/SignupResultPage.vue')
+        },
+        {
+            path: '/setting',
+            component: () => import('../pages/SettingPage.vue')
         }
     ],
 });
