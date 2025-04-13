@@ -94,7 +94,7 @@ const handleFindId = async () => {
     sessionStorage.setItem('findIdResult', JSON.stringify(emails))
 
     // 라우터 이동 (state나 query 없이!)
-    router.push({ name: 'FindIdResult' })
+    router.push('/findid/result')
   } catch (err) {
     console.error('아이디 찾기 중 오류 발생:', err)
     alert('아이디 찾기 중 오류가 발생했습니다.')
