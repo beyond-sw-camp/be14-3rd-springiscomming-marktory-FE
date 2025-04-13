@@ -6,7 +6,7 @@
             <div class="editor-preview-wrap">
                 <!-- ✍️ 에디터 섹션 -->
                 <div class="editor-left">
-                    <MarkdownEditor v-model="content" :title.sync="form.title" :tags.sync="form.tags"
+                    <MarkdownEditor v-model="content" v-model:title="form.title" v-model:tags="form.tags"
                         @publish-click="showSheet = true" />
                 </div>
 
@@ -24,14 +24,16 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
 import MarkdownEditor from '../components/post/MarkdownEditor.vue'
 import MarkdownViewer from '../components/post/MarkdownViewer.vue'
 import PublishBottomSheet from '../components/post/PublishBottomSheet.vue'
 
 const showSheet = ref(false)
 const content = ref('# 시작해볼까요?')
-const form = ref({ title: '', tags: '' })
+const form = reactive({
+    title: '', tags: []
+})
 
 const handlePublish = (data) => {
     console.log('출간 데이터:', data)
@@ -57,6 +59,7 @@ const handlePublish = (data) => {
 .editor-preview-wrap {
     display: flex;
     height: 100%;
+    min-height: 0;
 }
 
 .editor-left {
@@ -64,19 +67,26 @@ const handlePublish = (data) => {
     padding: 2rem;
     overflow-y: auto;
     scrollbar-width: none;
+    /* Firefox */
     -ms-overflow-style: none;
+    /* IE & Edge */
     border-right: 1px solid #D4D4D4;
+}
+
+.editor-left::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
 }
 
 .editor-right {
     flex: 1;
     padding: 2rem;
+    height: 100%;
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
-.editor-left::-webkit-scrollbar,
 .editor-right::-webkit-scrollbar {
     display: none;
 }
