@@ -13,19 +13,19 @@ const router = createRouter({
         },
         {
             path: '/login',
-            component: () => import('../pages/LoginPage.vue')
+            component: () => import('@/pages/LoginPage.vue')
         },
         {
             path: '/findid',
-            component: () => import('../pages/FindIdPage.vue')
+            component: () => import('@/pages/FindIdPage.vue')
         },
         {
             path: '/signup',
-            component: () => import('../pages/SignupPage.vue')
+            component: () => import('@/pages/SignupPage.vue')
         },
         {
             path: '/presignup',
-            component: () => import('../pages/PreSignupPage.vue')
+            component: () => import('@/pages/PreSignupPage.vue')
         },
         {
             path: '/mypage',
@@ -48,7 +48,12 @@ const router = createRouter({
         {
             path: '/editor',
             component: () => import('@/pages/EditorPage.vue')
-        }
+        },
+        {
+            path: '/findid/result',
+            name: 'FindIdResult',
+            component: () => import('@/pages/FindIdResultPage.vue')
+        },
     ],
 });
 
