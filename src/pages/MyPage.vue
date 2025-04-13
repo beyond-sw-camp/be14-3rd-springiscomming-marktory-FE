@@ -1,7 +1,9 @@
 <template>
+    <header>
+        <AppHeader/>
+    </header>
     <div class="mypage">
         <header class="header">
-            <AppHeader/>
             <div class="mypage-title">LGTM</div>
             <div class="mypagemenu-row">
                 <RouterLink to="/mypage/post" class="tab" active-class="active">
@@ -59,7 +61,7 @@
 
     .mypage-title {
         width: 1440px;
-        margin-top: 64px;
+        margin-top: 94px;
         padding-left: 91px;
         padding-top: 94px;
         font-size: 96px;
@@ -130,7 +132,6 @@
         width: 262px;
         display: flex;
         flex-direction: column;
-        /* align-items: center; */
     }
 
     .tab {

@@ -48,6 +48,10 @@ const router = createRouter({
         {
             path: '/editor',
             component: () => import('@/pages/EditorPage.vue')
+        },
+        {
+            path: '/categorypage',
+            component: () => import('../pages/CategoryPage.vue')
         }
     ],
 });
