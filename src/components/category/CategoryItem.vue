@@ -1,15 +1,12 @@
 <template>
   <div :class="['category-item', { editing: isEditing }]">
     <span class="icon drag">☰</span>
-
     <input
       v-if="isEditing"
       v-model="editedCategory"
       class="category-input"
-      @keyup.enter="finishEdit"
-    />
+      @keyup.enter="finishEdit"/>
     <span v-else class="category-text">{{ editedCategory }}</span>
-
     <button
       class="icon-button"
       @click="toggleEdit"
@@ -18,7 +15,6 @@
       <img v-if="!isEditing" :src="hovered === 'edit' ? editOrange : editWhite" alt="수정"/>
       <img v-else :src="hovered === 'edit' ? checkWhite : checkOrange" alt="완료"/>
     </button>
-
     <button
       class="icon-button"
       @click="showConfirm = true"
@@ -26,8 +22,6 @@
       @mouseleave="hovered = ''">
       <img :src="isEditing ? hovered === 'delete' ? trashWhite : trashOrange : hovered === 'delete' ? trashOrange : trashWhite" alt="삭제"/>
     </button>
-
-    <!-- 삭제 확인 모달 -->
     <div v-if="showConfirm" class="overlay">
       <div class="confirm-box">
         <p>정말 제거하시겠어요?<br /><small>(적용된 게시글은 유지됩니다.)</small></p>
@@ -41,40 +35,40 @@
 </template>
 
 <script setup>
-import editWhite from '@/assets/icons/edit-icon-white.svg'
-import editOrange from '@/assets/icons/edit-icon-orange.svg'
-import checkWhite from '@/assets/icons/check-icon-white.svg'
-import checkOrange from '@/assets/icons/check-icon-orange.svg'
-import trashWhite from '@/assets/icons/trash-icon-white.svg'
-import trashOrange from '@/assets/icons/trash-icon-orange.svg'
-import { ref } from 'vue';
+  import editWhite from '@/assets/icons/edit-icon-white.svg'
+  import editOrange from '@/assets/icons/edit-icon-orange.svg'
+  import checkWhite from '@/assets/icons/check-icon-white.svg'
+  import checkOrange from '@/assets/icons/check-icon-orange.svg'
+  import trashWhite from '@/assets/icons/trash-icon-white.svg'
+  import trashOrange from '@/assets/icons/trash-icon-orange.svg'
+  import { ref } from 'vue';
 
-const props = defineProps({
-  category: Object
-});
-const emit = defineEmits(['update', 'delete']);
+  const props = defineProps({
+    category: Object
+  });
+  const emit = defineEmits(['update', 'delete']);
 
-const isEditing = ref(false);
-const hovered = ref('');
-const editedCategory = ref(props.category.name);
-const showConfirm = ref(false);
+  const isEditing = ref(false);
+  const hovered = ref('');
+  const editedCategory = ref(props.category.name);
+  const showConfirm = ref(false);
 
-function toggleEdit() {
-  if (isEditing.value) {
+  function toggleEdit() {
+    if (isEditing.value) {
+      emit('update', { id: props.category.id, name: editedCategory.value });
+    }
+    isEditing.value = !isEditing.value;
+  }
+
+  function finishEdit() {
+    isEditing.value = false;
     emit('update', { id: props.category.id, name: editedCategory.value });
   }
-  isEditing.value = !isEditing.value;
-}
 
-function finishEdit() {
-  isEditing.value = false;
-  emit('update', { id: props.category.id, name: editedCategory.value });
-}
-
-function deleteItem() {
-  emit('delete', props.category.id);
-  showConfirm.value = false;
-}
+  function deleteItem() {
+    emit('delete', props.category.id);
+    showConfirm.value = false;
+  }
 </script>
 
 <style scoped>
