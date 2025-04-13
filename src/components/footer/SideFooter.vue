@@ -11,8 +11,8 @@
             <p>이메일 : marktory@gmail.com</p>
         </div>
         <div class="footer-links">
-            <a href="#">정책 관련 링크</a>
-            <a href="#">개인정보처리정책</a>
+            <RouterLink to="/policy/service">정책 관련 링크</RouterLink>
+            <RouterLink to="/policy/privacy">개인정보처리정책</RouterLink>
         </div>
     </footer>
 </template>
@@ -25,34 +25,42 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 180px;
-    color: #ccc;
-    padding: 12px 8px;           /* ✅ padding 줄임 */
-    font-size: 10px;             /* ✅ 글자 크기 줄임 */
-    line-height: 1.4;            /* ✅ 줄 간격도 컴팩트하게 */
-    z-index: 100;
+    width: 172px;
+    height: 125px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #D4D4D4;
+    padding: 6px 8px;              /* ✅ 줄임 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     box-sizing: border-box;
+    overflow: hidden;              /* ✅ 안전 */
+    z-index: 100;
 }
 
 .footer-info p {
-    margin: 0 0 2px 0;           /* ✅ p 태그 간격 살짝 줄임 */
-    font-weight: 500;
+    margin: 0 0 2px 0;
+    line-height: 1.2;
 }
 
 .footer-links {
-    margin-top: 12px;            /* ✅ 전체 간격 줄임 */
     display: flex;
     flex-direction: column;
-    gap: 3px;                    /* ✅ 링크 간격도 줄임 */
+    gap: 1px;
 }
 
-.footer-links a {
-    color: #ccc;
-    text-decoration: none;
-    font-size: 10px;             /* ✅ 링크는 살짝 더 작게 */
+.footer-links a,
+.footer-links :deep(a) {
+    color: #D4D4D4;
+    font-size: 10px;
+    font-weight: bold;
+    text-decoration: none;    /* ✅ 밑줄 제거 */
+    cursor: pointer;
 }
 
 .footer-links a:hover {
-    text-decoration: underline;
+    text-decoration: none;    /* ✅ hover 시에도 변화 없음 */
 }
 </style>

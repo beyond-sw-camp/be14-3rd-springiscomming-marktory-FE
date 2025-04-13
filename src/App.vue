@@ -1,12 +1,21 @@
 <template>
-  <div id="app" class="theme-dark">
+  <header>
+    <nav>
+      <RouterLink to="/" />
+    </nav>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+
+  </header>
+  
+  <main id="app" class="theme-dark">
     <RouterView />
-  </div>
+  </main>
 </template>
 
 <script setup>
 import { RouterView } from 'vue-router';
 </script>
+
 
 <style>
 html,
