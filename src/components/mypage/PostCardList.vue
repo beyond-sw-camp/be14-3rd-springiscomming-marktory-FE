@@ -1,99 +1,30 @@
 <template>
     <div class="card-list">
       <PostCard
-        v-for="(post, index) in postList"
-        :key="index"
-        :title="post.title"
-        :date="post.date"
-        :thumbnailImg="post.thumbnailImg"
-        :profileImg="post.profileImg"
-        :nickname="post.nickname"/>
+      v-for="post in postList"
+      :key="post.id"
+      :title="post.title"
+      :date="post.date"
+      :profileImg="post.profileImg"
+      :thumbnail="post.thumbnail"
+      :commentCount="post.commentCount"
+      :likeCount="post.likeCount"
+      :nickname="post.nickname"
+      type="post"/>
     </div>
   </template>
     
   <script setup>
     import PostCard from './PostCard.vue';
-    import imgage from '../icons/D_profile_IMG.png';
-    
-    const postList = [
-      {
-        title: '파이썬 기초 문법 정리',
-        date: '2024-03-01',
-        thumbnailImg: imgage,
-        profileImg: imgage,
-        nickname: 'Dong'
-      },
-      {
-        title: '여행 준비 체크리스트 ✈️',
-        date: '2024-03-02',
-        thumbnailImg: imgage,
-        profileImg: imgage,
-        nickname: 'Jisoo'
-      },
-      {
-        title: '헬스 가이드 💪',
-        date: '2024-03-03',
-        thumbnailImg: imgage,
-        profileImg: imgage,
-        nickname: 'Ironman'
-      },
-      {
-        title: '파이썬 기초 문법 정리',
-        date: '2024-03-01',
-        thumbnailImg: imgage,
-        profileImg: imgage,
-        nickname: 'Dong'
-      },
-      {
-        title: '여행 준비 체크리스트 ✈️',
-        date: '2024-03-02',
-        thumbnailImg: imgage,
-        profileImg: imgage,
-        nickname: 'Jisoo'
-      },
-      {
-        title: '헬스 가이드 💪',
-        date: '2024-03-03',
-        thumbnailImg: imgage,
-        profileImg: imgage,
-        nickname: 'Ironman'
-      },
-      {
-        title: '파이썬 기초 문법 정리',
-        date: '2024-03-01',
-        thumbnailImg: imgage,
-        profileImg: imgage,
-        nickname: 'Dong'
-      },
-      {
-        title: '여행 준비 체크리스트 ✈️',
-        date: '2024-03-02',
-        thumbnailImg: imgage,
-        profileImg: imgage,
-        nickname: 'Jisoo'
-      },
-      {
-        title: '헬스 가이드 💪',
-        date: '2024-03-03',
-        thumbnailImg: imgage,
-        profileImg: imgage,
-        nickname: 'Ironman'
-      },
-      {
-        title: '여행 준비 체크리스트 ✈️',
-        date: '2024-03-02',
-        thumbnailImg: imgage,
-        profileImg: imgage,
-        nickname: 'Jisoo'
-      },
-      {
-        title: '헬스 가이드 💪',
-        date: '2024-03-03',
-        thumbnailImg: imgage,
-        profileImg: imgage,
-        nickname: 'Ironman'
-      }
-    ];
+    import { ref, onMounted } from 'vue'
+
+    const postList = ref([])
+
+    onMounted(async () => {
+      const res = await fetch('http://localhost:3001/posts')
+      const data = await res.json()
+      postList.value = data
+    });
   </script>
     
   <style scoped>

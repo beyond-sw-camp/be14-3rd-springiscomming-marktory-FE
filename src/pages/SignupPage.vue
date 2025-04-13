@@ -1,7 +1,6 @@
 <template>
-  <header>
-    <Header />
-  </header>
+
+  <AppHeader />
 
   <div class="wrapper">
     <div class="scaler" :style="scaleStyle">
@@ -17,7 +16,7 @@
 
         <!-- 오른쪽 입력 영역 -->
         <div class="form-section">
-          <img src="../assets/icons/marktory-logo.svg" alt="로고" class="logo" />
+          <img src="@/assets/icons/marktory-logo.svg" alt="로고" class="logo" />
 
           <InputField v-model="name" placeholder="이름" />
           <p v-if="!name && triedSubmit" class="error">필수 항목입니다.</p>
@@ -47,7 +46,7 @@
     </div>
   </div>
 
-  <Footer><Footer /></Footer>
+  <AppFooter />   
 
 	<BaseModal v-if="showModal" title="운영정책" @close="showModal = false">
 		<!-- 약관 내용 -->
@@ -81,12 +80,12 @@
 
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-import InputField from '../components/login/InputField.vue'
-import LoginButton from '../components/login/LoginButton.vue'
-import Header from '../components/AppHeader.vue'
-import Footer from '../components/footer/AppFooter.vue'
-import BirthDateField from '../components/login/BirthDateField.vue'
-import BaseModal from '../components/BaseModal.vue'
+import InputField from '@/components/login/InputField.vue'
+import LoginButton from '@/components/login/LoginButton.vue'
+import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/footer/AppFooter.vue'
+import BirthDateField from '@/components/login/BirthDateField.vue'
+import BaseModal from '@/components/BaseModal.vue'
 
 const name = ref('')
 const nickname = ref('')
