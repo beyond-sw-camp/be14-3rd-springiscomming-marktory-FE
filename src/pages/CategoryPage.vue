@@ -17,7 +17,17 @@
         <main>
             <div class="mypage-row">
                 <div class="mypage-left">
-                    <SideProfile />
+                    <div class="profile">
+                        <SideProfile />
+                    </div>
+                    <div class="category-list">
+                        <CategoryItem
+                            v-for="cat in categories"
+                            :key="cat.id"
+                            :category="cat"
+                            @update="updateCategory"
+                            @delete="deleteCategory"/>
+                    </div>
                 </div>
             </div>
         </main>
@@ -31,6 +41,25 @@
     import AppHeader from '../components/AppHeader.vue';
     import SideFooter from '../components/footer/SideFooter.vue';
     import SideProfile from '../components/mypage/SideProfile.vue';
+    import CategoryItem from '../components/category/CategoryItem.vue';
+    import { ref } from 'vue';
+
+    const categories = ref([
+        { id: 1, name: '자바' },
+        { id: 2, name: '파이썬' },
+        { id: 3, name: '성장 기록' },
+        { id: 4, name: '공부 방법' },
+        { id: 5, name: '회고' }
+    ]);
+
+    function updateCategory(updated) {
+        const item = categories.value.find(c => c.id === updated.id);
+        if (item) item.name = updated.name;
+    };
+
+    function deleteCategory(id) {
+        categories.value = categories.value.filter(c => c.id !== id);
+    };
 </script>
 
 <style scoped>
@@ -72,7 +101,7 @@
         color: #FD6F22;
         border-bottom: 2px solid #FD6F22;
     }
-    
+
     .save {
         width: 133px;
         height: 52px;
@@ -95,5 +124,17 @@
         width: 262px;
         display: flex;
         flex-direction: column;
+    }
+
+    .profile {
+        position: fixed;
+    }
+
+    .category-list {
+        margin-left: 338px;
+        padding-top: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
 </style>
