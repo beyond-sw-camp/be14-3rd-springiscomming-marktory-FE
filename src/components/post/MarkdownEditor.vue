@@ -1,24 +1,24 @@
 <template>
-    <div class="editor-wrapper">
+    <section class="editor-wrapper">
         <input v-model="titleSync" placeholder="제목입력" class="title-input" />
 
-        <div class="tag-input-group">
+        <section class="tag-input-group">
             <span v-for="(tag, index) in tagList" :key="index" class="tag-badge">{{ tag }}</span>
             <input v-model="rawTagInput" placeholder="태그를 입력하세요" @keydown.enter.prevent="addTag" class="tag-input" />
-        </div>
+        </section>
 
-        <div class="editor-main">
+        <section class="editor-main">
             <vue-easymde :model-value="modelValue" :options="editorOptions" @update:modelValue="emitUpdate" />
-        </div>
+        </section>
 
-        <div class="editor-footer">
+        <footer class="editor-footer">
             <button class="action-btn">← 나가기</button>
             <div class="btn-group">
                 <button class="action-btn">임시저장</button>
                 <button class="publish-btn" @click="$emit('publish-click')">출간하기</button>
             </div>
-        </div>
-    </div>
+        </footer>
+    </section>
 </template>
 
 <script setup>
@@ -175,5 +175,18 @@ const editorOptions = {
 
 :deep(.CodeMirror-cursor) {
     border-left: 1px solid white;
+}
+
+:deep(h1),
+:deep(h2),
+:deep(h3),
+:deep(h4),
+:deep(h5),
+:deep(h6),
+:deep(code),
+:deep(span),
+:deep(mark) {
+    background-color: transparent !important;
+    box-shadow: none !important;
 }
 </style>
