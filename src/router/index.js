@@ -53,7 +53,7 @@ const router = createRouter({
             path: '/categorypage',
             component: () => import('../pages/CategoryPage.vue')
         },
-        }
+        {
             path: '/adminPage',
             component: () => import('../pages/AdminPage.vue'),
             children: [
@@ -61,11 +61,11 @@ const router = createRouter({
                     path: 'notice',        // 공지사항 리스트
                     component: () => import('../components/admin/NoticeAdmin.vue')
                 },
-                {
-                    path: 'notice/:id',     // 공지사항 상세페이지
-                    component: () => import('../components/admin/NoticeDetail.vue'),
-                    props: true
-                }
+                // {
+                //     path: 'notice/:id',     // 공지사항 상세페이지
+                //     component: () => import('../components/admin/NoticeDetail.vue'),
+                //     props: true
+                // }
             ]
         },
         {
@@ -79,6 +79,14 @@ const router = createRouter({
         {
             path: '/setting',
             component: () => import('../pages/SettingPage.vue')
+        },
+        {
+            path: '/prefindpw',
+            component: () => import('../pages/PreFindPwPage.vue')
+        },
+        {
+            path: '/findpw',
+            component: () => import('../pages/FindPwPage.vue')
         }
     ],
 });
