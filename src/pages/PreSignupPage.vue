@@ -8,13 +8,13 @@
         <!-- 왼쪽 -->
         <div class="welcome-section">
           <h1 class="welcome-title">환영해요!</h1>
-          <img src="../assets/icons/marktory-cat.svg" alt="고양이" class="cat-image" />
+          <img src="@/assets/icons/marktory-cat.svg" alt="고양이" class="cat-image" />
           <p class="welcome-text">Marktory는 모든 사람의<br />이야기를 기다립니다.</p>
         </div>
 
         <!-- 오른쪽 -->
         <div class="login-section">
-          <img src="../assets/icons/marktory-logo.svg" alt="로고" class="logo" />
+          <img src="@/assets/icons/marktory-logo.svg" alt="로고" class="logo" />
           <InputField v-model="email" placeholder="이메일을 입력하세요" type="email" />
           <LoginButton @click="sendEmail" text="이메일 전송" />
         </div>
@@ -27,10 +27,10 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import InputField from '../components/login/InputField.vue'
-import LoginButton from '../components/login/LoginButton.vue'
-import AppHeader from '../components/AppHeader.vue'
-import AppFooter from '../components/footer/AppFooter.vue'
+import InputField from '@/components/login/InputField.vue'
+import LoginButton from '@/components/login/LoginButton.vue'
+import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/footer/AppFooter.vue'
 
 const email = ref('')
 const scaleStyle = ref({})

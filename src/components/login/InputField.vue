@@ -21,8 +21,8 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import eyeOpen from './eye-open.svg'
-import eyeClosed from './eye-closed.svg'
+import eyeOpen from '@/assets/icons/eye-open.svg'
+import eyeClosed from '@/assets/icons/eye-closed.svg'
 
 const props = defineProps({
   modelValue: String,
