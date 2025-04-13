@@ -3,8 +3,13 @@
         <input v-model="titleSync" placeholder="제목입력" class="title-input" />
 
         <section class="tag-input-group">
-            <span v-for="(tag, index) in tagList" :key="index" class="tag-badge">{{ tag }}</span>
-            <input v-model="rawTagInput" placeholder="태그를 입력하세요" @keydown.enter.prevent="addTag" class="tag-input" />
+            <div class="tag-input-wrapper">
+                <span v-for="(tag, index) in visibleTags" :key="index" class="tag-badge">
+                    {{ tag }}
+                </span>
+                <input v-model="rawTagInput" class="tag-input" placeholder="태그를 입력하세요" @keyup.enter.prevent="addTag"
+                    @keydown.delete="handleBackspace" />
+            </div>
         </section>
 
         <section class="editor-main">
@@ -15,49 +20,68 @@
             <button class="action-btn">← 나가기</button>
             <div class="btn-group">
                 <button class="action-btn">임시저장</button>
-                <button class="publish-btn" @click="$emit('publish-click')">출간하기</button>
+                <button class="publish-btn" @click="$emit('publish-click')">
+                    출간하기
+                </button>
             </div>
         </footer>
     </section>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import 'easymde/dist/easymde.min.css'
 
 const props = defineProps({
     modelValue: String,
     title: String,
-    tags: String
+    tags: {
+        type: Array,
+        default: () => [],
+    },
 })
 
-const emit = defineEmits(['update:modelValue', 'update:title', 'update:tags', 'publish-click'])
+const emit = defineEmits([
+    'update:modelValue',
+    'update:title',
+    'update:tags',
+    'publish-click',
+])
 
 const emitUpdate = (val) => emit('update:modelValue', val)
 
 const titleSync = computed({
     get: () => props.title,
-    set: (val) => emit('update:title', val)
+    set: (val) => emit('update:title', val),
 })
 
 const rawTagInput = ref('')
-const tagList = ref([])
-
-const tagsSync = computed({
-    get: () => props.tags,
-    set: (val) => emit('update:tags', val)
-})
+const tagList = ref([...props.tags ?? []])
+const visibleTags = computed(() => tagList.value)
 
 const addTag = () => {
     const trimmed = rawTagInput.value.trim()
-    if (trimmed && !tagList.value.includes(trimmed)) {
-        tagList.value.push(trimmed.startsWith('#') ? trimmed : `#${trimmed}`)
-    }
+    if (!trimmed || tagList.value.includes(trimmed)) return
+    tagList.value.push(trimmed)
     rawTagInput.value = ''
 }
 
+const handleBackspace = (e) => {
+    if (rawTagInput.value === '' && tagList.value.length > 0) {
+        tagList.value.pop()
+    }
+}
+
+watch(
+    tagList,
+    (newVal) => {
+        emit('update:tags', newVal)
+    },
+    { deep: true }
+)
+
 const editorOptions = {
-    status: false
+    status: false,
 }
 </script>
 
@@ -73,7 +97,6 @@ const editorOptions = {
     flex-grow: 1;
     overflow-y: auto;
     padding-bottom: 2rem;
-    /* 버튼과 겹치지 않도록 아래 공간 확보 */
 }
 
 .title-input {
@@ -94,7 +117,7 @@ const editorOptions = {
     color: white;
     border: none;
     padding: 0.5rem 0;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     font-size: 1rem;
     width: 100%;
     outline: none;
@@ -145,6 +168,52 @@ const editorOptions = {
     width: calc(100% + 4rem);
 }
 
+.tag-input-group {
+    margin-bottom: 1rem;
+}
+
+.tag-input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid transparent;
+    padding: 0.25rem 0;
+    min-height: 2.5rem;
+}
+
+.tag-badge {
+    background-color: #f58220;
+    color: #2c2c2c;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    white-space: nowrap;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+.tag-badge::before {
+    content: "# ";
+}
+
+.tag-input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    min-width: 80px;
+    flex: 1;
+    caret-color: #FF7433;
+}
+
+/* EasyMDE 커스텀 */
 :deep(.EasyMDEContainer),
 :deep(.CodeMirror),
 :deep(.editor-toolbar),
@@ -177,16 +246,31 @@ const editorOptions = {
     border-left: 1px solid white;
 }
 
-:deep(h1),
-:deep(h2),
-:deep(h3),
-:deep(h4),
-:deep(h5),
-:deep(h6),
-:deep(code),
-:deep(span),
-:deep(mark) {
+:deep(.CodeMirror-scroll) {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+:deep(.CodeMirror-scroll::-webkit-scrollbar) {
+    display: none;
+}
+
+:deep(.CodeMirror-cursor) {
+    border-left: 2px solid #FF7433 !important;
+}
+
+:deep(.EasyMDEContainer h1),
+:deep(.EasyMDEContainer h2),
+:deep(.EasyMDEContainer h3),
+:deep(.EasyMDEContainer h4),
+:deep(.EasyMDEContainer h5),
+:deep(.EasyMDEContainer h6),
+:deep(.EasyMDEContainer code),
+:deep(.EasyMDEContainer pre),
+:deep(.EasyMDEContainer mark),
+:deep(.EasyMDEContainer span) {
     background-color: transparent !important;
     box-shadow: none !important;
+    color: white !important;
 }
 </style>

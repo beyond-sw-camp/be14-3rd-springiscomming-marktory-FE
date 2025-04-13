@@ -32,7 +32,7 @@ import PublishBottomSheet from '../components/post/PublishBottomSheet.vue'
 const showSheet = ref(false)
 const content = ref('# 시작해볼까요?')
 const form = reactive({
-    title: '', tags: ''
+    title: '', tags: []
 })
 
 const handlePublish = (data) => {
@@ -59,6 +59,7 @@ const handlePublish = (data) => {
 .editor-preview-wrap {
     display: flex;
     height: 100%;
+    min-height: 0;
 }
 
 .editor-left {
@@ -66,19 +67,26 @@ const handlePublish = (data) => {
     padding: 2rem;
     overflow-y: auto;
     scrollbar-width: none;
+    /* Firefox */
     -ms-overflow-style: none;
+    /* IE & Edge */
     border-right: 1px solid #D4D4D4;
+}
+
+.editor-left::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
 }
 
 .editor-right {
     flex: 1;
     padding: 2rem;
+    height: 100%;
     overflow-y: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
-.editor-left::-webkit-scrollbar,
 .editor-right::-webkit-scrollbar {
     display: none;
 }
