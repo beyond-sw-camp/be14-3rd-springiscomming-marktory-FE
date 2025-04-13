@@ -1,6 +1,7 @@
 <!-- Comment.vue -->
 <template>
     <section class="comment-section">
+        <CommentInput />
         <CommentItem v-for="comment in comments" :key="comment.id" :comment="comment"
             :current-user-id="currentUserId" />
     </section>
@@ -13,6 +14,7 @@ import tim_profile from '@/assets/comment/tim_profile.png';
 import morris_profile from '@/assets/comment/morris_profile.png';
 import d_profile from '@/assets/comment/d_profile.png';
 import dong_profile from '@/assets/comment/dong_profile.png';
+import CommentInput from './CommentInput.vue';
 
 const comments = [
     {
