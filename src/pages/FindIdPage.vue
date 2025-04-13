@@ -142,7 +142,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .wrapper {
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
   position: relative;
   background-color: black;
   overflow: hidden;
@@ -167,6 +167,7 @@ onBeforeUnmount(() => {
 .logo {
   width: 500px;
   margin-bottom: 16px;
+  margin-top: -50px;
 }
 
 .error {

@@ -22,7 +22,9 @@
             <router-link to="/presignup">회원가입</router-link>
             <span class="find-links">
               <router-link to="/findid">아이디</router-link>
-              / <a href="#">비밀번호</a> 찾기
+              /
+              <router-link to="/prefindpw">비밀번호</router-link>
+              찾기
             </span>
           </div>
         </div>
@@ -114,11 +116,10 @@ onBeforeUnmount(() => {
 <style>
 .wrapper {
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
   background-color: #000;
   overflow: hidden;
   position: relative;
-
 }
 
 .scaler {
@@ -126,6 +127,7 @@ onBeforeUnmount(() => {
 }
 
 .login-container {
+  margin-top: -50px;
   display: flex;
   width: 1920px;
   height: 1080px;
@@ -180,7 +182,7 @@ onBeforeUnmount(() => {
 
 .login-links {
   width: 500px;
-  font-size: 20px;
+  font-size: 23px;
   display: flex;
   justify-content: space-between;
   font-family: "Noto Sans KR", sans-serif;

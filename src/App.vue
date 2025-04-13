@@ -1,4 +1,5 @@
 <template>
+
   <header>
     <nav>
       <RouterLink to="/" />
@@ -10,12 +11,12 @@
   <main id="app" class="theme-dark">
     <RouterView />
   </main>
+
 </template>
 
 <script setup>
 import { RouterView } from 'vue-router';
 </script>
-
 
 <style>
 html,

@@ -78,7 +78,7 @@ const sendEmail = () => {
 <style scoped>
 .wrapper {
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
   background-color: #000;
   overflow: hidden;
   position: relative;
@@ -98,6 +98,7 @@ const sendEmail = () => {
 
 /* 왼쪽 */
 .welcome-section {
+  margin-top: -50px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -127,6 +128,7 @@ const sendEmail = () => {
 
 /* 오른쪽 */
 .login-section {
+  margin-top: -50px;
   flex: 1;
   display: flex;
   flex-direction: column;
