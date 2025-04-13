@@ -1,8 +1,6 @@
 <template>
   
-  <header> 
-    <Header /> 
-  </header>
+  <AppHeader />
 
   <div class="wrapper">
     <div class="scaler" :style="scaleStyle">
@@ -32,17 +30,15 @@
     </div>
   </div>
 
-  <Footer>
-    <Footer/>
-  </Footer>    
+  <AppFooter /> 
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import InputField from '../components/login/InputField.vue'
 import LoginButton from '../components/login/LoginButton.vue'
-import Header from '../components/AppHeader.vue'
-import Footer from '../components/footer/AppFooter.vue'
+import AppHeader from '../components/AppHeader.vue'
+import AppFooter from '../components/footer/AppFooter.vue'
 
 /* 복호화 */
 import bcrypt from 'bcryptjs'

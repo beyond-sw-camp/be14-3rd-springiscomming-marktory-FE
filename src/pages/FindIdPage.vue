@@ -1,6 +1,7 @@
 <template>
   <div class="find-id-page">
-    <Header />
+
+    <AppHeader />
 
     <div class="wrapper">
       <div class="scaler" :style="scaleStyle">
@@ -27,15 +28,15 @@
       </div>
     </div>
 
-    <Footer />
+    <AppFooter />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
-import Header from '../components/AppHeader.vue'
-import Footer from '../components/footer/AppFooter.vue'
+import AppHeader from '../components/AppHeader.vue'
+import AppFooter from '../components/footer/AppFooter.vue'
 import InputField from '../components/login/InputField.vue'
 import LoginButton from '../components/login/LoginButton.vue'
 import BirthDateField from '../components/login/BirthDateField.vue' // ✅ 여기 정확히 import!
