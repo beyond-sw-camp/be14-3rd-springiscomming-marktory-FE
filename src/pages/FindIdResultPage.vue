@@ -137,7 +137,7 @@ const maskEmail = (email) => {
 .logo {
   width: 500px;
   margin-bottom: 24px;
-  margin-top: -50px;;
+  margin-top: -50px;
 }
 
 .title {

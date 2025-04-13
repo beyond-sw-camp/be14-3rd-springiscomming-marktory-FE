@@ -145,6 +145,7 @@ onBeforeUnmount(() => {
   gap: 24px;
   padding: 40px;
   box-sizing: border-box;
+  margin-top: -50px;
 }
 
 .welcome-title {

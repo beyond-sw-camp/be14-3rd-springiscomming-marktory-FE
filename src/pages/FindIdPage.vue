@@ -8,6 +8,9 @@
         <div class="findid-container">
           <img src="@/assets/icons/marktory-logo.svg" alt="로고" class="logo" />
 
+          <h1>아이디 찾기</h1>
+          <h3>이름과 생년월일을 입력해주세요.</h3>
+
           <!-- 이름 입력 -->
           <InputField v-model="name" placeholder="이름" />
           <p v-if="!name && triedSubmit" class="error">필수 항목입니다.</p>
@@ -21,7 +24,7 @@
 
           <!-- 하단 링크 -->
           <div class="links">
-            <RouterLink to="/signup">회원가입</RouterLink>
+            <RouterLink to="/presignup">회원가입</RouterLink>
             <RouterLink to="/login">로그인</RouterLink>
           </div>
         </div>
@@ -166,7 +169,6 @@ onBeforeUnmount(() => {
 
 .logo {
   width: 500px;
-  margin-bottom: 16px;
   margin-top: -50px;
 }
 
@@ -183,7 +185,7 @@ onBeforeUnmount(() => {
   width: 500px;
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
+  font-size: 23px;
   color: #fd6f22;
 }
 
