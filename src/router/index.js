@@ -50,6 +50,10 @@ const router = createRouter({
             component: () => import('@/pages/EditorPage.vue')
         },
         {
+            path: '/categorypage',
+            component: () => import('../pages/CategoryPage.vue')
+        },
+        }
             path: '/adminPage',
             component: () => import('../pages/AdminPage.vue'),
             children: [
