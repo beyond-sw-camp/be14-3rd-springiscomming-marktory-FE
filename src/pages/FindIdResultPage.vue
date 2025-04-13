@@ -40,9 +40,9 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import AppHeader from '../components/AppHeader.vue'
-import AppFooter from '../components/footer/AppFooter.vue'
-import LoginButton from '../components/login/LoginButton.vue'
+import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/footer/AppFooter.vue'
+import LoginButton from '@/components/login/LoginButton.vue'
 
 const route = useRoute()
 const router = useRouter()
