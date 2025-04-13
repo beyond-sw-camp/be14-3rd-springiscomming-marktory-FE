@@ -1,6 +1,7 @@
 <template>
   <div class="find-id-page">
-    <Header />
+
+    <AppHeader />
 
     <div class="wrapper">
       <div class="scaler" :style="scaleStyle">
@@ -27,23 +28,39 @@
       </div>
     </div>
 
-    <Footer />
+    <AppFooter />
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import Header from '../components/AppHeader.vue'
-import Footer from '../components/footer/AppFooter.vue'
-import InputField from '../components/login/InputField.vue'
-import LoginButton from '../components/login/LoginButton.vue'
-import BirthDateField from '../components/login/BirthDateField.vue' // ✅ 여기 정확히 import!
+import { useRouter } from 'vue-router'
+import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/footer/AppFooter.vue'
+import InputField from '@/components/login/InputField.vue'
+import LoginButton from '@/components/login/LoginButton.vue'
+import BirthDateField from '@/components/login/BirthDateField.vue'
+
+const router = useRouter()
 
 const name = ref('')
 const birth = ref('')
 const triedSubmit = ref(false)
+const formatBirthToISO = (birthInput) => {
+  if (birthInput instanceof Date && !isNaN(birthInput)) {
+    const year = birthInput.getFullYear()
+    const month = String(birthInput.getMonth() + 1).padStart(2, '0') // 0부터 시작하니까 +1
+    const day = String(birthInput.getDate()).padStart(2, '0')
+    return `${year}-${month}-${day}`
+  }
 
-const handleFindId = () => {
+  return ''
+}
+
+
+const handleFindId = async () => {
+  console.log('birth.value:', birth.value)
+
   triedSubmit.value = true
 
   if (!name.value || !birth.value) {
@@ -51,8 +68,42 @@ const handleFindId = () => {
     return
   }
 
-  console.log('아이디 찾기 요청:', name.value, birth.value)
+  const formattedBirth = formatBirthToISO(birth.value)
+  if (!formattedBirth) {
+    alert('올바른 생년월일 형식이 아닙니다.')
+    return
+  }
+
+  try {
+    const res = await fetch(
+      `http://localhost:3000/members?name=${encodeURIComponent(name.value)}&birthday=${encodeURIComponent(formattedBirth)}`
+    )
+    const members = await res.json()
+
+    if (members.length === 0) {
+      alert('일치하는 사용자를 찾을 수 없습니다.')
+      return
+    }
+
+    const emails = members.map((m) => m.email)
+
+    // sessionStorage에 저장
+    sessionStorage.setItem('findIdResult', JSON.stringify(emails))
+
+    // 라우터 이동 (state나 query 없이!)
+    router.push({ name: 'FindIdResult' })
+  } catch (err) {
+    console.error('아이디 찾기 중 오류 발생:', err)
+    alert('아이디 찾기 중 오류가 발생했습니다.')
+  }
+
+  //   alert(`당신의 아이디는: ${members[0].email}`)
+  // } catch (err) {
+  //   console.error('아이디 찾기 중 오류 발생:', err)
+  //   alert('아이디 찾기 중 오류가 발생했습니다.')
+  // }
 }
+
 
 // ✅ 화면 확대/축소 방지
 const scaleStyle = ref({})
