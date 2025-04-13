@@ -6,6 +6,7 @@
 
     <article class="main-content">
       <Post :post="postData" />
+      <Comment />
     </article>
 
     <aside class="right-sidebar">
@@ -15,6 +16,7 @@
 </template>
 
 <script setup>
+import Comment from '../components/comment/Comment.vue';
 import Post from '../components/post/Post.vue'
 import Category from '../components/post/category.vue';
 import contentImg from '@/assets/post/content-img.png';
@@ -78,4 +80,6 @@ const postData = {
   top: 2rem;
   width: 160px;
 }
+
+.comment-section {}
 </style>
