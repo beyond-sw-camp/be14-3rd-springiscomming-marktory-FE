@@ -177,7 +177,7 @@
       "name": "강이도은",
       "nickname": "D",
       "birthday": "2001-11-12",
-      "image": "/src/components/mypage/D_profile_IMG.png",
+      "image": "/src/assets/images/profile/D.png",
       "status": "is_delete",
       "black_date": null,
       "assigned_date": "2023-05-10 14:23:45",
@@ -186,148 +186,25 @@
       "is_terms": true,
       "followerCount": 122,
       "followingCount": 32
+    },
+    {
+      "id": 12,
+      "email": "meow@mail.com",
+      "password": "$2a$12$qRN4y0dTIAyPnLdFzTAIXOnD5HDFXjrXo7MKgzz2YNyss2FjDLbyq",
+      "name": "주아현",
+      "nickname": "Kasey",
+      "birthday": "2001-11-12",
+      "image": "/src/assets/images/profile/kasey.jpeg",
+      "status": "is_delete",
+      "black_date": null,
+      "assigned_date": "2023-05-10 14:23:45",
+      "delete_date": "2024-01-20 09:15:30",
+      "report_count": 0,
+      "is_terms": true,
+      "followerCount": 67,
+      "followingCount": 22
     }
   ],
-  "posts": [
-  { "id": 100, "title": "게시글 제목 1", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 23, "likeCount": 54, "nickname": "D", "date": "2025-04-12", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 101, "title": "게시글 제목 2", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 0, "likeCount": 13, "nickname": "D", "date": "2025-04-11", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 102, "title": "게시글 제목 3", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 15, "likeCount": 36, "nickname": "D", "date": "2025-04-10", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 103, "title": "게시글 제목 4", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 36, "likeCount": 68, "nickname": "D", "date": "2025-04-09", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 104, "title": "게시글 제목 5", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 40, "likeCount": 38, "nickname": "D", "date": "2025-04-08", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 105, "title": "게시글 제목 6", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 29, "likeCount": 95, "nickname": "D", "date": "2025-04-07", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 106, "title": "게시글 제목 7", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 33, "likeCount": 57, "nickname": "D", "date": "2025-04-06", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 107, "title": "게시글 제목 8", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 16, "likeCount": 72, "nickname": "D", "date": "2025-04-05", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 108, "title": "게시글 제목 9", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 26, "likeCount": 76, "nickname": "D", "date": "2025-04-04", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 109, "title": "게시글 제목 10", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 48, "likeCount": 96, "nickname": "D", "date": "2025-04-03", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 110, "title": "게시글 제목 11", "thumbnail": "/src/components/mypage/default-img.png", "commentCount": 48, "likeCount": 19, "nickname": "D", "date": "2025-04-02", "profileImg": "/src/components/mypage/D_profile_IMG.png" }
-],
-
-"templates": [
-  { "id": 200, "title": "템플릿 제목 1", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 130, "nickname": "D", "date": "2025-04-01", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 201, "title": "템플릿 제목 2", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 7, "nickname": "D", "date": "2025-03-31", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 202, "title": "템플릿 제목 3", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 20, "nickname": "D", "date": "2025-03-30", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 203, "title": "템플릿 제목 4", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 14, "nickname": "D", "date": "2025-03-29", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 204, "title": "템플릿 제목 5", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 300, "nickname": "D", "date": "2025-03-28", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 205, "title": "템플릿 제목 6", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 234, "nickname": "D", "date": "2025-03-27", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 206, "title": "템플릿 제목 7", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 62, "nickname": "D", "date": "2025-03-26", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 207, "title": "템플릿 제목 8", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 0, "nickname": "D", "date": "2025-03-25", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 208, "title": "템플릿 제목 9", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 225, "nickname": "D", "date": "2025-03-24", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 209, "title": "템플릿 제목 10", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 195, "nickname": "D", "date": "2025-03-23", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
-  { "id": 210, "title": "템플릿 제목 11", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 26, "nickname": "D", "date": "2025-03-22", "profileImg": "/src/components/mypage/D_profile_IMG.png" }
-],
-
-"likedposts": [
-  {
-    "id": 1,
-    "title": "자바란 무엇인가?",
-    "date": "2025.04.13",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png",
-    "thumbnail": "/src/components/mypage/default-img.png",
-    "commentCount": 4,
-    "likeCount": 36,
-    "nickname": "코딩하는돌고래"
-  },
-  {
-    "id": 2,
-    "title": "파이썬의 매력",
-    "date": "2025.04.12",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png",
-    "thumbnail": "/src/components/mypage/default-img.png",
-    "commentCount": 13,
-    "likeCount": 13,
-    "nickname": "개발자토끼"
-  },
-  {
-    "id": 3,
-    "title": "개발 공부 루틴",
-    "date": "2025.04.11",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png",
-    "thumbnail": "/src/components/mypage/default-img.png",
-    "commentCount": 19,
-    "likeCount": 12,
-    "nickname": "자바요정"
-  },
-  {
-    "id": 4,
-    "title": "코딩하기 좋은 시간은?",
-    "date": "2025.04.10",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png",
-    "thumbnail": "/src/components/mypage/default-img.png",
-    "commentCount": 20,
-    "likeCount": 14,
-    "nickname": "파이썬냥이"
-  },
-  {
-    "id": 5,
-    "title": "자료구조 총정리",
-    "date": "2025.04.09",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png",
-    "thumbnail": "/src/components/mypage/default-img.png",
-    "commentCount": 9,
-    "likeCount": 22,
-    "nickname": "백엔드곰돌이"
-  },
-  {
-    "id": 6,
-    "title": "백엔드와 프론트엔드 차이",
-    "date": "2025.04.08",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png",
-    "thumbnail": "/src/components/mypage/default-img.png",
-    "commentCount": 13,
-    "likeCount": 24,
-    "nickname": "프론트펭귄"
-  },
-  {
-    "id": 7,
-    "title": "CS 면접 요약",
-    "date": "2025.04.07",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png",
-    "thumbnail": "/src/components/mypage/default-img.png",
-    "commentCount": 19,
-    "likeCount": 19,
-    "nickname": "DB정복자"
-  },
-  {
-    "id": 8,
-    "title": "Docker 완전정복",
-    "date": "2025.04.06",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png",
-    "thumbnail": "/src/components/mypage/default-img.png",
-    "commentCount": 10,
-    "likeCount": 32,
-    "nickname": "스프링고수"
-  },
-  {
-    "id": 9,
-    "title": "JPA vs MyBatis",
-    "date": "2025.04.05",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png",
-    "thumbnail": "/src/components/mypage/default-img.png",
-    "commentCount": 3,
-    "likeCount": 27,
-    "nickname": "코딩부엉이"
-  },
-  {
-    "id": 10,
-    "title": "코딩 테스트 준비 전략",
-    "date": "2025.04.04",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png",
-    "thumbnail": "/src/components/mypage/default-img.png",
-    "commentCount": 14,
-    "likeCount": 30,
-    "nickname": "CS고수"
-  },
-  {
-    "id": 11,
-    "title": "인프라 기초 다지기",
-    "date": "2025.04.03",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png",
-    "thumbnail": "/src/components/mypage/default-img.png",
-    "commentCount": 9,
-    "likeCount": 18,
-    "nickname": "리액트너구리"
-  }
-],
 
 "likedcomments": [
   {
@@ -335,158 +212,266 @@
     "date": "2025.04.13",
     "content": "정말 잘 설명되어 있네요.",
     "postTitle": "자바란 무엇인가?",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/kasey.jpeg"
   },
   {
     "id": 2,
     "date": "2025.04.12",
     "content": "큰 도움이 되었어요!",
     "postTitle": "파이썬의 매력",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/tim.png"
   },
   {
     "id": 3,
     "date": "2025.04.11",
     "content": "이렇게 보니 이해가 쉬워요.",
     "postTitle": "개발 공부 루틴",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/dong.jpeg"
   },
   {
     "id": 4,
     "date": "2025.04.10",
     "content": "감사합니다. 잘 읽었습니다.",
     "postTitle": "코딩하기 좋은 시간은?",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/kasey.jpeg"
   },
   {
     "id": 5,
     "date": "2025.04.09",
     "content": "깔끔하게 정리돼 있어서 보기 좋아요.",
     "postTitle": "자료구조 총정리",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/alex.jpeg"
   },
   {
     "id": 6,
     "date": "2025.04.08",
     "content": "이건 진짜 꿀팁이에요!",
     "postTitle": "백엔드와 프론트엔드 차이",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/tim.png"
   },
   {
     "id": 7,
     "date": "2025.04.07",
     "content": "완전 공감합니다.",
     "postTitle": "CS 면접 요약",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/kasey.jpeg"
   },
   {
     "id": 8,
     "date": "2025.04.06",
     "content": "기억에 오래 남을 것 같아요.",
     "postTitle": "Docker 완전정복",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/morris.jpeg"
   },
   {
     "id": 9,
     "date": "2025.04.05",
     "content": "코드 예시가 좋아요.",
     "postTitle": "JPA vs MyBatis",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/alex.jpeg"
   },
   {
     "id": 10,
     "date": "2025.04.04",
     "content": "추천하고 싶은 글입니다.",
     "postTitle": "코딩 테스트 준비 전략",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/tim.png"
   },
   {
     "id": 11,
     "date": "2025.04.03",
     "content": "하루 10분씩만 봐도 성장하겠네요!",
     "postTitle": "인프라 기초 다지기",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/morris.jpeg"
   }
 ],
 
 "writtencomment": [
   {
-    "id": 1,
-    "date": "2025.04.13",
-    "content": "정말 잘 설명되어 있네요.",
-    "postTitle": "자바란 무엇인가?",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
-  },
-  {
-    "id": 2,
-    "date": "2025.04.12",
-    "content": "큰 도움이 되었어요!",
-    "postTitle": "파이썬의 매력",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
-  },
-  {
-    "id": 3,
-    "date": "2025.04.11",
-    "content": "이렇게 보니 이해가 쉬워요.",
-    "postTitle": "개발 공부 루틴",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
-  },
-  {
-    "id": 4,
-    "date": "2025.04.10",
-    "content": "감사합니다. 잘 읽었습니다.",
-    "postTitle": "코딩하기 좋은 시간은?",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
-  },
-  {
     "id": 5,
     "date": "2025.04.09",
     "content": "깔끔하게 정리돼 있어서 보기 좋아요.",
     "postTitle": "자료구조 총정리",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/tim.png"
   },
   {
     "id": 6,
     "date": "2025.04.08",
     "content": "이건 진짜 꿀팁이에요!",
     "postTitle": "백엔드와 프론트엔드 차이",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/morris.jpeg"
   },
   {
     "id": 7,
     "date": "2025.04.07",
     "content": "완전 공감합니다.",
     "postTitle": "CS 면접 요약",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/alex.jpeg"
   },
   {
     "id": 8,
     "date": "2025.04.06",
     "content": "기억에 오래 남을 것 같아요.",
     "postTitle": "Docker 완전정복",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/tim.png"
   },
   {
     "id": 9,
     "date": "2025.04.05",
     "content": "코드 예시가 좋아요.",
     "postTitle": "JPA vs MyBatis",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/kasey.jpeg"
   },
   {
     "id": 10,
     "date": "2025.04.04",
     "content": "추천하고 싶은 글입니다.",
     "postTitle": "코딩 테스트 준비 전략",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/morris.jpeg"
   },
   {
     "id": 11,
     "date": "2025.04.03",
     "content": "하루 10분씩만 봐도 성장하겠네요!",
     "postTitle": "인프라 기초 다지기",
-    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    "profileImg": "/src/assets/images/profile/dong.jpeg"
   }
+],
+"allposts": [
+  { "id": 100, "title": "나도 개발자 할래!", "thumbnail": "/src/assets/images/post/default-img.png", "commentCount": 23, "likeCount": 54, "nickname": "D", "date": "2025-04-12", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 101, "title": "TS 한입만", "thumbnail": "/src/assets/images/post/post01.png", "commentCount": 23, "likeCount": 54, "nickname": "Kasey", "date": "2025-04-12", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 102, "title": "한 줄로 끝내는 Docker 환경 구축", "thumbnail": "/src/assets/images/post/post02.png", "commentCount": 0, "likeCount": 13, "nickname": "Alex", "date": "2025-04-11", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 103, "title": "인덱스 튜닝 해봤니?", "thumbnail": "/src/assets/images/post/post03.png", "commentCount": 15, "likeCount": 36, "nickname": "Dong", "date": "2025-04-10", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 104, "title": "인텔리제이, 너 누구야!", "thumbnail": "/src/assets/images/post/post04.png", "commentCount": 36, "likeCount": 68, "nickname": "Morris", "date": "2025-04-09", "profileImg": "/src/assets/images/profile/morris.jpeg" },
+  { "id": 105, "title": "한 번에 정리하는 ES6", "thumbnail": "/src/assets/images/post/post05.png", "commentCount": 40, "likeCount": 38, "nickname": "Kasey", "date": "2025-04-08", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 106, "title": "이건 꼭 알아야 해! 실무에서 자주 쓰는 MySQL 쿼리", "thumbnail": "/src/assets/images/post/post06.png", "commentCount": 29, "likeCount": 95, "nickname": "Alex", "date": "2025-04-07", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 107, "title": "개발자에게 맞는 생산성 툴, 뭐 쓰세요?", "thumbnail": "/src/assets/images/post/post07.png", "commentCount": 33, "likeCount": 57, "nickname": "D", "date": "2025-04-06", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 108, "title": "RESTful API란? 제대로 알고 쓰자", "thumbnail": "/src/assets/images/post/post08.png", "commentCount": 16, "likeCount": 72, "nickname": "Kasey", "date": "2025-04-05", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 109, "title": "React로 첫 화면 만들기", "thumbnail": "/src/assets/images/post/post09.png", "commentCount": 26, "likeCount": 76, "nickname": "Morris", "date": "2025-04-04", "profileImg": "/src/assets/images/profile/morris.jpeg" },
+  { "id": 110, "title": "JOIN, 언제 써야 해? 상황별 JOIN 완벽 가이드", "thumbnail": "/src/assets/images/post/post10.png", "commentCount": 48, "likeCount": 96, "nickname": "Dong", "date": "2025-04-03", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 111, "title": "처음으로 서버를 띄워봤다.", "thumbnail": "/src/assets/images/post/post11.png", "commentCount": 48, "likeCount": 19, "nickname": "D", "date": "2025-04-02", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 112, "title": "리팩토링 숲숲", "thumbnail": "/src/assets/images/post/post12.png", "commentCount": 23, "likeCount": 54, "nickname": "Alex", "date": "2025-04-01", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 113, "title": "하루 10분! 사이드 프로젝트로 성장하는 법", "thumbnail": "/src/assets/images/post/post13.png", "commentCount": 0, "likeCount": 13, "nickname": "Tim", "date": "2025-04-01", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 114, "title": "이건 몰랐지? 개발자가 자주 실수하는 패턴들", "thumbnail": "/src/assets/images/post/post14.png", "commentCount": 15, "likeCount": 36, "nickname": "Kasey", "date": "2025-03-28", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 115, "title": "개발 일지 3개월 써보니 생긴 변화들", "thumbnail": "/src/assets/images/post/post15.png", "commentCount": 36, "likeCount": 68, "nickname": "Morris", "date": "2025-03-27", "profileImg": "/src/assets/images/profile/morris.jpeg" },
+  { "id": 116, "title": "깃허브 레포 이렇게 꾸미면 눈에 띕니다", "thumbnail": "/src/assets/images/post/post16.png", "commentCount": 40, "likeCount": 38, "nickname": "Dong", "date": "2025-03-26", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 117, "title": "자바란 무엇인가?", "thumbnail": "/src/assets/images/post/post17.png", "commentCount": 29, "likeCount": 95, "nickname": "D", "date": "2025-03-24", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 118, "title": "개발 공부 루틴 어떻게 짜지?", "thumbnail": "/src/assets/images/post/post18.png", "commentCount": 33, "likeCount": 57, "nickname": "Alex", "date": "2025-03-22", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 119, "title": "Docker로 개발 환경 통일하기", "thumbnail": "/src/assets/images/post/post19.png", "commentCount": 16, "likeCount": 72, "nickname": "Kasey", "date": "2025-03-21", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 120, "title": "JPA vs MyBatis, 내 선택은?", "thumbnail": "/src/assets/images/post/post20.png", "commentCount": 26, "likeCount": 76, "nickname": "Tim", "date": "2025-03-20", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 121, "title": "코딩하기 좋은 시간은?", "thumbnail": "/src/assets/images/post/post21.png", "commentCount": 48, "likeCount": 96, "nickname": "Morris", "date": "2025-03-18", "profileImg": "/src/assets/images/profile/morris.jpeg" },
+  { "id": 122, "title": "코드리뷰, 어떻게 하면 서로 안 상할까?", "thumbnail": "/src/assets/images/post/post22.png", "commentCount": 48, "likeCount": 19, "nickname": "Dong", "date": "2025-03-15", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 123, "title": "Git과 Github가 처음인 당신에게", "thumbnail": "/src/assets/images/post/post23.png", "commentCount": 23, "likeCount": 54, "nickname": "Kasey", "date": "2025-03-13", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 124, "title": "MySQL이랑 친해지기!", "thumbnail": "/src/assets/images/post/post24.png", "commentCount": 0, "likeCount": 13, "nickname": "Tim", "date": "2025-03-11", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 125, "title": "카카오 코테 3주 후기", "thumbnail": "/src/assets/images/post/post25.png", "commentCount": 15, "likeCount": 36, "nickname": "D", "date": "2025-03-10", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 126, "title": "나는 왜 코딩이 재밌을까?", "thumbnail": "/src/assets/images/post/post26.png", "commentCount": 36, "likeCount": 68, "nickname": "Alex", "date": "2025-03-09", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 127, "title": "CS 공부, 어디서부터?", "thumbnail": "/src/assets/images/post/post27.png", "commentCount": 40, "likeCount": 38, "nickname": "Morris", "date": "2025-03-08", "profileImg": "/src/assets/images/profile/morris.jpeg" },
+  { "id": 128, "title": "영어 못하는 개발자는 괜찮을까?", "thumbnail": "/src/assets/images/post/post28.png", "commentCount": 29, "likeCount": 95, "nickname": "Dong", "date": "2025-03-07", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 129, "title": "비전공자의 첫 포트폴리오 만들기", "thumbnail": "/src/assets/images/post/post29.webp", "commentCount": 33, "likeCount": 57, "nickname": "Kasey", "date": "2025-03-06", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 130, "title": "JavaScript로 간단한 투두 앱 만들기", "thumbnail": "/src/assets/images/post/post30.png", "commentCount": 16, "likeCount": 72, "nickname": "D", "date": "2025-03-05", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 131, "title": "나만의 개발 블로그 시작하기", "thumbnail": "/src/assets/images/post/post31.png", "commentCount": 26, "likeCount": 76, "nickname": "Tim", "date": "2025-03-04", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 132, "title": "요즘 핫한 프레임워크는?", "thumbnail": "/src/assets/images/post/post32.png", "commentCount": 48, "likeCount": 96, "nickname": "Alex", "date": "2025-03-03", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 133, "title": "Git 명령어 파해치기", "thumbnail": "/src/assets/images/post/post33.png", "commentCount": 48, "likeCount": 19, "nickname": "Kasey", "date": "2025-03-02", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 134, "title": "REST API가 뭔가요?", "thumbnail": "/src/assets/images/post/post34.png", "commentCount": 23, "likeCount": 54, "nickname": "Morris", "date": "2025-03-01", "profileImg": "/src/assets/images/profile/morris.jpeg" },
+  { "id": 135, "title": "퇴근 후 사이드 프로젝트, 그게 나. ", "thumbnail": "/src/assets/images/post/post35.png", "commentCount": 0, "likeCount": 13, "nickname": "D", "date": "2025-02-27", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 136, "title": "개발자라면 필수인 익스텐션", "thumbnail": "/src/assets/images/post/post36.png", "commentCount": 15, "likeCount": 36, "nickname": "Tim", "date": "2025-02-25", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 137, "title": "Spring과 MyBatis로 게시판 만들기", "thumbnail": "/src/assets/images/post/post37.png", "commentCount": 36, "likeCount": 68, "nickname": "Kasey", "date": "2025-02-18", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 138, "title": "팀프로젝트, 계획부터 배포까지", "thumbnail": "/src/assets/images/post/post38.png", "commentCount": 40, "likeCount": 38, "nickname": "Dong", "date": "2025-02-08", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 139, "title": "면접을 위한 CS개념 정리", "thumbnail": "/src/assets/images/post/post39.png", "commentCount": 29, "likeCount": 95, "nickname": "D", "date": "2025-02-07", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 140, "title": "React 상태관리, 어떻게?", "thumbnail": "/src/assets/images/post/post40.png", "commentCount": 33, "likeCount": 57, "nickname": "Alex", "date": "2025-02-06", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 141, "title": "처음 해본 협업.. Git 충돌에 멘붕", "thumbnail": "/src/assets/images/post/post41.png", "commentCount": 16, "likeCount": 72, "nickname": "D", "date": "2025-02-05", "profileImg": "/src/assets/images/profile/D.png" }
+],
+"alltemplates": [
+  { "id": 200, "title": "나만의 CS 정리 노트", "thumbnail": "/src/assets/images/temp/temp01.png", "usageCount": 130, "nickname": "D", "date": "2025-04-13", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 201, "title": "사이드 프로젝트 정리", "thumbnail": "/src/assets/images/temp/temp02.png", "usageCount": 7, "nickname": "Kasey", "date": "2025-04-12", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 202, "title": "알고리즘 문제 풀이 노트", "thumbnail": "/src/assets/images/temp/temp03.png", "usageCount": 20, "nickname": "Alex", "date": "2025-04-11", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 203, "title": "기술 면접 준비 시트", "thumbnail": "/src/assets/images/temp/temp04.png", "usageCount": 14, "nickname": "Dong", "date": "2025-04-10", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 204, "title": "개발 일지", "thumbnail": "/src/assets/images/temp/temp05.png", "usageCount": 300, "nickname": "Morris", "date": "2025-04-08", "profileImg": "/src/assets/images/profile/morris.jpeg" },
+  { "id": 205, "title": "하루 공부 정리 포멧", "thumbnail": "/src/assets/images/temp/temp06.png", "usageCount": 234, "nickname": "Tim", "date": "2025-04-07", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 206, "title": "팀 회의록", "thumbnail": "/src/assets/images/temp/temp07.png", "usageCount": 62, "nickname": "Kasey", "date": "2025-04-05", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 207, "title": "나의 코딩 컨벤션", "thumbnail": "/src/assets/images/temp/temp08.png", "usageCount": 0, "nickname": "Alex", "date": "2025-04-02", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 208, "title": "오류 디버깅 정리장", "thumbnail": "/src/assets/images/temp/temp09.png", "usageCount": 225, "nickname": "D", "date": "2025-04-01", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 209, "title": "모의 면접 기록장", "thumbnail": "/src/assets/images/temp/temp10.png", "usageCount": 195, "nickname": "Dong", "date": "2025-03-28", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 210, "title": "코딩하며 써내려간 하루", "thumbnail": "/src/assets/images/temp/temp11.png", "usageCount": 26, "nickname": "D", "date": "2025-03-27", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 211, "title": "이력서에 담긴 내 이야기", "thumbnail": "/src/assets/images/temp/temp12.png", "usageCount": 130, "nickname": "Morris", "date": "2025-03-26", "profileImg": "/src/assets/images/profile/morris.jpeg" },
+  { "id": 212, "title": "기술 면접 정리 노트", "thumbnail": "/src/assets/images/temp/temp13.png", "usageCount": 7, "nickname": "Kasey", "date": "2025-03-24", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 213, "title": "나의 성장기", "thumbnail": "/src/assets/images/temp/temp14.png", "usageCount": 20, "nickname": "Tim", "date": "2025-03-22", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 214, "title": "리팩토링 체크리스트", "thumbnail": "/src/assets/images/temp/temp15.png", "usageCount": 14, "nickname": "Alex", "date": "2025-03-21", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 215, "title": "API 명세서 작성 폼", "thumbnail": "/src/assets/images/temp/temp16.png", "usageCount": 300, "nickname": "D", "date": "2025-03-20", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 216, "title": "프로젝트 회고 템플릿", "thumbnail": "/src/assets/images/temp/temp17.png", "usageCount": 234, "nickname": "Dong", "date": "2025-03-17", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 217, "title": "디버깅 정리", "thumbnail": "/src/assets/images/temp/temp18.png", "usageCount": 62, "nickname": "Morris", "date": "2025-03-15", "profileImg": "/src/assets/images/profile/morris.jpeg" },
+  { "id": 218, "title": "개발 흐름 정리", "thumbnail": "/src/assets/images/temp/temp19.png", "usageCount": 0, "nickname": "Kasey", "date": "2025-03-13", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 219, "title": "html 구조", "thumbnail": "/src/assets/images/temp/temp20.png", "usageCount": 225, "nickname": "Tim", "date": "2025-03-12", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 220, "title": "서버 관리 템플릿", "thumbnail": "/src/assets/images/temp/temp21.png", "usageCount": 195, "nickname": "Dong", "date": "2025-03-11", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 221, "title": "협업 노트", "thumbnail": "/src/assets/images/temp/temp22.png", "usageCount": 26, "nickname": "Alex", "date": "2025-03-09", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 222, "title": "알고리즘 풀이", "thumbnail": "/src/assets/images/temp/temp23.png", "usageCount": 130, "nickname": "Kasey", "date": "2025-03-04", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 223, "title": "머리아플땐 낙서", "thumbnail": "/src/assets/images/temp/temp24.png", "usageCount": 7, "nickname": "Morris", "date": "2025-03-03", "profileImg": "/src/assets/images/profile/morris.jpeg" },
+  { "id": 224, "title": "에러 해결 과정 정리", "thumbnail": "/src/assets/images/temp/temp25.png", "usageCount": 20, "nickname": "D", "date": "2025-03-02", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 225, "title": "기술 스택 사용 후기", "thumbnail": "/src/assets/images/temp/temp26.png", "usageCount": 14, "nickname": "Dong", "date": "2025-03-01", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 226, "title": "기능 구현 흐름을 적는 구조", "thumbnail": "/src/assets/images/temp/temp27.png", "usageCount": 300, "nickname": "Alex", "date": "2025-02-28", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 227, "title": "리팩토링 전/후 비교 작성용 포맷", "thumbnail": "/src/assets/images/temp/temp28.png", "usageCount": 234, "nickname": "Tim", "date": "2025-02-27", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 228, "title": "서비스 사용기 정리용 레이아웃", "thumbnail": "/src/assets/images/temp/temp29.png", "usageCount": 62, "nickname": "Kasey", "date": "2025-02-26", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 229, "title": "공부 루틴/습관 정리 양식", "thumbnail": "/src/assets/images/temp/temp30.png", "usageCount": 0, "nickname": "D", "date": "2025-02-25", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 230, "title": "스터디 주차별 요약 & 느낀점", "thumbnail": "/src/assets/images/temp/temp31.png", "usageCount": 225, "nickname": "Morris", "date": "2025-02-24", "profileImg": "/src/assets/images/profile/morris.jpeg" },
+  { "id": 231, "title": "알고리즘 풀이 설명용 정리 구조", "thumbnail": "/src/assets/images/temp/temp32.png", "usageCount": 195, "nickname": "Dong", "date": "2025-02-23", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 232, "title": "API 연동기/통신 흐름 정리 양식", "thumbnail": "/src/assets/images/temp/temp33.png", "usageCount": 26, "nickname": "Alex", "date": "2025-02-22", "profileImg": "/src/assets/images/profile/alex.jpeg" },
+  { "id": 233, "title": "버그 발생 → 해결까지 흐름 정리 구조", "thumbnail": "/src/assets/images/temp/temp34.png", "usageCount": 130, "nickname": "Tim", "date": "2025-02-17", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 234, "title": "협업 이슈/대화 내용 회고 포맷", "thumbnail": "/src/assets/images/temp/temp35.png", "usageCount": 7, "nickname": "D", "date": "2025-02-15", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 235, "title": "새 프로젝트 초기 정리 구조", "thumbnail": "/src/assets/images/temp/temp36.png", "usageCount": 20, "nickname": "Morris", "date": "2025-02-11", "profileImg": "/src/assets/images/profile/morris.jpeg" },
+  { "id": 236, "title": "새 프로젝트 초기 정리 구조", "thumbnail": "/src/assets/images/temp/temp37.png", "usageCount": 14, "nickname": "Kasey", "date": "2025-02-10", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 237, "title": "기술 블로그 글 초안 틀", "thumbnail": "/src/assets/images/temp/temp38.png", "usageCount": 300, "nickname": "Tim", "date": "2025-02-09", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 238, "title": "환경 세팅 단계별 기록용 양식", "thumbnail": "/src/assets/images/temp/temp39.png", "usageCount": 234, "nickname": "Dong", "date": "2025-02-08", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 239, "title": "배포 일지 작성용 (과정/이슈/대응)", "thumbnail": "/src/assets/images/temp/temp40.png", "usageCount": 62, "nickname": "D", "date": "2025-02-05", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 240, "title": "환경 세팅 단계별 기록용 양식", "thumbnail": "/src/assets/images/temp/temp41.png", "usageCount": 14, "nickname": "Kasey", "date": "2025-02-04", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 241, "title": "오픈소스 기여 경험 공유용 정리", "thumbnail": "/src/assets/images/temp/temp42.png", "usageCount": 300, "nickname": "Tim", "date": "2025-02-03", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 242, "title": "장애 대응 보고서 (현상/원인/조치)", "thumbnail": "/src/assets/images/temp/temp43.png", "usageCount": 234, "nickname": "Dong", "date": "2025-02-02", "profileImg": "/src/assets/images/profile/dong.jpeg" },
+  { "id": 243, "title": "개발 관련 서적 요약 정리", "thumbnail": "/src/assets/images/temp/temp44.png", "usageCount": 62, "nickname": "D", "date": "2025-02-01", "profileImg": "/src/assets/images/profile/D.png" }
+],
+
+"Dposts": [
+  { "id": 100, "title": "나도 개발자 할래!", "thumbnail": "/src/assets/images/post/default-img.png", "commentCount": 23, "likeCount": 54, "nickname": "D", "date": "2025-04-12", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 107, "title": "개발자에게 맞는 생산성 툴, 뭐 쓰세요?", "thumbnail": "/src/assets/images/post/post07.png", "commentCount": 33, "likeCount": 57, "nickname": "D", "date": "2025-04-06", "profileImg": "/src/assets/images/profile/tim.png" },
+  { "id": 111, "title": "처음으로 서버를 띄워봤다.", "thumbnail": "/src/assets/images/post/post11.png", "commentCount": 48, "likeCount": 19, "nickname": "D", "date": "2025-04-02", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 117, "title": "자바란 무엇인가?", "thumbnail": "/src/assets/images/post/post17.png", "commentCount": 29, "likeCount": 95, "nickname": "D", "date": "2025-03-24", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 130, "title": "JavaScript로 간단한 투두 앱 만들기", "thumbnail": "/src/assets/images/post/post30.png", "commentCount": 16, "likeCount": 72, "nickname": "D", "date": "2025-03-05", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 135, "title": "퇴근 후 사이드 프로젝트, 그게 나. ", "thumbnail": "/src/assets/images/post/post35.png", "commentCount": 0, "likeCount": 13, "nickname": "D", "date": "2025-02-27", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 139, "title": "면접을 위한 CS개념 정리", "thumbnail": "/src/assets/images/post/post39.png", "commentCount": 29, "likeCount": 95, "nickname": "D", "date": "2025-02-07", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 141, "title": "처음 해본 협업.. Git 충돌에 멘붕", "thumbnail": "/src/assets/images/post/post41.png", "commentCount": 16, "likeCount": 72, "nickname": "D", "date": "2025-02-05", "profileImg": "/src/assets/images/profile/D.png" }
+],
+
+"Dtemps": [
+  { "id": 200, "title": "나만의 CS 정리 노트", "thumbnail": "/src/assets/images/temp/temp01.png", "usageCount": 130, "nickname": "D", "date": "2025-04-13", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 208, "title": "오류 디버깅 정리장", "thumbnail": "/src/assets/images/temp/temp09.png", "usageCount": 225, "nickname": "D", "date": "2025-04-01", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 210, "title": "코딩하며 써내려간 하루", "thumbnail": "/src/assets/images/temp/temp11.png", "usageCount": 26, "nickname": "D", "date": "2025-03-27", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 215, "title": "API 명세서 작성 폼", "thumbnail": "/src/assets/images/temp/temp16.png", "usageCount": 300, "nickname": "D", "date": "2025-03-20", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 224, "title": "에러 해결 과정 정리", "thumbnail": "/src/assets/images/temp/temp25.png", "usageCount": 20, "nickname": "D", "date": "2025-03-02", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 229, "title": "공부 루틴/습관 정리 양식", "thumbnail": "/src/assets/images/temp/temp30.png", "usageCount": 0, "nickname": "D", "date": "2025-02-25", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 234, "title": "협업 이슈/대화 내용 회고 포맷", "thumbnail": "/src/assets/images/temp/temp35.png", "usageCount": 7, "nickname": "D", "date": "2025-02-15", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 239, "title": "배포 일지 작성용 (과정/이슈/대응)", "thumbnail": "/src/assets/images/temp/temp40.png", "usageCount": 62, "nickname": "D", "date": "2025-02-05", "profileImg": "/src/assets/images/profile/D.png" },
+  { "id": 243, "title": "개발 관련 서적 요약 정리", "thumbnail": "/src/assets/images/temp/temp44.png", "usageCount": 62, "nickname": "D", "date": "2025-02-01", "profileImg": "/src/assets/images/profile/D.png" }
+],
+
+"kaseyposts": [
+  { "id": 101, "title": "TS 한입만", "thumbnail": "/src/assets/images/post/post01.png", "commentCount": 23, "likeCount": 54, "nickname": "Kasey", "date": "2025-04-12", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 105, "title": "한 번에 정리하는 ES6", "thumbnail": "/src/assets/images/post/post05.png", "commentCount": 40, "likeCount": 38, "nickname": "Kasey", "date": "2025-04-08", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 108, "title": "RESTful API란? 제대로 알고 쓰자", "thumbnail": "/src/assets/images/post/post08.png", "commentCount": 16, "likeCount": 72, "nickname": "Kasey", "date": "2025-04-05", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 114, "title": "이건 몰랐지? 개발자가 자주 실수하는 패턴들", "thumbnail": "/src/assets/images/post/post14.png", "commentCount": 15, "likeCount": 36, "nickname": "Kasey", "date": "2025-03-28", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 119, "title": "Docker로 개발 환경 통일하기", "thumbnail": "/src/assets/images/post/post19.png", "commentCount": 16, "likeCount": 72, "nickname": "Kasey", "date": "2025-03-21", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 123, "title": "Git과 Github가 처음인 당신에게", "thumbnail": "/src/assets/images/post/post23.png", "commentCount": 23, "likeCount": 54, "nickname": "Kasey", "date": "2025-03-13", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 129, "title": "비전공자의 첫 포트폴리오 만들기", "thumbnail": "/src/assets/images/post/post29.webp", "commentCount": 33, "likeCount": 57, "nickname": "Kasey", "date": "2025-03-06", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 133, "title": "Git 명령어 파해치기", "thumbnail": "/src/assets/images/post/post33.png", "commentCount": 48, "likeCount": 19, "nickname": "Kasey", "date": "2025-03-02", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 137, "title": "Spring과 MyBatis로 게시판 만들기", "thumbnail": "/src/assets/images/post/post37.png", "commentCount": 36, "likeCount": 68, "nickname": "Kasey", "date": "2025-02-18", "profileImg": "/src/assets/images/profile/kasey.jpeg" }
+],
+
+"kaseytemps": [
+  { "id": 201, "title": "사이드 프로젝트 정리", "thumbnail": "/src/assets/images/temp/temp02.png", "usageCount": 7, "nickname": "Kasey", "date": "2025-04-12", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 206, "title": "팀 회의록", "thumbnail": "/src/assets/images/temp/temp07.png", "usageCount": 62, "nickname": "Kasey", "date": "2025-04-05", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 212, "title": "기술 면접 정리 노트", "thumbnail": "/src/assets/images/temp/temp13.png", "usageCount": 7, "nickname": "Kasey", "date": "2025-03-24", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 218, "title": "개발 흐름 정리", "thumbnail": "/src/assets/images/temp/temp19.png", "usageCount": 0, "nickname": "Kasey", "date": "2025-03-13", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 222, "title": "알고리즘 풀이", "thumbnail": "/src/assets/images/temp/temp23.png", "usageCount": 130, "nickname": "Kasey", "date": "2025-03-04", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 228, "title": "서비스 사용기 정리용 레이아웃", "thumbnail": "/src/assets/images/temp/temp29.png", "usageCount": 62, "nickname": "Kasey", "date": "2025-02-26", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 236, "title": "새 프로젝트 초기 정리 구조", "thumbnail": "/src/assets/images/temp/temp37.png", "usageCount": 14, "nickname": "Kasey", "date": "2025-02-10", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
+  { "id": 240, "title": "환경 세팅 단계별 기록용 양식", "thumbnail": "/src/assets/images/temp/temp41.png", "usageCount": 14, "nickname": "Kasey", "date": "2025-02-04", "profileImg": "/src/assets/images/profile/kasey.jpeg" }
 ]
 
 }

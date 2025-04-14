@@ -26,8 +26,11 @@
 
 <script setup>
   import FollowUserList from '../follow/FollowUserList.vue';
-  import followImg from '@/components/mypage/D_profile_IMG.png';
-  import followImg2 from '@/assets/comment/alex_profile.png'
+  import kasey from '@/assets/images/profile/kasey.jpeg';
+  import morris from '@/assets/images/profile/morris.jpeg';
+  import dong from '@/assets/images/profile/dong.jpeg';
+  import alex from '@/assets/images/profile/alex.jpeg';
+  import tim from '@/assets/images/profile/tim.png';
   import { ref, onMounted } from 'vue';
 
   const member = ref({});
@@ -52,18 +55,18 @@
   const overlayUsers = ref([]);
 
   const dummyUsers = [
-    { id: 1, nickname: 'Kasey', email: 'meow@mail.com', image: followImg },
-    { id: 2, nickname: 'Morris', email: 'meow@mail.com', image: followImg2 },
-    { id: 3, nickname: 'Dong', email: 'rainyday@mail.com', image: followImg },
-    { id: 4, nickname: 'Alex', email: 'woo@mail.com', image: followImg },
-    { id: 5, nickname: 'Kasey', email: 'meow@mail.com', image: followImg },
-    { id: 6, nickname: 'Morris', email: 'meow@mail.com', image: followImg },
-    { id: 7, nickname: 'Dong', email: 'rainyday@mail.com', image: followImg },
-    { id: 8, nickname: 'Alex', email: 'woo@mail.com', image: followImg },
-    { id: 9, nickname: 'Kasey', email: 'meow@mail.com', image: followImg },
-    { id: 10, nickname: 'Morris', email: 'meow@mail.com', image: followImg },
-    { id: 11, nickname: 'Dong', email: 'rainyday@mail.com', image: followImg },
-    { id: 12, nickname: 'Alex', email: 'woo@mail.com', image: followImg }
+    { id: 1, nickname: 'Kasey', email: 'meow@mail.com', image: kasey },
+    { id: 2, nickname: 'Morris', email: 'meow@mail.com', image: morris },
+    { id: 3, nickname: 'Dong', email: 'rainyday@mail.com', image: dong },
+    { id: 4, nickname: 'Alex', email: 'woo@mail.com', image: alex },
+    { id: 5, nickname: 'Tim', email: 'tommy@mail.com', image: tim },
+    { id: 6, nickname: 'Morris', email: 'meow@mail.com', image: morris },
+    { id: 7, nickname: 'Dong', email: 'rainyday@mail.com', image: dong },
+    { id: 8, nickname: 'Alex', email: 'woo@mail.com', image: alex },
+    { id: 9, nickname: 'Kasey', email: 'meow@mail.com', image: kasey },
+    { id: 10, nickname: 'Tim', email: 'tommy@mail.com', image: tim },
+    { id: 11, nickname: 'Dong', email: 'rainyday@mail.com', image: dong },
+    { id: 12, nickname: 'Alex', email: 'woo@mail.com', image: alex }
   ];
 
   function openOverlay(type) {
