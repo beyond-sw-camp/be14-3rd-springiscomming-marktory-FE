@@ -17,7 +17,7 @@
                     </div>
                 </RouterLink>
                 <div class="filter">
-                    <span class="filter-label">전체</span>
+                    <ArrayModal/>
                 </div>
             </div>
         </header>
@@ -41,6 +41,7 @@
     import AppHeader from '../components/AppHeader.vue';
     import OtherSideProfile from '../components/mypage/OtherSideProfile.vue';
     import Category from '../components/post/Category.vue';
+    import ArrayModal from '../components/ArrayModal.vue';
     import { RouterLink, RouterView } from 'vue-router';
 </script>
 
