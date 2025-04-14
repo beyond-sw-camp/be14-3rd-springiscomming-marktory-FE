@@ -5,7 +5,13 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            component: () => import('@/pages/HomePage.vue')
+            redirect: '/post/all' // 기본 진입 시 게시글/전체
+        },
+        {
+            path: '/:tab/:filter',
+            name: 'HomePage',
+            component: () => import('@/pages/HomePage.vue'),
+            props: true
         },
         {
             path: '/article/:id',
