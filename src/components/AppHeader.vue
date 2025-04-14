@@ -20,16 +20,16 @@
                 <img src="../assets/icons/notification.svg" alt="알림" class="icon notification-icon" />
             </button>
 
-            <template v-if="isLogined">
+            <template v-if="memberStore.isLogined">
                 <button class="write-btn">글 쓰기</button>
 
                 <!-- 프로필 & 드롭다운 버튼 그룹 -->
                 <div class="profile-wrapper" ref="dropdownRef">
                 <div class="profile-trigger" @click="toggleDropdown">
                     <img
-                    src="../assets/icons/pochaco.png"
-                    alt="프로필 사진"
-                    class="profile_image"
+                        :src="memberStore.user?.image || defaultProfile"
+                        class="dropdown_profile_image"
+                        alt="프로필 이미지"
                     />
                     <img
                     src="../assets/icons/chervon-down.svg"
@@ -43,12 +43,12 @@
                     <div class="profile-dropdown-menu">
                     <div class="dropdown-header">
                         <img
-                        src="../assets/icons/pochaco.png"
+                        :src="memberStore.user?.image || defaultProfile"
                         class="dropdown_profile_image"
                         />
                         <div>
-                            <p class="name">D</p>
-                            <p class="email">D1112@mail.com</p>
+                            <p class="name">{{ memberStore.user?.nickname }}</p>
+                            <p class="email">{{ memberStore.user?.email }}</p>
                         </div>
                     </div>
                     <ul class="menu-list">
@@ -85,9 +85,11 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
+import { useMemberStore } from '../stores/memberStore'
+import defaultProfile from '../assets/icons/defaultProfile.png'
 
 const router = useRouter()
-const isLogined = ref(true)
+const memberStore = useMemberStore()
 const showDropdown = ref(false)
 const dropdownRef = ref(null)
 
@@ -100,9 +102,9 @@ function toggleDropdown() {
 }
 
 function logout() {
-    isLogined.value = false
+    memberStore.logout()
     showDropdown.value = false
-    // 실제 로그아웃 처리 로직
+    router.push('/') 
 }
 
 function goTo(page) {
