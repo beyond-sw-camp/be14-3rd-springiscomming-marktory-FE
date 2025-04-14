@@ -20,12 +20,12 @@ import { ref, watch } from 'vue';
 const props = defineProps({
     initialText: {
         type: String,
-        default: '',
+        default: ''
     },
     isEdit: {
         type: Boolean,
-        default: false,
-    },
+        default: false
+    }
 });
 
 const emit = defineEmits(['submit', 'cancel']);
@@ -33,20 +33,21 @@ const emit = defineEmits(['submit', 'cancel']);
 const inputText = ref(props.initialText);
 const isFocused = ref(false);
 
-watch(
-    () => props.initialText,
-    (newVal) => {
-        inputText.value = newVal;
-    },
-    { immediate: true }
-);
+// 수정 모드일 경우 외부 텍스트 반영
+watch(() => props.initialText, (val) => {
+    inputText.value = val;
+});
 
-const submitComment = () => {
-    if (!inputText.value.trim()) return;
-    emit('submit', inputText.value.trim());
-    inputText.value = '';
-};
+function submitComment() {
+    const trimmed = inputText.value.trim();
+    if (!trimmed) return;
+    emit('submit', trimmed);
+    if (!props.isEdit) {
+        inputText.value = ''; // 새 댓글일 경우 초기화
+    }
+}
 </script>
+
 
 <style scoped>
 .comment-input-wrapper {

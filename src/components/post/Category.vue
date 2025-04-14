@@ -5,7 +5,7 @@
         </div>
         <div class="category-list">
             <div v-for="(item, index) in categories" :key="index" class="category-item">
-                {{ item }}
+                {{ item.name }}
             </div>
         </div>
     </aside>
@@ -22,6 +22,7 @@ export default {
     },
 };
 </script>
+
 
 <style scoped>
 .category-box {

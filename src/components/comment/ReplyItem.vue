@@ -40,7 +40,10 @@ const props = defineProps({
 });
 
 const isMine = computed(() => props.reply.userId === props.currentUserId);
-const formatDate = (dateStr) => dateStr.split("T")[0];
+const formatDate = (dateStr) => {
+    if (!dateStr) return '날짜 없음';
+    return dateStr.split('T')[0];
+};
 const toggleLike = () => {
     console.log("좋아요 토글:", props.reply.id);
 };
