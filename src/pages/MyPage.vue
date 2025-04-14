@@ -1,7 +1,9 @@
 <template>
+    <header>
+        <AppHeader/>
+    </header>
     <div class="mypage">
         <header class="header">
-            <AppHeader/>
             <div class="mypage-title">LGTM</div>
             <div class="mypagemenu-row">
                 <RouterLink to="/mypage/post" class="tab" active-class="active">
@@ -30,13 +32,17 @@
                 </div>
             </div>
         </main>
+        <footer>
+            <SideFooter/>
+        </footer>
     </div>
 </template>
 
 <script setup>
     import AppHeader from '../components/AppHeader.vue';
-    import SideProfile from '../components/SideProfile.vue';
-    import Category from '../components/Category.vue';
+    import SideFooter from '../components/footer/SideFooter.vue';
+    import SideProfile from '../components/mypage/SideProfile.vue';
+    import Category from '../components/post/Category.vue';
     import { RouterLink, RouterView } from 'vue-router';
 </script>
 
@@ -55,7 +61,7 @@
 
     .mypage-title {
         width: 1440px;
-        margin-top: 64px;
+        margin-top: 94px;
         padding-left: 91px;
         padding-top: 94px;
         font-size: 96px;
@@ -120,6 +126,10 @@
     }
 
     .mypage-left {
+        position: fixed;
+        top: 30px;
+        margin: 0 auto;
+        width: 262px;
         display: flex;
         flex-direction: column;
     }

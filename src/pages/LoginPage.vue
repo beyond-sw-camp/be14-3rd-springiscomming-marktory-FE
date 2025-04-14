@@ -1,8 +1,6 @@
 <template>
   
-  <header> 
-    <Header /> 
-  </header>
+  <AppHeader />
 
   <div class="wrapper">
     <div class="scaler" :style="scaleStyle">
@@ -10,13 +8,13 @@
         <!-- 왼쪽 -->
         <div class="welcome-section">
           <h1 class="welcome-title">환영해요!</h1>
-          <img src="../assets/icons/marktory-cat.svg" alt="고양이" class="cat-image" />
+          <img src="@/assets/icons/marktory-cat.svg" alt="고양이" class="cat-image" />
           <p class="welcome-text">Marktory는 모든 사람의<br />이야기를 기다립니다.</p>
         </div>
 
         <!-- 오른쪽 -->
         <div class="login-section">
-          <img src="../assets/icons/marktory-logo.svg" alt="로고" class="logo" />
+          <img src="@/assets/icons/marktory-logo.svg" alt="로고" class="logo" />
           <InputField v-model="email" placeholder="아이디(이메일)" type="text" />
           <InputField v-model="password" placeholder="비밀번호" type="password" />
           <LoginButton @click="handleLogin" />
@@ -24,7 +22,9 @@
             <router-link to="/presignup">회원가입</router-link>
             <span class="find-links">
               <router-link to="/findid">아이디</router-link>
-              / <a href="#">비밀번호</a> 찾기
+              /
+              <router-link to="/prefindpw">비밀번호</router-link>
+              찾기
             </span>
           </div>
         </div>
@@ -32,20 +32,26 @@
     </div>
   </div>
 
-  <Footer>
-    <Footer/>
-  </Footer>    
+  <AppFooter /> 
 </template>
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import InputField from '../components/login/InputField.vue'
-import LoginButton from '../components/login/LoginButton.vue'
-import Header from '../components/AppHeader.vue'
-import Footer from '../components/footer/AppFooter.vue'
+import { useMemberStore } from '../stores/memberStore'
+import { useRouter } from 'vue-router'
+import InputField from '@/components/login/InputField.vue'
+import LoginButton from '@/components/login/LoginButton.vue'
+import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/footer/AppFooter.vue'
 
 /* 복호화 */
 import bcrypt from 'bcryptjs'
+
+/* pinia를 불러오기 */
+const memberStore = useMemberStore();
+
+/* 라우터 사용 */
+const router = useRouter();
 
 // 로그인 처리 함수
 const handleLogin = async () => {
@@ -67,8 +73,9 @@ const handleLogin = async () => {
     const isMatch = await bcrypt.compare(password.value, member.password)
 
     if (isMatch) {
+      memberStore.login(member)
       alert('✅ 로그인 성공!')
-      // TODO: 로그인 성공 후 처리 (페이지 이동, 토큰 저장 등)
+      router.push('/')
     } else {
       alert('❌ 비밀번호가 일치하지 않습니다.')
     }
@@ -118,11 +125,10 @@ onBeforeUnmount(() => {
 <style>
 .wrapper {
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
   background-color: #000;
   overflow: hidden;
   position: relative;
-
 }
 
 .scaler {
@@ -130,6 +136,7 @@ onBeforeUnmount(() => {
 }
 
 .login-container {
+  margin-top: 50px;
   display: flex;
   width: 1920px;
   height: 1080px;
@@ -184,7 +191,7 @@ onBeforeUnmount(() => {
 
 .login-links {
   width: 500px;
-  font-size: 20px;
+  font-size: 23px;
   display: flex;
   justify-content: space-between;
   font-family: "Noto Sans KR", sans-serif;

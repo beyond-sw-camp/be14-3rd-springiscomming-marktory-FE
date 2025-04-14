@@ -13,19 +13,19 @@ const router = createRouter({
         },
         {
             path: '/login',
-            component: () => import('../pages/LoginPage.vue')
+            component: () => import('@/pages/LoginPage.vue')
         },
         {
             path: '/findid',
-            component: () => import('../pages/FindIdPage.vue')
+            component: () => import('@/pages/FindIdPage.vue')
         },
         {
             path: '/signup',
-            component: () => import('../pages/SignupPage.vue')
+            component: () => import('@/pages/SignupPage.vue')
         },
         {
             path: '/presignup',
-            component: () => import('../pages/PreSignupPage.vue')
+            component: () => import('@/pages/PreSignupPage.vue')
         },
         {
             path: '/mypage',
@@ -50,6 +50,10 @@ const router = createRouter({
             component: () => import('@/pages/EditorPage.vue')
         },
         {
+            path: '/categorypage',
+            component: () => import('../pages/CategoryPage.vue')
+        },
+        {
             path: '/adminPage',
             component: () => import('../pages/AdminPage.vue'),
             children: [
@@ -57,12 +61,33 @@ const router = createRouter({
                     path: 'notice',        // 공지사항 리스트
                     component: () => import('../components/admin/NoticeAdmin.vue')
                 },
-                {
-                    path: 'notice/:id',     // 공지사항 상세페이지
-                    component: () => import('../components/admin/NoticeDetail.vue'),
-                    props: true
-                }
-        ]}
+                // {
+                //     path: 'notice/:id',     // 공지사항 상세페이지
+                //     component: () => import('../components/admin/NoticeDetail.vue'),
+                //     props: true
+                // }
+            ]
+        },
+        {
+            path: '/findid/result',
+            component: () => import('@/pages/FindIdResultPage.vue')
+        },
+        {
+            path: '/signup/result',
+            component: () => import('@/pages/SignupResultPage.vue')
+        },
+        {
+            path: '/setting',
+            component: () => import('../pages/SettingPage.vue')
+        },
+        {
+            path: '/prefindpw',
+            component: () => import('../pages/PreFindPwPage.vue')
+        },
+        {
+            path: '/findpw',
+            component: () => import('../pages/FindPwPage.vue')
+        }
     ],
 });
 
