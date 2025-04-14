@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import { ref, nextTick, watch } from 'vue'
+import { ref, nextTick } from 'vue'
 import CommentList from './CommentList.vue'
 import CommentInput from './CommentInput.vue'
 import { createComment, getComments } from '@/api/comment.api'
@@ -74,11 +74,17 @@ function submitEdit() {
     editContent.value = ''
 }
 
+function getKSTISOString() {
+    const now = new Date()
+    const kstOffset = 9 * 60 * 60 * 1000
+    return new Date(now.getTime() + kstOffset).toISOString()
+}
+
 async function handleSubmitNewComment(content) {
     try {
         await createComment({
             content,
-            written_date: new Date().toISOString(),
+            written_date: getKSTISOString(),
             modify_date: null,
             is_deleted: false,
             type: 1,
@@ -99,6 +105,7 @@ async function handleSubmitNewComment(content) {
     }
 }
 </script>
+
 
 
 <style scoped>
