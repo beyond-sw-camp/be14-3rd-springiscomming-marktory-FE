@@ -45,9 +45,12 @@ import PostCardList from '@/components/mypage/PostCardList.vue'
 import TempCardList from '@/components/mypage/TempCardList.vue'
 import PageModal from '../components/PageModal.vue'
 import TemplateModal from '../components/TemplateModal.vue'
+import { useMemberStore } from '../stores/memberStore'
 
 const route = useRoute()
 const router = useRouter()
+
+const memberStore = useMemberStore();
 
 const sortOption = ref('전체');
 const handleSortChange = (option) => {
@@ -63,6 +66,12 @@ const activeTab = ref(route.params.tab || 'post')
 const activeDot = ref(route.params.filter || 'all')
 
 function updateRoute(tab = activeTab.value, filter = activeDot.value) {
+  if (filter === 'subscribe' && !memberStore.isLogined) {
+    alert('로그인이 필요한 기능입니다.')
+    router.push('/login')
+    return
+  }
+
   activeTab.value = tab
   activeDot.value = filter
   router.push(`/${tab}/${filter}`)
