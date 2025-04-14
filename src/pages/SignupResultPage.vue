@@ -21,9 +21,9 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
-import AppHeader from '../components/AppHeader.vue'
-import AppFooter from '../components/footer/AppFooter.vue'
-import LoginButton from '../components/login/LoginButton.vue'
+import AppHeader from '@/components/AppHeader.vue'
+import AppFooter from '@/components/footer/AppFooter.vue'
+import LoginButton from '@/components/login/LoginButton.vue'
 
 const router = useRouter()
 
@@ -66,7 +66,7 @@ onBeforeUnmount(() => {
 <style scoped>
 .wrapper {
 	width: 100vw;
-	height: 90vh;
+	height: 80vh;
 	position: relative;
 	background-color: black;
 	overflow: hidden;
@@ -91,12 +91,13 @@ onBeforeUnmount(() => {
 .logo {
 	width: 658px;
 	margin-bottom: 24px;
+	margin-top: 60px;
 }
 
 .title {
 	font-size: 64px;
 	font-weight: bold;
-	margin-bottom: 150px;
+	margin-bottom: 100px;
 }
 
 </style>

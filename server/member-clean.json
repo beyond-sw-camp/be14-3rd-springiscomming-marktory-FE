@@ -149,6 +149,21 @@
             "delete_date": null,
             "report_count": 1,
             "is_terms": true
+        },
+        {
+            "id": 11,
+            "email": "test.lee@example.com",
+            "password": "$2a$12$qRN4y0dTIAyPnLdFzTAIXOnD5HDFXjrXo7MKgzz2YNyss2FjDLbyq",
+            "name": "이서영",
+            "nickname": "서영의공방",
+            "birthday": "2000-11-11",
+            "image": "https://example.com/images/seoyoung.jpg",
+            "status": "is_delete",
+            "black_date": null,
+            "assigned_date": "2023-05-10 14:23:45",
+            "delete_date": "2024-01-20 09:15:30",
+            "report_count": 0,
+            "is_terms": true
         }
     ]
 }

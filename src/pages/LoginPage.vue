@@ -22,7 +22,9 @@
             <router-link to="/presignup">회원가입</router-link>
             <span class="find-links">
               <router-link to="/findid">아이디</router-link>
-              / <a href="#">비밀번호</a> 찾기
+              /
+              <router-link to="/prefindpw">비밀번호</router-link>
+              찾기
             </span>
           </div>
         </div>
@@ -35,6 +37,8 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { useMemberStore } from '../stores/memberStore'
+import { useRouter } from 'vue-router'
 import InputField from '@/components/login/InputField.vue'
 import LoginButton from '@/components/login/LoginButton.vue'
 import AppHeader from '@/components/AppHeader.vue'
@@ -42,6 +46,12 @@ import AppFooter from '@/components/footer/AppFooter.vue'
 
 /* 복호화 */
 import bcrypt from 'bcryptjs'
+
+/* pinia를 불러오기 */
+const memberStore = useMemberStore();
+
+/* 라우터 사용 */
+const router = useRouter();
 
 // 로그인 처리 함수
 const handleLogin = async () => {
@@ -63,8 +73,9 @@ const handleLogin = async () => {
     const isMatch = await bcrypt.compare(password.value, member.password)
 
     if (isMatch) {
+      memberStore.login(member)
       alert('✅ 로그인 성공!')
-      // TODO: 로그인 성공 후 처리 (페이지 이동, 토큰 저장 등)
+      router.push('/')
     } else {
       alert('❌ 비밀번호가 일치하지 않습니다.')
     }
@@ -114,11 +125,10 @@ onBeforeUnmount(() => {
 <style>
 .wrapper {
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
   background-color: #000;
   overflow: hidden;
   position: relative;
-
 }
 
 .scaler {
@@ -126,6 +136,7 @@ onBeforeUnmount(() => {
 }
 
 .login-container {
+  margin-top: 50px;
   display: flex;
   width: 1920px;
   height: 1080px;
@@ -180,7 +191,7 @@ onBeforeUnmount(() => {
 
 .login-links {
   width: 500px;
-  font-size: 20px;
+  font-size: 23px;
   display: flex;
   justify-content: space-between;
   font-family: "Noto Sans KR", sans-serif;

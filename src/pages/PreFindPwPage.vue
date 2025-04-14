@@ -1,26 +1,25 @@
 <template>
-  <div class="find-id-page">
-
+  <div class="find-pre-pw-page">
     <AppHeader />
 
     <div class="wrapper">
       <div class="scaler" :style="scaleStyle">
-        <div class="findid-container">
+        <div class="findpw-container">
           <img src="@/assets/icons/marktory-logo.svg" alt="로고" class="logo" />
 
-          <h1>아이디 찾기</h1>
-          <h3>이름과 생년월일을 입력해주세요.</h3>
+          <h1>비밀번호 찾기</h1>
+          <h3>이메일 인증 전 본인 인증이 필요합니다.</h3>
 
           <!-- 이름 입력 -->
           <InputField v-model="name" placeholder="이름" />
           <p v-if="!name && triedSubmit" class="error">필수 항목입니다.</p>
 
-          <!-- 생년월일 입력: BirthDateField 사용 -->
+          <!-- 생년월일 입력 -->
           <BirthDateField v-model="birth" />
           <p v-if="!birth && triedSubmit" class="error">필수 항목입니다.</p>
 
-          <!-- 아이디 찾기 버튼 -->
-          <LoginButton text="아이디 찾기" @click="handleFindId" />
+          <!-- 인증 버튼 -->
+          <LoginButton text="본인 인증" @click="handleFindId" />
 
           <!-- 하단 링크 -->
           <div class="links">
@@ -49,21 +48,18 @@ const router = useRouter()
 const name = ref('')
 const birth = ref('')
 const triedSubmit = ref(false)
+
 const formatBirthToISO = (birthInput) => {
   if (birthInput instanceof Date && !isNaN(birthInput)) {
     const year = birthInput.getFullYear()
-    const month = String(birthInput.getMonth() + 1).padStart(2, '0') // 0부터 시작하니까 +1
+    const month = String(birthInput.getMonth() + 1).padStart(2, '0')
     const day = String(birthInput.getDate()).padStart(2, '0')
     return `${year}-${month}-${day}`
   }
-
   return ''
 }
 
-
 const handleFindId = async () => {
-  console.log('birth.value:', birth.value)
-
   triedSubmit.value = true
 
   if (!name.value || !birth.value) {
@@ -88,27 +84,20 @@ const handleFindId = async () => {
       return
     }
 
-    const emails = members.map((m) => m.email)
+    const memberId = members[0].id
 
-    // sessionStorage에 저장
-    sessionStorage.setItem('findIdResult', JSON.stringify(emails))
-
-    // 라우터 이동 (state나 query 없이!)
-    router.push('/findid/result')
+    // memberId만 저장
+    sessionStorage.setItem('FindPw', JSON.stringify({ memberId }))
+    console.log(memberId)
+    // 페이지 이동
+    router.push('/findpw')
   } catch (err) {
-    console.error('아이디 찾기 중 오류 발생:', err)
-    alert('아이디 찾기 중 오류가 발생했습니다.')
+    console.error('비밀번호 본인 인증 중 오류 발생:', err)
+    alert('본인 인증 오류.')
   }
-
-  //   alert(`당신의 아이디는: ${members[0].email}`)
-  // } catch (err) {
-  //   console.error('아이디 찾기 중 오류 발생:', err)
-  //   alert('아이디 찾기 중 오류가 발생했습니다.')
-  // }
 }
 
-
-// ✅ 화면 확대/축소 방지
+// 화면 확대/축소 방지
 const scaleStyle = ref({})
 const baseWidth = 1920
 const baseHeight = 1080
@@ -155,7 +144,8 @@ onBeforeUnmount(() => {
   will-change: transform;
 }
 
-.findid-container {
+.findpw-container {
+  margin-top: 50px;
   width: 1920px;
   height: 1080px;
   font-family: 'Noto Sans KR', sans-serif;
@@ -169,7 +159,6 @@ onBeforeUnmount(() => {
 
 .logo {
   width: 500px;
-  margin-top: 50px;
 }
 
 .error {

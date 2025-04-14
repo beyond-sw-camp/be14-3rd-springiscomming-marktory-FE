@@ -1,26 +1,17 @@
 <template>
-  <div class="find-id-page">
-
+  <div class="find-pw-page">
     <AppHeader />
 
     <div class="wrapper">
       <div class="scaler" :style="scaleStyle">
-        <div class="findid-container">
+        <div class="findpw-container">
           <img src="@/assets/icons/marktory-logo.svg" alt="로고" class="logo" />
 
-          <h1>아이디 찾기</h1>
-          <h3>이름과 생년월일을 입력해주세요.</h3>
+          <h1>비밀번호 찾기</h1>
+          <h3>가입 시 입력한 이메일 계정 주소를 입력해주세요.</h3>
 
-          <!-- 이름 입력 -->
-          <InputField v-model="name" placeholder="이름" />
-          <p v-if="!name && triedSubmit" class="error">필수 항목입니다.</p>
-
-          <!-- 생년월일 입력: BirthDateField 사용 -->
-          <BirthDateField v-model="birth" />
-          <p v-if="!birth && triedSubmit" class="error">필수 항목입니다.</p>
-
-          <!-- 아이디 찾기 버튼 -->
-          <LoginButton text="아이디 찾기" @click="handleFindId" />
+          <InputField v-model="email" placeholder="이메일을 입력하세요" type="email" />
+          <LoginButton @click="sendEmail" text="임시 비밀번호 전송" />
 
           <!-- 하단 링크 -->
           <div class="links">
@@ -43,27 +34,113 @@ import AppFooter from '@/components/footer/AppFooter.vue'
 import InputField from '@/components/login/InputField.vue'
 import LoginButton from '@/components/login/LoginButton.vue'
 import BirthDateField from '@/components/login/BirthDateField.vue'
+import bcrypt from 'bcryptjs'
 
 const router = useRouter()
 
 const name = ref('')
 const birth = ref('')
 const triedSubmit = ref(false)
+
+const email = ref('')
+const actualEmail = ref('')
+const memberId = ref('');
+
+onMounted(async () => {
+  const stored = sessionStorage.getItem('FindPw')
+  const parsed = stored ? JSON.parse(stored) : {}
+
+  if (!parsed.memberId) {
+    console.warn('❗ memberId 없음!')
+    return
+  }
+
+  memberId.value = parsed.memberId
+
+  try {
+    const res = await fetch(`http://localhost:3000/members/${memberId.value}`)
+    const member = await res.json()
+
+    console.log('✅ 가져온 사용자 정보:', member)
+    name.value = member.name
+    birth.value = member.birthday
+    actualEmail.value = member.email
+  } catch (err) {
+    console.error('❌ 사용자 정보 가져오기 실패:', err)
+  }
+})
+
 const formatBirthToISO = (birthInput) => {
   if (birthInput instanceof Date && !isNaN(birthInput)) {
     const year = birthInput.getFullYear()
-    const month = String(birthInput.getMonth() + 1).padStart(2, '0') // 0부터 시작하니까 +1
+    const month = String(birthInput.getMonth() + 1).padStart(2, '0')
     const day = String(birthInput.getDate()).padStart(2, '0')
     return `${year}-${month}-${day}`
   }
-
   return ''
 }
 
+const sendEmail = async () => {
+  if (!email.value) {
+    alert('이메일을 입력해주세요.')
+    return
+  }
+
+  if (email.value !== actualEmail.value) {
+    alert('입력한 이메일이 사용자 정보와 일치하지 않습니다.')
+    return
+  }
+
+  const requestVo = {
+    email: email.value,
+    name: name.value,
+    birthday: birth.value,
+  }
+
+  try {
+    const response = await fetch('http://localhost:8000/member-server/check/api/member/password/reset', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify(requestVo),
+    })
+
+    const contentType = response.headers.get('content-type')
+    const data = contentType && contentType.includes('application/json') ? await response.json() : {}
+
+    if (!response.ok) {
+      alert(data.exceptionMessage || '비밀번호 찾기에 실패했습니다.')
+      return
+    }
+
+    alert(data.message) // 예: "임시 비밀번호가 전송되었습니다."
+    console.log(data.password)
+
+    // 👉 bcrypt 암호화
+    const salt = bcrypt.genSaltSync(10)
+    const hashedPw = bcrypt.hashSync(data.password, salt)
+
+    // 👉 mock 데이터에 암호화된 비밀번호 반영
+    if (memberId.value) {
+      await fetch(`http://localhost:3000/members/${memberId.value}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          password: hashedPw,
+        }),
+      })
+    }
+  } catch (err) {
+    console.error('요청 중 오류 발생:', err)
+    alert('서버와의 통신 중 문제가 발생했습니다.')
+  }
+}
 
 const handleFindId = async () => {
-  console.log('birth.value:', birth.value)
-
   triedSubmit.value = true
 
   if (!name.value || !birth.value) {
@@ -88,27 +165,20 @@ const handleFindId = async () => {
       return
     }
 
-    const emails = members.map((m) => m.email)
+    const memberId = members[0].id
 
-    // sessionStorage에 저장
-    sessionStorage.setItem('findIdResult', JSON.stringify(emails))
+    // memberId만 저장
+    sessionStorage.setItem('FindPw', JSON.stringify({ memberId }))
 
-    // 라우터 이동 (state나 query 없이!)
-    router.push('/findid/result')
+    // 페이지 이동
+    router.push({ name: 'FindPw' })
   } catch (err) {
-    console.error('아이디 찾기 중 오류 발생:', err)
-    alert('아이디 찾기 중 오류가 발생했습니다.')
+    console.error('비밀번호 본인 인증 중 오류 발생:', err)
+    alert('본인 인증 오류.')
   }
-
-  //   alert(`당신의 아이디는: ${members[0].email}`)
-  // } catch (err) {
-  //   console.error('아이디 찾기 중 오류 발생:', err)
-  //   alert('아이디 찾기 중 오류가 발생했습니다.')
-  // }
 }
 
-
-// ✅ 화면 확대/축소 방지
+// 화면 확대/축소 방지
 const scaleStyle = ref({})
 const baseWidth = 1920
 const baseHeight = 1080
@@ -131,6 +201,7 @@ const updateScale = () => {
     zIndex: 10,
   }
 }
+
 
 onMounted(() => {
   updateScale()
@@ -155,7 +226,7 @@ onBeforeUnmount(() => {
   will-change: transform;
 }
 
-.findid-container {
+.findpw-container {
   width: 1920px;
   height: 1080px;
   font-family: 'Noto Sans KR', sans-serif;

@@ -24,7 +24,7 @@
             <LoginButton text="로그인" @click="goToLogin" />
             <div class="links">
               <RouterLink to="/signup">회원가입</RouterLink>
-              <RouterLink to="/findpw">비밀번호 찾기</RouterLink>
+              <RouterLink to="/prefindpw">비밀번호 찾기</RouterLink>
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@ const maskEmail = (email) => {
 <style scoped>
 .wrapper {
   width: 100vw;
-  height: 90vh;
+  height: 80vh;
   position: relative;
   background-color: black;
   overflow: hidden;
@@ -137,6 +137,7 @@ const maskEmail = (email) => {
 .logo {
   width: 500px;
   margin-bottom: 24px;
+  margin-top: 50px;
 }
 
 .title {
@@ -177,7 +178,7 @@ const maskEmail = (email) => {
 	margin-top: 20px;
   display: flex;
   gap: 24px;
-  font-size: 18px;
+  font-size: 23px;
 	justify-content: space-between;
 }
 

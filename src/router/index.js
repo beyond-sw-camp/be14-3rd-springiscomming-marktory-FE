@@ -101,6 +101,14 @@ const router = createRouter({
                     component: () => import('../components/activity/WrittenCmtCardList.vue')
                 }
             ]
+        },
+        {
+            path: '/prefindpw',
+            component: () => import('../pages/PreFindPwPage.vue')
+        },
+        {
+            path: '/findpw',
+            component: () => import('../pages/FindPwPage.vue')
         }
     ]
 });
