@@ -1,19 +1,22 @@
 <template>
-    <header>
-        <AppHeader/>
-    </header>
-    <div class="mypage">
+    <AppHeader/>
+    <div class="activity">
         <header class="header">
             <div class="mypage-title">LGTM</div>
-            <div class="mypagemenu-row">
-                <RouterLink to="/mypage/post" class="tab" active-class="active">
+            <div class="activitymenu-row">
+                <RouterLink to="/activity/post" class="tab" active-class="active">
                     <div class="post">
-                        <span class="post-label">게시글</span>
+                        <span class="post-label">좋아요 누른 게시글</span>
                     </div>
                 </RouterLink>
-                <RouterLink to="/mypage/temp" class="tab" active-class="active">
-                    <div class="temp">
-                        <span class="temp-label">템플릿</span>
+                <RouterLink to="/activity/likecomment" class="tab" active-class="active">
+                    <div class="likecomment">
+                        <span class="likecomment-label">좋아요 누른 댓글</span>
+                    </div>
+                </RouterLink>
+                <RouterLink to="/activity/writecomment" class="tab" active-class="active">
+                    <div class="writecomment">
+                        <span class="writecomment-label">내가 남긴 댓글</span>
                     </div>
                 </RouterLink>
                 <div class="filter">
@@ -25,10 +28,9 @@
             <div class="mypage-row">
                 <div class="mypage-left">
                     <SideProfile />
-                    <Category />
                 </div>
-                <div class="mypage-postcardlist">
-                    <RouterView/>    
+                <div class="activity-cardlist">
+                    <RouterView/>   
                 </div>
             </div>
         </main>
@@ -37,19 +39,20 @@
 
 <script setup>
     import AppHeader from '../components/AppHeader.vue';
-    import SideFooter from '../components/footer/SideFooter.vue';
     import SideProfile from '../components/mypage/SideProfile.vue';
-    import Category from '../components/post/Category.vue';
     import { RouterLink, RouterView } from 'vue-router';
 </script>
 
 <style scoped>
     .header {
         position: fixed;
+        top: 0;
+        margin: 0;
+        padding: 0;
         z-index: 100;
     }
 
-    .mypage {
+    .activity {
         max-width: 1440px;
         margin: 0 auto;
         color: white;
@@ -67,21 +70,24 @@
         background-color: black;
     }
 
-    .mypage-row {
+    .activity-row {
         display: flex;
     }
 
-    .mypage-postcardlist {
+    .activity-cardlist {
         margin-left: 338px;
         margin-top: 444px;
         z-index: 1;
     }
 
-    .mypagemenu-row {
+    .activitymenu-row {
         width: 1440px;
         padding-bottom: 8px;
         display: flex;
         background-color: black;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        align-items: center;
 
     }
 
@@ -97,17 +103,27 @@
         color: white;
     }
 
-    .temp {
+    .likecomment {
         padding-left: 20px;
     }
 
-    .temp-label {
+    .likecomment-label {
         font-size: 23px;
         display: inline-block;
     }
 
+    .writecomment {
+        padding-left: 20px;
+    }
+
+    .writecomment-label {
+        font-size: 23px;
+        display: inline-block;
+    }
+
+
     .filter {
-        padding-left: 660px;
+        padding-left: 200px;
         padding-top: 60px;
     }
 
@@ -139,13 +155,15 @@
     }
 
     .tab .post-label,
-    .tab .temp-label {
+    .tab .likecomment-label, 
+    .tab .writecomment-label {
         border-bottom: 3px solid transparent;
         transition: border-color 0.3s;
     }
 
     .tab.active .post-label,
-    .tab.active .temp-label {
+    .tab.active .likecomment-label,
+    .tab.active .writecomment-label {
         padding-bottom: 10px;
         color: #FD6F22;
         border-bottom-color: #FD6F22;

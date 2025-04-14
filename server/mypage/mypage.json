@@ -214,7 +214,279 @@
   { "id": 208, "title": "템플릿 제목 9", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 225, "nickname": "D", "date": "2025-03-24", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
   { "id": 209, "title": "템플릿 제목 10", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 195, "nickname": "D", "date": "2025-03-23", "profileImg": "/src/components/mypage/D_profile_IMG.png" },
   { "id": 210, "title": "템플릿 제목 11", "thumbnail": "/src/components/mypage/default-img.png", "usageCount": 26, "nickname": "D", "date": "2025-03-22", "profileImg": "/src/components/mypage/D_profile_IMG.png" }
-]
+],
 
+"likedposts": [
+  {
+    "id": 1,
+    "title": "자바란 무엇인가?",
+    "date": "2025.04.13",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png",
+    "thumbnail": "/src/components/mypage/default-img.png",
+    "commentCount": 4,
+    "likeCount": 36,
+    "nickname": "코딩하는돌고래"
+  },
+  {
+    "id": 2,
+    "title": "파이썬의 매력",
+    "date": "2025.04.12",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png",
+    "thumbnail": "/src/components/mypage/default-img.png",
+    "commentCount": 13,
+    "likeCount": 13,
+    "nickname": "개발자토끼"
+  },
+  {
+    "id": 3,
+    "title": "개발 공부 루틴",
+    "date": "2025.04.11",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png",
+    "thumbnail": "/src/components/mypage/default-img.png",
+    "commentCount": 19,
+    "likeCount": 12,
+    "nickname": "자바요정"
+  },
+  {
+    "id": 4,
+    "title": "코딩하기 좋은 시간은?",
+    "date": "2025.04.10",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png",
+    "thumbnail": "/src/components/mypage/default-img.png",
+    "commentCount": 20,
+    "likeCount": 14,
+    "nickname": "파이썬냥이"
+  },
+  {
+    "id": 5,
+    "title": "자료구조 총정리",
+    "date": "2025.04.09",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png",
+    "thumbnail": "/src/components/mypage/default-img.png",
+    "commentCount": 9,
+    "likeCount": 22,
+    "nickname": "백엔드곰돌이"
+  },
+  {
+    "id": 6,
+    "title": "백엔드와 프론트엔드 차이",
+    "date": "2025.04.08",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png",
+    "thumbnail": "/src/components/mypage/default-img.png",
+    "commentCount": 13,
+    "likeCount": 24,
+    "nickname": "프론트펭귄"
+  },
+  {
+    "id": 7,
+    "title": "CS 면접 요약",
+    "date": "2025.04.07",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png",
+    "thumbnail": "/src/components/mypage/default-img.png",
+    "commentCount": 19,
+    "likeCount": 19,
+    "nickname": "DB정복자"
+  },
+  {
+    "id": 8,
+    "title": "Docker 완전정복",
+    "date": "2025.04.06",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png",
+    "thumbnail": "/src/components/mypage/default-img.png",
+    "commentCount": 10,
+    "likeCount": 32,
+    "nickname": "스프링고수"
+  },
+  {
+    "id": 9,
+    "title": "JPA vs MyBatis",
+    "date": "2025.04.05",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png",
+    "thumbnail": "/src/components/mypage/default-img.png",
+    "commentCount": 3,
+    "likeCount": 27,
+    "nickname": "코딩부엉이"
+  },
+  {
+    "id": 10,
+    "title": "코딩 테스트 준비 전략",
+    "date": "2025.04.04",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png",
+    "thumbnail": "/src/components/mypage/default-img.png",
+    "commentCount": 14,
+    "likeCount": 30,
+    "nickname": "CS고수"
+  },
+  {
+    "id": 11,
+    "title": "인프라 기초 다지기",
+    "date": "2025.04.03",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png",
+    "thumbnail": "/src/components/mypage/default-img.png",
+    "commentCount": 9,
+    "likeCount": 18,
+    "nickname": "리액트너구리"
+  }
+],
+
+"likedcomments": [
+  {
+    "id": 1,
+    "date": "2025.04.13",
+    "content": "정말 잘 설명되어 있네요.",
+    "postTitle": "자바란 무엇인가?",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 2,
+    "date": "2025.04.12",
+    "content": "큰 도움이 되었어요!",
+    "postTitle": "파이썬의 매력",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 3,
+    "date": "2025.04.11",
+    "content": "이렇게 보니 이해가 쉬워요.",
+    "postTitle": "개발 공부 루틴",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 4,
+    "date": "2025.04.10",
+    "content": "감사합니다. 잘 읽었습니다.",
+    "postTitle": "코딩하기 좋은 시간은?",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 5,
+    "date": "2025.04.09",
+    "content": "깔끔하게 정리돼 있어서 보기 좋아요.",
+    "postTitle": "자료구조 총정리",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 6,
+    "date": "2025.04.08",
+    "content": "이건 진짜 꿀팁이에요!",
+    "postTitle": "백엔드와 프론트엔드 차이",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 7,
+    "date": "2025.04.07",
+    "content": "완전 공감합니다.",
+    "postTitle": "CS 면접 요약",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 8,
+    "date": "2025.04.06",
+    "content": "기억에 오래 남을 것 같아요.",
+    "postTitle": "Docker 완전정복",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 9,
+    "date": "2025.04.05",
+    "content": "코드 예시가 좋아요.",
+    "postTitle": "JPA vs MyBatis",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 10,
+    "date": "2025.04.04",
+    "content": "추천하고 싶은 글입니다.",
+    "postTitle": "코딩 테스트 준비 전략",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 11,
+    "date": "2025.04.03",
+    "content": "하루 10분씩만 봐도 성장하겠네요!",
+    "postTitle": "인프라 기초 다지기",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  }
+],
+
+"writtencomment": [
+  {
+    "id": 1,
+    "date": "2025.04.13",
+    "content": "정말 잘 설명되어 있네요.",
+    "postTitle": "자바란 무엇인가?",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 2,
+    "date": "2025.04.12",
+    "content": "큰 도움이 되었어요!",
+    "postTitle": "파이썬의 매력",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 3,
+    "date": "2025.04.11",
+    "content": "이렇게 보니 이해가 쉬워요.",
+    "postTitle": "개발 공부 루틴",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 4,
+    "date": "2025.04.10",
+    "content": "감사합니다. 잘 읽었습니다.",
+    "postTitle": "코딩하기 좋은 시간은?",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 5,
+    "date": "2025.04.09",
+    "content": "깔끔하게 정리돼 있어서 보기 좋아요.",
+    "postTitle": "자료구조 총정리",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 6,
+    "date": "2025.04.08",
+    "content": "이건 진짜 꿀팁이에요!",
+    "postTitle": "백엔드와 프론트엔드 차이",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 7,
+    "date": "2025.04.07",
+    "content": "완전 공감합니다.",
+    "postTitle": "CS 면접 요약",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 8,
+    "date": "2025.04.06",
+    "content": "기억에 오래 남을 것 같아요.",
+    "postTitle": "Docker 완전정복",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 9,
+    "date": "2025.04.05",
+    "content": "코드 예시가 좋아요.",
+    "postTitle": "JPA vs MyBatis",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 10,
+    "date": "2025.04.04",
+    "content": "추천하고 싶은 글입니다.",
+    "postTitle": "코딩 테스트 준비 전략",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  },
+  {
+    "id": 11,
+    "date": "2025.04.03",
+    "content": "하루 10분씩만 봐도 성장하겠네요!",
+    "postTitle": "인프라 기초 다지기",
+    "profileImg": "/src/components/mypage/D_profile_IMG.png"
+  }
+]
 
 }
