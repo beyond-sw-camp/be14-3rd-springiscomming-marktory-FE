@@ -19,9 +19,11 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref, defineEmits } from 'vue'
 
-    const options = ['전체', '등록순', '최신순']
+    const emit = defineEmits(['updateSort']);
+
+    const options = ['전체', '좋아요순', '최신순']
     const selected = ref('전체')
     const open = ref(false)
 
@@ -32,6 +34,7 @@
     const selectOption = (option) => {
     selected.value = option
     open.value = false
+    emit('updateSort', option)
 }
 </script>
 

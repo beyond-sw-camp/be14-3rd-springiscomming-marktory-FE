@@ -12,8 +12,8 @@
       </div>
       <div class="filter-row">
         <!-- <span class="filter-label">전체</span> -->
-        <PageModal v-if="activeTab === 'post'" />
-        <TemplateModal v-else />
+        <PageModal v-if="activeTab === 'post'" @updateSort="handleSortChange" />
+        <TemplateModal v-else @updateSort="handleSortChange"/>
       </div>
     </header>
     <main>
@@ -29,8 +29,8 @@
       </div>
       <div class="main-row">
         <div class="main-postcardlist">
-          <PostCardList v-if="activeTab === 'post'" :filterType="activeDot" />
-          <TempCardList v-else :filterType="activeDot" />
+          <PostCardList v-if="activeTab === 'post'" :filterType="activeDot" :sortOption="sortOption" />
+          <TempCardList v-else :filterType="activeDot" :sortOption="sortOption" />
         </div>
       </div>
     </main>
@@ -48,6 +48,11 @@ import TemplateModal from '../components/TemplateModal.vue'
 
 const route = useRoute()
 const router = useRouter()
+
+const sortOption = ref('전체');
+const handleSortChange = (option) => {
+  sortOption.value = option
+}
 
 const props = defineProps({
   tab: String,

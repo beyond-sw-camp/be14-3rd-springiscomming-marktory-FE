@@ -21,20 +21,35 @@
     const postList = ref([])
 
     const props = defineProps({
-      filterType: String  
+      filterType: String,
+      sortOption: String
     })
 
     const fetchData = async () => {
       const res = await fetch('http://localhost:3001/allposts')
-      const data = await res.json()
-      postList.value = props.filterType === 'subscribe'
-    ? data.filter(post => post.id % 2 === 0)
-    : data
-    };
+      let data = await res.json()
+
+      // 구독 필터 먼저
+      if (props.filterType === 'subscribe') {
+        data = data.filter(post => post.id % 2 === 0)
+      }
+
+      // 좋아요순 정렬 처리 (문자열 → 숫자 변환)
+      if (props.sortOption === '좋아요순') {
+        data = [...data].sort((a, b) => Number(b.likeCount) - Number(a.likeCount))
+      } else if (props.sortOption === '최신순') {
+        data = [...data].sort((a, b) => new Date(b.date) - new Date(a.date))
+      }
+
+      postList.value = data
+    }
 
     onMounted(fetchData)
 
-    watch(() => props.filterType, fetchData)
+    watch(
+      [() => props.filterType, () => props.sortOption],
+      fetchData
+    )
   </script>
     
   <style scoped>
