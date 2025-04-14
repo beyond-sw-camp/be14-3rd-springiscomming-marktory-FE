@@ -58,7 +58,7 @@ onMounted(async () => {
   memberId.value = parsed.memberId
 
   try {
-    const res = await fetch(`http://localhost:3000/members/${memberId.value}`)
+    const res = await fetch(`http://localhost:3001/members/${memberId.value}`)
     const member = await res.json()
 
     console.log('✅ 가져온 사용자 정보:', member)
@@ -124,7 +124,7 @@ const sendEmail = async () => {
 
     // 👉 mock 데이터에 암호화된 비밀번호 반영
     if (memberId.value) {
-      await fetch(`http://localhost:3000/members/${memberId.value}`, {
+      await fetch(`http://localhost:3001/members/${memberId.value}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -156,7 +156,7 @@ const handleFindId = async () => {
 
   try {
     const res = await fetch(
-      `http://localhost:3000/members?name=${encodeURIComponent(name.value)}&birthday=${encodeURIComponent(formattedBirth)}`
+      `http://localhost:3001/members?name=${encodeURIComponent(name.value)}&birthday=${encodeURIComponent(formattedBirth)}`
     )
     const members = await res.json()
 
