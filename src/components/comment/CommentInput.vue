@@ -12,18 +12,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const inputText = ref('')
-const isFocused = ref(false)
+const inputText = ref("");
+const isFocused = ref(false);
 
-const emit = defineEmits(['submit'])
+const emit = defineEmits(["submit"]);
 
 const submitComment = () => {
-    if (!inputText.value.trim()) return
-    emit('submit', inputText.value.trim())
-    inputText.value = ''
-}
+    if (!inputText.value.trim()) return;
+    emit("submit", inputText.value.trim());
+    inputText.value = "";
+};
 </script>
 
 <style scoped>

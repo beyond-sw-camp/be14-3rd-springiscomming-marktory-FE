@@ -21,34 +21,35 @@
         <div class="comment-content">{{ comment.content }}</div>
 
         <div class="comment-footer">
-            <button class="like-btn" :class="{ liked: comment.liked }" @click="toggleLike">
-                <img :src="comment.liked ? filledHeart : emptyHeart" alt="like" class="heart-icon" />
-                <span>{{ comment.likeCount }}</span>
-            </button>
-
             <button class="reply-btn" @click="$emit('reply')">
                 <img src="@/assets/icons/reply-icon.svg" alt="reply" class="reply-icon" />
                 답글 달기
+                <span>{{ comment.replies.length }}</span>
+            </button>
+
+            <button class="like-btn" :class="{ liked: comment.liked }" @click="toggleLike">
+                <img :src="comment.liked ? filledHeart : emptyHeart" alt="like" class="heart-icon" />
+                <span>{{ comment.likeCount }}</span>
             </button>
         </div>
     </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
-import filledHeart from '@/assets/icons/heart-icon.svg'
-import emptyHeart from '@/assets/icons/heart-icon.svg'
+import { computed } from "vue";
+import filledHeart from "@/assets/icons/heart-icon.svg";
+import emptyHeart from "@/assets/icons/heart-icon.svg";
 
 const props = defineProps({
     comment: Object,
-    currentUserId: String
-})
+    currentUserId: String,
+});
 
-const isMine = computed(() => props.comment.userId === props.currentUserId)
-const formatDate = (dateStr) => dateStr.split('T')[0]
+const isMine = computed(() => props.comment.userId === props.currentUserId);
+const formatDate = (dateStr) => dateStr.split("T")[0];
 const toggleLike = () => {
-    console.log('좋아요 토글:', props.comment.id)
-}
+    console.log("좋아요 토글:", props.comment.id);
+};
 </script>
 
 <style scoped>
@@ -58,6 +59,7 @@ const toggleLike = () => {
     padding: 1.25rem 1rem;
     color: #fff;
     font-size: 0.95rem;
+    border-left: 1.5px solid #444;
     position: relative;
 }
 
@@ -90,14 +92,15 @@ const toggleLike = () => {
 
 .comment-actions {
     display: flex;
-    gap: 0.25rem;
+    align-self: flex-start;
+    gap: 1rem;
 }
 
 .action-btn {
     background: none;
     color: #aaa;
     border: none;
-    font-size: 0.75rem;
+    font-size: 15px;
     cursor: pointer;
     padding: 0;
 }
