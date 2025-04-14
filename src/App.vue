@@ -22,7 +22,10 @@ import SideFooter from "@/components/footer/SideFooter.vue";
 
 <style>
 html,
-body,
+body{
+  scrollbar-gutter: stable;
+  background-color: black;
+}
 #app {
   background-color: #000;
   color: #fff;

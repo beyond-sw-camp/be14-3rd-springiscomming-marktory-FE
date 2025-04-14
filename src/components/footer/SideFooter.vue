@@ -48,7 +48,6 @@ onBeforeUnmount(() => {
     height: 150px;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 15px;
-    font-weight: bold;
     color: #D4D4D4;
     padding: 6px 8px;              /* ✅ 줄임 */
     display: flex;
