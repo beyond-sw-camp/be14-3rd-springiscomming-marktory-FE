@@ -23,7 +23,7 @@
     const router = useRouter();
 
     const goToArticle = () => {
-    router.push('/article/:id'); // 항상 같은 페이지로 이동
+    router.push('/article/1');
     };
 
     const postList = ref([])
