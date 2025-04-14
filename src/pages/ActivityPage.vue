@@ -20,7 +20,7 @@
                     </div>
                 </RouterLink>
                 <div class="filter">
-                    <ArrayModal/>
+                    <PageModal/>
                 </div>
             </div>
         </header>
@@ -40,7 +40,7 @@
 <script setup>
     import AppHeader from '../components/AppHeader.vue';
     import SideProfile from '../components/mypage/SideProfile.vue';
-    import ArrayModal from '../components/ArrayModal.vue';
+    import PageModal from '../components/PageModal.vue';
     import { RouterLink, RouterView } from 'vue-router';
 </script>
 
