@@ -21,7 +21,8 @@
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 400px;
+    width: 90%;              /* ✅ 400px → 퍼센트로 유연하게 */
+    max-width: 400px;        /* ✅ 최대폭은 유지 */
     height: 62px;
     display: flex;
     flex-direction: column;
@@ -32,18 +33,21 @@
     font-size: 20px;
     color: #808080;
     z-index: 100;
+    padding-top: 10px;
 }
 
 .footer-links {
 width: 400px;
 height: 22px;
+flex-direction: row;
+
 display: flex;
-justify-content: space-between;
+justify-content: space-evenly;
 align-items: center;
 }
 
 .footer-link {
-font-size: 22px;
+font-size: 18px;
 font-weight: 500;
 color: #888888;
 text-decoration: none;
