@@ -1,5 +1,5 @@
 <template>
-  <div class="follow-user">
+  <div class="follow-user" @click="goToKaseyPage">
     <img :src="user.image" alt="profile" class="profile-img" />
     <div class="user-info">
       <p class="nickname">{{ user.nickname }}</p>
@@ -13,14 +13,21 @@
 
 <script setup>
   import { ref } from 'vue';
+  import { useRouter } from 'vue-router';
+
   const props = defineProps({ 
     user: Object,
     type: String
   });
   const isFollowing = ref(true);
-  
+  const router = useRouter();
+
   function toggleFollow() {
     isFollowing.value = !isFollowing.value;
+  }
+
+  function goToKaseyPage() {
+  router.push('/mypage/kasey');
   }
 </script>
 

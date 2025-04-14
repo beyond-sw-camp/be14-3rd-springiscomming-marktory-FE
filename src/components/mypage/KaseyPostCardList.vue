@@ -10,6 +10,7 @@
       :commentCount="post.commentCount"
       :likeCount="post.likeCount"
       :nickname="post.nickname"
+      @click="goToArticle" 
       type="post"/>
     </div>
   </template>
@@ -17,6 +18,13 @@
   <script setup>
     import PostCard from './PostCard.vue';
     import { ref, onMounted, defineProps, watch } from 'vue'
+    import { useRouter } from 'vue-router';
+    
+    const router = useRouter();
+
+    const goToArticle = () => {
+    router.push('/article/:id'); // 항상 같은 페이지로 이동
+    };
 
     const postList = ref([])
 

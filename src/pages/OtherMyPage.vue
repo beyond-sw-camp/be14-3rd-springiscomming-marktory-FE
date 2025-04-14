@@ -1,9 +1,7 @@
 <template>
-    <header>
-        <AppHeader/>
-    </header>
     <div class="mypage">
         <header class="header">
+            <AppHeader/>
             <div class="mypage-title">코딩하는 고먐미</div>
             <div class="mypagemenu-row">
                 <RouterLink to="/mypage/kasey/post" class="tab" active-class="active">

@@ -1,7 +1,7 @@
 <template>
-    <AppHeader/>
     <div class="activity">
         <header class="header">
+            <AppHeader/>
             <div class="mypage-title">LGTM</div>
             <div class="activitymenu-row">
                 <RouterLink to="/activity/post" class="tab" active-class="active">
