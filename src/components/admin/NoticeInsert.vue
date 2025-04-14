@@ -12,14 +12,7 @@
         type="text"
         placeholder="제목을 입력하세요"
       />
-
-      <!-- 툴바 (시각적 요소용) -->
-      <div class="editor-toolbar">
-        <span>H1</span><span>H2</span><span>H3</span><span>H4</span>
-        <span class="divider" />
-        <span><b>B</b></span><span><i>I</i></span>
-        <span>🟰</span><span>❝❞</span><span>🖼️</span><span>🔗</span><span>&lt;/&gt;</span>
-      </div>
+      <hr/>
 
       <!-- 내용 입력 -->
       <div
