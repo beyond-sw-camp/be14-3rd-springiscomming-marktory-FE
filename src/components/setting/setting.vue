@@ -7,7 +7,15 @@
           <img src="@/assets/icons/doeun-profile.svg" alt="Profile Image" />
         </div>
         <div class="button-group">
-          <button class="upload-button">이미지 업로드</button>
+          <button class="upload-button" @click="triggerFileSelect">이미지 업로드</button>
+
+          <input
+  ref="fileInput"
+  type="file"
+  accept="image/*"
+  @change="handleImageUpload"
+  style="display: none"
+/>
           <button class="remove-button" @click="openImageDeleteModal">이미지 제거</button>
         </div>
       </div>
@@ -210,6 +218,36 @@ const defaultImage = '@/assets/icons/default-profile.svg';     // 기본 이미�
 const handleImageDelete = () => {
   profileImage.value = defaultImage; // 이미지 초기화
   isImageDeleteVisible.value = false; // 모달 닫기
+};
+
+const fileInput = ref(null);
+
+// 버튼 눌렀을 때 input 클릭 트리거
+const triggerFileSelect = () => {
+  fileInput.value.click();
+};
+
+// 이미지 업로드 처리
+const handleImageUpload = async (event) => {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const formData = new FormData();
+  formData.append('image', file);
+
+  try {
+    // 예시 - axios로 서버에 이미지 업로드
+    const response = await axios.post('/api/upload', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+
+    // 업로드 성공 후 이미지 URL 반영
+    profileImage.value = response.data.imageUrl; // 서버에서 받은 URL로 교체
+  } catch (error) {
+    console.error('이미지 업로드 실패:', error);
+  }
 };
 
 
