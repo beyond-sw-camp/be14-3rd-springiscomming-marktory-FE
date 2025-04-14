@@ -79,7 +79,7 @@ const handleFindId = async () => {
 
   try {
     const res = await fetch(
-      `http://localhost:3000/members?name=${encodeURIComponent(name.value)}&birthday=${encodeURIComponent(formattedBirth)}`
+      `http://localhost:3001/members?name=${encodeURIComponent(name.value)}&birthday=${encodeURIComponent(formattedBirth)}`
     )
     const members = await res.json()
 
