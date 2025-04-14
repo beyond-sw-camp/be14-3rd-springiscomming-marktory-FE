@@ -11,7 +11,9 @@
         </div>
       </div>
       <div class="filter-row">
-        <span class="filter-label">전체</span>
+        <!-- <span class="filter-label">전체</span> -->
+        <PageModal v-if="activeTab === 'post'" @updateSort="handleSortChange" />
+        <TemplateModal v-else @updateSort="handleSortChange"/>
       </div>
     </header>
     <main>
@@ -27,8 +29,8 @@
       </div>
       <div class="main-row">
         <div class="main-postcardlist">
-          <PostCardList v-if="activeTab === 'post'" :filterType="activeDot" />
-          <TempCardList v-else :filterType="activeDot" />
+          <PostCardList v-if="activeTab === 'post'" :filterType="activeDot" :sortOption="sortOption" />
+          <TempCardList v-else :filterType="activeDot" :sortOption="sortOption" />
         </div>
       </div>
     </main>
@@ -41,9 +43,19 @@ import { useRoute, useRouter } from 'vue-router'
 import AppHeader from '@/components/AppHeader.vue'
 import PostCardList from '@/components/mypage/PostCardList.vue'
 import TempCardList from '@/components/mypage/TempCardList.vue'
+import PageModal from '../components/PageModal.vue'
+import TemplateModal from '../components/TemplateModal.vue'
+import { useMemberStore } from '../stores/memberStore'
 
 const route = useRoute()
 const router = useRouter()
+
+const memberStore = useMemberStore();
+
+const sortOption = ref('전체');
+const handleSortChange = (option) => {
+  sortOption.value = option
+}
 
 const props = defineProps({
   tab: String,
@@ -54,6 +66,12 @@ const activeTab = ref(route.params.tab || 'post')
 const activeDot = ref(route.params.filter || 'all')
 
 function updateRoute(tab = activeTab.value, filter = activeDot.value) {
+  if (filter === 'subscribe' && !memberStore.isLogined) {
+    alert('로그인이 필요한 기능입니다.')
+    router.push('/login')
+    return
+  }
+
   activeTab.value = tab
   activeDot.value = filter
   router.push(`/${tab}/${filter}`)

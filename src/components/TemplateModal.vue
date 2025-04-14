@@ -1,27 +1,29 @@
 <template>
-<div class="sort-dropdown">
-    <button class="sort-button" @click="toggleDropdown">
-    {{ selected }}
-    <span class="arrow">&#9662;</span>
-    </button>
-
-    <div v-if="open" class="sort-menu">
-    <div
-        v-for="option in options"
-        :key="option"
-        class="sort-option"
-        @click="selectOption(option)"
-    >
-        {{ option }}
+    <div class="sort-dropdown">
+        <button class="sort-button" @click="toggleDropdown">
+        {{ selected }}
+        <span class="arrow">&#9662;</span>
+        </button>
+    
+        <div v-if="open" class="sort-menu">
+        <div
+            v-for="option in options"
+            :key="option"
+            class="sort-option"
+            @click="selectOption(option)"
+        >
+            {{ option }}
+        </div>
+        </div>
     </div>
-    </div>
-</div>
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref, defineEmits } from 'vue'
 
-    const options = ['전체', '등록순', '최신순']
+    const emit = defineEmits(['updateSort']);
+
+    const options = ['전체', '사용순', '최신순']
     const selected = ref('전체')
     const open = ref(false)
 
@@ -32,7 +34,8 @@
     const selectOption = (option) => {
     selected.value = option
     open.value = false
-}
+    emit('updateSort', option)
+    }
 </script>
 
 <style scoped>
