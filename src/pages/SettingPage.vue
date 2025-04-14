@@ -2,14 +2,14 @@
   <div class="setting-page">
     <AppHeader />
     <Setting />
-    <SideFooter />
+    <!-- <SideFooter /> -->
     <AppFooter />
   </div>
 </template>
 
 <script setup>
 import AppHeader from "../components/AppHeader.vue";
-import SideFooter from "../components/footer/SideFooter.vue";
+// import SideFooter from "../components/footer/SideFooter.vue";
 import AppFooter from "../components/footer/AppFooter.vue";
 import Setting from '../components/setting/setting.vue';
 </script>
