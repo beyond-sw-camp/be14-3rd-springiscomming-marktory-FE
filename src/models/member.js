@@ -1,6 +1,6 @@
 export function mapMember(raw) {
     return {
-        id: raw.id,
+        id: Number(raw.id),
         email: raw.email,
         nickname: raw.nickname,
         name: raw.name,
@@ -10,7 +10,7 @@ export function mapMember(raw) {
         isBlack: raw.status === 'is_black',
         isDeleted: raw.status === 'is_delete',
         mypageTitle: raw.mypage_title,
-        reportCount: raw.report_count,
+        reportCount: Number(raw.report_count),
         assignedDate: raw.assigned_date,
         deleteDate: raw.delete_date,
         blackDate: raw.black_date

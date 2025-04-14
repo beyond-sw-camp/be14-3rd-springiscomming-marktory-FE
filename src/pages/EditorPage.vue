@@ -25,18 +25,98 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
+import { useRouter } from 'vue-router'
+import MarkdownIt from 'markdown-it'
+
 import MarkdownEditor from '../components/post/MarkdownEditor.vue'
 import MarkdownViewer from '../components/post/MarkdownViewer.vue'
 import PublishBottomSheet from '../components/post/PublishBottomSheet.vue'
 
+import { getCategories } from '../api/category.api'
+import { createPost } from '../api/post.api'
+import {
+    getHashtags,
+    createHashtag,
+    createPostHashtag
+} from '../api/hashtag.api'
+import { getTemplateSpaceByMember, createTemplate } from '../api/template.api'
+
+const router = useRouter()
 const showSheet = ref(false)
 const content = ref('# 시작해볼까요?')
 const form = reactive({
-    title: '', tags: []
+    title: '',
+    tags: []
 })
 
-const handlePublish = (data) => {
-    console.log('출간 데이터:', data)
+// ✅ 마크다운 → HTML 변환기 세팅
+const md = new MarkdownIt({ html: true, linkify: true })
+
+const handlePublish = async (data) => {
+    const html = md.render(content.value)
+    const categories = await getCategories()
+    const category = categories.find(c => c.name === data.selectedCategory)
+    const categoryId = category?.id ?? null
+
+    if (data.type === 'post') {
+        // 게시글 저장
+        const postPayload = {
+            title: form.title,
+            content: html,
+            post_url: '',
+            thumbnail: '',
+            written_date: new Date().toISOString(),
+            delete_date: null,
+            visibility: data.visibility,
+            member_id: '1',
+            category_id: categoryId
+        }
+
+        const savedPost = await createPost(postPayload)
+        const postId = savedPost.id
+
+        // 해시태그 처리
+        const existingHashtags = await getHashtags()
+        const nameToIdMap = Object.fromEntries(existingHashtags.map(h => [h.name, h.id]))
+
+        for (const tag of form.tags) {
+            let hashtagId = nameToIdMap[tag]
+
+            if (!hashtagId) {
+                const newHashtag = await createHashtag({ name: tag })
+                hashtagId = newHashtag.id
+            }
+
+            await createPostHashtag({
+                post_id: String(postId),
+                hashtag_id: String(hashtagId)
+            })
+        }
+
+        // ✅ 작성된 게시글 페이지로 이동
+        router.push(`/article/${postId}`)
+        console.log('✅ 게시글 출간 완료')
+    } else {
+        // 템플릿 저장
+        const templateSpace = await getTemplateSpaceByMember('1')
+        const templatePayload = {
+            title: form.title,
+            description: data.description,
+            content: html,
+            thumbnail: '',
+            written_date: new Date().toISOString(),
+            delete_date: null,
+            visibility: data.visibility,
+            usage_count: 0,
+            is_copy: 'N',
+            repository_id: templateSpace.id
+        }
+
+        await createTemplate(templatePayload)
+        console.log('✅ 템플릿 저장 완료')
+    }
+
+    showSheet.value = false
 }
 </script>
 

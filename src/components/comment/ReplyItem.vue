@@ -4,7 +4,7 @@
             <img :src="reply.profileImage" alt="profile" class="profile-img" />
             <div class="user-info">
                 <div class="nickname">{{ reply.nickname }}</div>
-                <div class="date">{{ formatDate(reply.createdAt) }}</div>
+                <div class="date">{{ formatDate(reply.written_date) }}</div>
             </div>
 
             <div class="reply-actions">

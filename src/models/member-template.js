@@ -1,6 +1,6 @@
 export function mapMemberTemplate(raw) {
     return {
-        id: raw.id,
+        id: Number(raw.id),
         title: raw.title,
         description: raw.description,
         content: raw.content,
@@ -8,8 +8,8 @@ export function mapMemberTemplate(raw) {
         visibility: raw.visibility,
         writtenDate: raw.written_date,
         deleteDate: raw.delete_date,
-        usageCount: raw.usage_count,
+        usageCount: Number(raw.usage_count),
         isCopy: raw.is_copy === 'Y',
-        repositoryId: raw.repository_id
+        repositoryId: Number(raw.repository_id)
     };
 }

@@ -1,6 +1,6 @@
 export function mapTemplateSpace(raw) {
     return {
-        id: raw.id,
-        memberId: raw.member_id
+        id: Number(raw.id),
+        memberId: Number(raw.member_id)
     };
 }

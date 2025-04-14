@@ -10,7 +10,7 @@
                 <img :src="comment.profileImage" alt="profile" class="profile-img" />
                 <div class="user-info">
                     <div class="nickname">{{ comment.nickname }}</div>
-                    <div class="date">{{ formatDate(comment.createdAt) }}</div>
+                    <div class="date">{{ formatDate(comment.written_date) }}</div>
                 </div>
 
                 <div class="comment-actions">
@@ -66,6 +66,7 @@ const emit = defineEmits([
 ]);
 
 const isMine = computed(() => props.comment.userId === props.currentUserId);
+
 const formatDate = (dateStr) => {
     if (!dateStr) return '날짜 없음';
     return dateStr.split('T')[0];

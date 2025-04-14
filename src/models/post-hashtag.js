@@ -1,6 +1,6 @@
 export function mapPostHashtag(raw) {
     return {
-        postId: raw.post_id,
-        hashtagId: raw.hashtag_id
+        postId: Number(raw.post_id),
+        hashtagId: Number(raw.hashtag_id)
     };
 }

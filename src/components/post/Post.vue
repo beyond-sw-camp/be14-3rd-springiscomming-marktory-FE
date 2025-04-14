@@ -20,8 +20,7 @@
     </section>
 
     <section class="post-content">
-      <div class="post-label">Liked</div>
-      <p class="post-body" v-html="post.content" />
+      <div class="post-body" v-html="post.content"></div>
     </section>
   </article>
 </template>
