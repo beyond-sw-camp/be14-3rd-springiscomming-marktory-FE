@@ -1,7 +1,7 @@
 {
   "members": [
     {
-      "id": 1,
+      "id": "1",
       "email": "seoyoung.lee@example.com",
       "password": "$2a$12$qRN4y0dTIAyPnLdFzTAIXOnD5HDFXjrXo7MKgzz2YNyss2FjDLbyq",
       "name": "이서영",
@@ -16,10 +16,10 @@
       "is_terms": true,
       "followerCount": 31,
       "followingCount": 21,
-      "role" : "member"
+      "role": "member"
     },
     {
-      "id": 2,
+      "id": "2",
       "email": "seojun.oh@example.com",
       "password": "$2a$12$T5pZVvXEKxkThFQZN2dUlucO2cQsiR9AL5pJyjeHGgJ6snfr9dADm",
       "name": "오서준",
@@ -34,10 +34,10 @@
       "is_terms": true,
       "followerCount": 35,
       "followingCount": 34,
-      "role" : "member"
+      "role": "member"
     },
     {
-      "id": 3,
+      "id": "3",
       "email": "junghoon.kim@example.com",
       "password": "$2a$12$KWtci/1Bld/V8ypHElWUs.1N6Lb/ucrHtx4reKN5.wuHI7krmcvRW",
       "name": "김정훈",
@@ -52,10 +52,10 @@
       "is_terms": true,
       "followerCount": 46,
       "followingCount": 11,
-      "role" : "member"
+      "role": "member"
     },
     {
-      "id": 4,
+      "id": "4",
       "email": "dongwoo.park@example.com",
       "password": "$2a$12$1Fu6TYRaaic64HOEqdkAmeFLtNBiAhOGSXNUU50jFtJmMu7x1YvvK",
       "name": "박동우",
@@ -70,10 +70,10 @@
       "is_terms": true,
       "followerCount": 17,
       "followingCount": 4,
-      "role" : "member"
+      "role": "member"
     },
     {
-      "id": 5,
+      "id": "5",
       "email": "soyeon.han@example.com",
       "password": "$2a$12$FGghs0HHU8Fk2y0BzhBtVuUv3akzXe1dJEqrwnp.Bp.Fns7MIOz9O",
       "name": "한소연",
@@ -88,10 +88,10 @@
       "is_terms": true,
       "followerCount": 12,
       "followingCount": 40,
-      "role" : "member"
+      "role": "member"
     },
     {
-      "id": 6,
+      "id": "6",
       "email": "youngho.choi@example.com",
       "password": "$2a$12$BGPLRrCaZPryrCDD01SehuEP444AoEtZgGJhh40.kdchPMLXLZqyK",
       "name": "최영호",
@@ -106,10 +106,10 @@
       "is_terms": true,
       "followerCount": 26,
       "followingCount": 1,
-      "role" : "member"
+      "role": "member"
     },
     {
-      "id": 7,
+      "id": "7",
       "email": "admin1@mail.com",
       "password": "$2a$12$DEoGO.i/553jJ./MNZvVweHDeJchnPCt0Ej1Ok8PRmY0NfIUCNmlC",
       "name": "김민준",
@@ -124,10 +124,10 @@
       "is_terms": true,
       "followerCount": 28,
       "followingCount": 43,
-      "role" : "admin"
+      "role": "admin"
     },
     {
-      "id": 8,
+      "id": "8",
       "email": "jihye.kang@example.com",
       "password": "$2a$12$/L686p7Jumg4c6bq3mdpJ.MBLSTNwcfCMxGCMLAh79XXw0536Itw2",
       "name": "강지혜",
@@ -142,10 +142,10 @@
       "is_terms": true,
       "followerCount": 35,
       "followingCount": 50,
-      "role" : "member"
+      "role": "member"
     },
     {
-      "id": 9,
+      "id": "9",
       "email": "yuna.song@example.com",
       "password": "$2a$12$y9QXgAPTj8hv9/8op0BjHO1g/QmhDkOUDpC6UZm9UkqNEXqnS9uWW",
       "name": "송유나",
@@ -160,10 +160,10 @@
       "is_terms": true,
       "followerCount": 7,
       "followingCount": 19,
-      "role" : "member"
+      "role": "member"
     },
     {
-      "id": 10,
+      "id": "10",
       "email": "eunji.park@example.com",
       "password": "$2a$12$aANRQsJobsfAd6YbfmO4vuce32R8/ewTk8ig9Tvdn7n6NejjEf7pe",
       "name": "박은지",
@@ -178,10 +178,10 @@
       "is_terms": true,
       "followerCount": 41,
       "followingCount": 7,
-      "role" : "member"
+      "role": "member"
     },
     {
-      "id": 11,
+      "id": "11",
       "email": "D1112@mail.com",
       "password": "$2a$12$qRN4y0dTIAyPnLdFzTAIXOnD5HDFXjrXo7MKgzz2YNyss2FjDLbyq",
       "name": "강이도은",
@@ -195,7 +195,8 @@
       "report_count": 0,
       "is_terms": true,
       "followerCount": 122,
-      "followingCount": 32
+      "followingCount": 32,
+      "role": "member"
     },
     {
       "id": 12,
@@ -213,6 +214,22 @@
       "is_terms": true,
       "followerCount": 67,
       "followingCount": 22
+    },      
+    {
+      "id": "87e2",
+      "email": "rainyday1367@naver.com",
+      "password": "$2b$12$97DRLrTX3Y6kjJEAySl9Y.T/v.XMCdoJNkq7c43dyF0IVIsoHpgde",
+      "name": "정동한",
+      "nickname": "뉴뉴덩할",
+      "birthday": "2025-04-14",
+      "image": null,
+      "status": "is_active",
+      "black_date": null,
+      "assigned_date": "2025-04-14 17:21:33",
+      "delete_date": null,
+      "report_count": 0,
+      "is_terms": true,
+      "role": "member"
     }
   ],
 
@@ -482,6 +499,489 @@
   { "id": 228, "title": "서비스 사용기 정리용 레이아웃", "thumbnail": "/src/assets/images/temp/temp29.png", "usageCount": 62, "nickname": "Kasey", "date": "2025-02-26", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
   { "id": 236, "title": "새 프로젝트 초기 정리 구조", "thumbnail": "/src/assets/images/temp/temp37.png", "usageCount": 14, "nickname": "Kasey", "date": "2025-02-10", "profileImg": "/src/assets/images/profile/kasey.jpeg" },
   { "id": 240, "title": "환경 세팅 단계별 기록용 양식", "thumbnail": "/src/assets/images/temp/temp41.png", "usageCount": 14, "nickname": "Kasey", "date": "2025-02-04", "profileImg": "/src/assets/images/profile/kasey.jpeg" }
-]
+],
 
+  "posts": [
+    {
+      "id": "100",
+      "title": "게시글 제목 1",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 23,
+      "likeCount": 54,
+      "nickname": "D",
+      "date": "2025-04-12",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "101",
+      "title": "게시글 제목 2",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 0,
+      "likeCount": 13,
+      "nickname": "D",
+      "date": "2025-04-11",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "102",
+      "title": "게시글 제목 3",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 15,
+      "likeCount": 36,
+      "nickname": "D",
+      "date": "2025-04-10",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "103",
+      "title": "게시글 제목 4",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 36,
+      "likeCount": 68,
+      "nickname": "D",
+      "date": "2025-04-09",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "104",
+      "title": "게시글 제목 5",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 40,
+      "likeCount": 38,
+      "nickname": "D",
+      "date": "2025-04-08",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "105",
+      "title": "게시글 제목 6",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 29,
+      "likeCount": 95,
+      "nickname": "D",
+      "date": "2025-04-07",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "106",
+      "title": "게시글 제목 7",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 33,
+      "likeCount": 57,
+      "nickname": "D",
+      "date": "2025-04-06",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "107",
+      "title": "게시글 제목 8",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 16,
+      "likeCount": 72,
+      "nickname": "D",
+      "date": "2025-04-05",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "108",
+      "title": "게시글 제목 9",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 26,
+      "likeCount": 76,
+      "nickname": "D",
+      "date": "2025-04-04",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "109",
+      "title": "게시글 제목 10",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 48,
+      "likeCount": 96,
+      "nickname": "D",
+      "date": "2025-04-03",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "110",
+      "title": "게시글 제목 11",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 48,
+      "likeCount": 19,
+      "nickname": "D",
+      "date": "2025-04-02",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    }
+  ],
+  "templates": [
+    {
+      "id": "200",
+      "title": "템플릿 제목 1",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "usageCount": 130,
+      "nickname": "D",
+      "date": "2025-04-01",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "201",
+      "title": "템플릿 제목 2",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "usageCount": 7,
+      "nickname": "D",
+      "date": "2025-03-31",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "202",
+      "title": "템플릿 제목 3",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "usageCount": 20,
+      "nickname": "D",
+      "date": "2025-03-30",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "203",
+      "title": "템플릿 제목 4",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "usageCount": 14,
+      "nickname": "D",
+      "date": "2025-03-29",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "204",
+      "title": "템플릿 제목 5",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "usageCount": 300,
+      "nickname": "D",
+      "date": "2025-03-28",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "205",
+      "title": "템플릿 제목 6",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "usageCount": 234,
+      "nickname": "D",
+      "date": "2025-03-27",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "206",
+      "title": "템플릿 제목 7",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "usageCount": 62,
+      "nickname": "D",
+      "date": "2025-03-26",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "207",
+      "title": "템플릿 제목 8",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "usageCount": 0,
+      "nickname": "D",
+      "date": "2025-03-25",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "208",
+      "title": "템플릿 제목 9",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "usageCount": 225,
+      "nickname": "D",
+      "date": "2025-03-24",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "209",
+      "title": "템플릿 제목 10",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "usageCount": 195,
+      "nickname": "D",
+      "date": "2025-03-23",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "210",
+      "title": "템플릿 제목 11",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "usageCount": 26,
+      "nickname": "D",
+      "date": "2025-03-22",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    }
+  ],
+  "likedposts": [
+    {
+      "id": "1",
+      "title": "자바란 무엇인가?",
+      "date": "2025.04.13",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 4,
+      "likeCount": 36,
+      "nickname": "코딩하는돌고래"
+    },
+    {
+      "id": "2",
+      "title": "파이썬의 매력",
+      "date": "2025.04.12",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 13,
+      "likeCount": 13,
+      "nickname": "개발자토끼"
+    },
+    {
+      "id": "3",
+      "title": "개발 공부 루틴",
+      "date": "2025.04.11",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 19,
+      "likeCount": 12,
+      "nickname": "자바요정"
+    },
+    {
+      "id": "4",
+      "title": "코딩하기 좋은 시간은?",
+      "date": "2025.04.10",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 20,
+      "likeCount": 14,
+      "nickname": "파이썬냥이"
+    },
+    {
+      "id": "5",
+      "title": "자료구조 총정리",
+      "date": "2025.04.09",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 9,
+      "likeCount": 22,
+      "nickname": "백엔드곰돌이"
+    },
+    {
+      "id": "6",
+      "title": "백엔드와 프론트엔드 차이",
+      "date": "2025.04.08",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 13,
+      "likeCount": 24,
+      "nickname": "프론트펭귄"
+    },
+    {
+      "id": "7",
+      "title": "CS 면접 요약",
+      "date": "2025.04.07",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 19,
+      "likeCount": 19,
+      "nickname": "DB정복자"
+    },
+    {
+      "id": "8",
+      "title": "Docker 완전정복",
+      "date": "2025.04.06",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 10,
+      "likeCount": 32,
+      "nickname": "스프링고수"
+    },
+    {
+      "id": "9",
+      "title": "JPA vs MyBatis",
+      "date": "2025.04.05",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 3,
+      "likeCount": 27,
+      "nickname": "코딩부엉이"
+    },
+    {
+      "id": "10",
+      "title": "코딩 테스트 준비 전략",
+      "date": "2025.04.04",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 14,
+      "likeCount": 30,
+      "nickname": "CS고수"
+    },
+    {
+      "id": "11",
+      "title": "인프라 기초 다지기",
+      "date": "2025.04.03",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png",
+      "thumbnail": "/src/components/mypage/default-img.png",
+      "commentCount": 9,
+      "likeCount": 18,
+      "nickname": "리액트너구리"
+    }
+  ],
+  "likedcomments": [
+    {
+      "id": "1",
+      "date": "2025.04.13",
+      "content": "정말 잘 설명되어 있네요.",
+      "postTitle": "자바란 무엇인가?",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "2",
+      "date": "2025.04.12",
+      "content": "큰 도움이 되었어요!",
+      "postTitle": "파이썬의 매력",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "3",
+      "date": "2025.04.11",
+      "content": "이렇게 보니 이해가 쉬워요.",
+      "postTitle": "개발 공부 루틴",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "4",
+      "date": "2025.04.10",
+      "content": "감사합니다. 잘 읽었습니다.",
+      "postTitle": "코딩하기 좋은 시간은?",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "5",
+      "date": "2025.04.09",
+      "content": "깔끔하게 정리돼 있어서 보기 좋아요.",
+      "postTitle": "자료구조 총정리",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "6",
+      "date": "2025.04.08",
+      "content": "이건 진짜 꿀팁이에요!",
+      "postTitle": "백엔드와 프론트엔드 차이",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "7",
+      "date": "2025.04.07",
+      "content": "완전 공감합니다.",
+      "postTitle": "CS 면접 요약",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "8",
+      "date": "2025.04.06",
+      "content": "기억에 오래 남을 것 같아요.",
+      "postTitle": "Docker 완전정복",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "9",
+      "date": "2025.04.05",
+      "content": "코드 예시가 좋아요.",
+      "postTitle": "JPA vs MyBatis",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "10",
+      "date": "2025.04.04",
+      "content": "추천하고 싶은 글입니다.",
+      "postTitle": "코딩 테스트 준비 전략",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "11",
+      "date": "2025.04.03",
+      "content": "하루 10분씩만 봐도 성장하겠네요!",
+      "postTitle": "인프라 기초 다지기",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    }
+  ],
+  "writtencomment": [
+    {
+      "id": "1",
+      "date": "2025.04.13",
+      "content": "정말 잘 설명되어 있네요.",
+      "postTitle": "자바란 무엇인가?",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "2",
+      "date": "2025.04.12",
+      "content": "큰 도움이 되었어요!",
+      "postTitle": "파이썬의 매력",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "3",
+      "date": "2025.04.11",
+      "content": "이렇게 보니 이해가 쉬워요.",
+      "postTitle": "개발 공부 루틴",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "4",
+      "date": "2025.04.10",
+      "content": "감사합니다. 잘 읽었습니다.",
+      "postTitle": "코딩하기 좋은 시간은?",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "5",
+      "date": "2025.04.09",
+      "content": "깔끔하게 정리돼 있어서 보기 좋아요.",
+      "postTitle": "자료구조 총정리",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "6",
+      "date": "2025.04.08",
+      "content": "이건 진짜 꿀팁이에요!",
+      "postTitle": "백엔드와 프론트엔드 차이",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "7",
+      "date": "2025.04.07",
+      "content": "완전 공감합니다.",
+      "postTitle": "CS 면접 요약",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "8",
+      "date": "2025.04.06",
+      "content": "기억에 오래 남을 것 같아요.",
+      "postTitle": "Docker 완전정복",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "9",
+      "date": "2025.04.05",
+      "content": "코드 예시가 좋아요.",
+      "postTitle": "JPA vs MyBatis",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "10",
+      "date": "2025.04.04",
+      "content": "추천하고 싶은 글입니다.",
+      "postTitle": "코딩 테스트 준비 전략",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    },
+    {
+      "id": "11",
+      "date": "2025.04.03",
+      "content": "하루 10분씩만 봐도 성장하겠네요!",
+      "postTitle": "인프라 기초 다지기",
+      "profileImg": "/src/components/mypage/D_profile_IMG.png"
+    }
+  ]
 }

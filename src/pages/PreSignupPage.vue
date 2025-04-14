@@ -91,7 +91,7 @@ const sendEmail = async () => {
     alert(data.message); // 예: "이메일이 전송되었습니다."
   } catch (err) {
     console.error('요청 중 오류 발생:', err);
-    alert('서버와의 통신 중 문제가 발생했습니다.');
+    alert(err.message);
   }
 };
 
