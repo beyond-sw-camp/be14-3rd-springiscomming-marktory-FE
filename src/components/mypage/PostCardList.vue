@@ -16,15 +16,25 @@
     
   <script setup>
     import PostCard from './PostCard.vue';
-    import { ref, onMounted } from 'vue'
+    import { ref, onMounted, defineProps, watch } from 'vue'
 
     const postList = ref([])
 
-    onMounted(async () => {
+    const props = defineProps({
+      filterType: String  
+    })
+
+    const fetchData = async () => {
       const res = await fetch('http://localhost:3001/posts')
       const data = await res.json()
-      postList.value = data
-    });
+      postList.value = props.filterType === 'subscribe'
+    ? data.filter(post => post.id % 2 === 0)
+    : data
+    };
+
+    onMounted(fetchData)
+
+    watch(() => props.filterType, fetchData)
   </script>
     
   <style scoped>
