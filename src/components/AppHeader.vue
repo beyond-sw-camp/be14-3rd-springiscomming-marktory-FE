@@ -28,7 +28,7 @@
                 <div class="profile-trigger" @click="toggleDropdown">
                     <img
                         :src="memberStore.user?.image || defaultProfile"
-                        class="dropdown_profile_image"
+                        class="profile_image"
                         alt="프로필 이미지"
                     />
                     <img
@@ -139,42 +139,44 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-/* ✅ 헤더 전체 배경 채움 */
 .header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 70px;
+    background-color: black;
+    z-index: 9999;
 }
 
-/* ✅ 내용물은 Figma 기준 1440px에 정렬 */
 .header-inner {
     max-width: 1440px;
-    height: 94px; /* Figma 기준 */
+    height: 100%;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 clamp(16px, 2vw, 24px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
 }
 
-/* 왼쪽 로고 */
+/* 로고 */
 .left .logo {
-    width: 257.88px;
+    width: 230px;
     height: 44px;
-    object-fit: contain; /* 혹은 cover, 필요에 따라 */
+    object-fit: contain;
     cursor: pointer;
 }
 
-/* 오른쪽 메뉴 그룹 */
+/* 오른쪽 메뉴 */
 .right {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 16px; /* Figma 상 더 정확한 간격 원하면 여기도 조정 */
-    width: 331px;   /* ✅ Figma 기준 */
-    height: 55px;   /* ✅ Figma 기준 */
+    gap: clamp(10px, 1.2vw, 16px);
+    height: clamp(40px, 4vw, 55px);
 }
 
-/* 기본 아이콘 버튼 스타일 */
+/* 아이콘 버튼 */
 .icon-btn {
     background: none;
     border: none;
@@ -186,48 +188,45 @@ onBeforeUnmount(() => {
     justify-content: center;
 }
 
-/* 아이콘 기본값 제거 */
 .icon {
     width: auto;
     height: auto;
 }
 
-/* 각각의 아이콘에 정확한 크기 적용 */
 .search-icon {
-    width: 33px;
-    height: 33px;
+    width: 25px;
+    height: 25px;
 }
 
 .notification-icon {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
 }
 
 .write-btn {
-    width: 120px;
-    height: 44px;
+    width: 90px;
+    height: 42px;
     border: 2px solid white;
     border-radius: 20px;
     background: none;
     color: white;
-    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Noto Sans KR', sans-serif; /* ✅ 폰트 패밀리 추가 */
-    font-size: 23px; /* ✅ 폰트 사이즈 적용 */
-    font-weight: bold;
 }
 
 .login-btn {
-    width: 120px;
-    height: 44px;
+    width: 90px;
+    height: 42px;
     background-color: #fd6f22;
     color: white;
     border: none;
     border-radius: 9999px;
+    font-family: 'Noto Sans KR', sans-serif;
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
@@ -240,24 +239,23 @@ onBeforeUnmount(() => {
 .profile-trigger {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: clamp(4px, 0.6vw, 6px);
     cursor: pointer;
 }
-/* ✅ 프로필 사진: 55x55로 확대 */
-.profile_image {
-    width: 55px;
-    height: 55px;
+
+.profile_image{
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     object-fit: cover;
 }
 
-/* ✅ 드롭다운 아이콘 (chevron) */
 .chervon-icon {
-    width: 20px;
-    height: 20px;
+    width: clamp(14px, 2vw, 20px);
+    height: clamp(14px, 2vw, 20px);
     object-fit: contain;
 }
-/* 로그인 된 상태에서 적용하는 css */
+
 .profile-wrapper {
     position: relative;
 }
@@ -268,102 +266,88 @@ onBeforeUnmount(() => {
     right: 0;
     background: #424242;
     color: white;
-    width: 305px; /* ✅ Figma 기준 */
-    height: 346px; /* ✅ Figma 기준 */
-    border-radius: 12px;
-    padding: 0; /* 여백 제거 */
+    width: 240px; /* ✅ 가로 너비 줄임 */
+    border-radius: 10px;
+    padding: 16px 0; /* ✅ 세로 여백 조금 증가 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     z-index: 9999;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
+/* 🔹 상단 프로필 */
 .dropdown-header {
     display: flex;
     align-items: center;
-    gap: 12px; /* ✅ 이미지와 텍스트 사이 간격 */
-    height: 74px;
-    padding: 0 16px;
+    gap: 10px;
+    padding: 0 16px 12px;
+    /* ✅ 하얀 선 제거: border-bottom 삭제 */
 }
 
-.profile_image {
-    width: 55px;
-    height: 55px;
+.dropdown_profile_image {
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
 }
 
-/* ✅ 텍스트 박스를 flex로 묶어 정렬 보정 */
 .profile-text-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: 0; /* ✅ overflow 방지를 위한 필수값 */
+    min-width: 0;
 }
 
 .name {
-    font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
-    line-height: 20px;
-    margin: 0 0 4px 0;
+    margin: 0;
     color: white;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .email {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 20px;
-    margin: 0;
-    color: #aaa;
+    color: #ccc;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 160px; /* ✅ 필요 시 조정 */
+    max-width: 160px;
+    margin: 2px 0 0;
+    font-family: 'Noto Sans KR', sans-serif;
 }
-.dropdown_profile_image {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+
+/* 🔹 메뉴 리스트 */
 .menu-list {
-    padding: 0;
-    margin: 0;
     list-style: none;
-    flex: 1;
-}
-.menu-icon {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
+    padding: 0;
+    margin: 8px 0 0; /* ✅ 위에 살짝 간격 */
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .menu-list li {
-    height: 67px; /* ✅ Figma 기준 */
     display: flex;
     align-items: center;
-    padding: 0 20px;
-    gap: 16px;
+    gap: 12px;
+    padding: 10px 16px;
     cursor: pointer;
-    transition: background 0.2s ease;
-    font-size: 18px;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .menu-icon {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
 }
 
 .dropdown-font {
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 500;
     margin: 0;
-    line-height: 1;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 </style>
