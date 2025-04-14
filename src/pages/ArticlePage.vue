@@ -1,4 +1,5 @@
 <template>
+  <AppHeader />
   <main class="page-layout">
     <aside class="left-sidebar">
       <!-- <AuthorProfile v-if="postData" :member="postData.member" /> -->
@@ -19,6 +20,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 
+import AppHeader from '@/components/AppHeader.vue'
 import Comment from "../components/comment/Comment.vue";
 import Post from "../components/post/Post.vue";
 import Category from "../components/post/Category.vue";
