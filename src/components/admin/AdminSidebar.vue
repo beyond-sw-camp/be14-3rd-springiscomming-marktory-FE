@@ -1,4 +1,3 @@
-<!-- components/Sidebar.vue -->
 <template>
   <aside class="sidebar">
     <nav class="menu">
@@ -27,25 +26,29 @@
     <div class="user-info">
       <p>
         <strong class="admin-name">{{ adminName }}</strong> 관리자 님<br />
-            좋은 아침이에요! </p>
-      <button class="logout-btn">로그아웃</button>
+        좋은 아침이에요!
+      </p>
+      <button class="logout-btn" @click="logout">로그아웃</button>
     </div>
   </aside>
 </template>
 
 <script setup>
 import { useRouter } from 'vue-router'
+import { useMemberStore } from '@/stores/memberStore'
 
 const props = defineProps({
   activeMenu: String,
   adminName: {
     type: String,
-    default: '김민준'  // 기본값 (예외 대응용)
+    default: '김민준'
   }
 })
 
 const emit = defineEmits(['update:menu'])
 const router = useRouter()
+const memberStore = useMemberStore()
+
 const routes = {
   '공지사항 관리': '/adminPage/notice',
   '신고 관리': '/adminPage/report',
@@ -55,6 +58,12 @@ const routes = {
 function goTo(menuName) {
   emit('update:menu', menuName)
   router.push(routes[menuName])
+}
+
+function logout() {
+  memberStore.logout()
+  alert('로그아웃 되었습니다.')
+  router.push('/login')
 }
 </script>
 
@@ -93,7 +102,6 @@ function goTo(menuName) {
   color: #FD6F22;
 }
 
-/* 사용자 정보 */
 .user-info {
   text-align: center;
   font-size: 23px;

@@ -119,7 +119,7 @@ function handleStatusClick(item) {
     }
     
     .filter {
-        padding-left: 830px;
+        padding-left: 890px;
         padding-top: 20px;
     }
 
