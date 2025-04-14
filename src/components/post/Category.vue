@@ -31,6 +31,7 @@ export default {
     padding: 1rem;
     font-family: 'Helvetica Neue', sans-serif;
     width: fit-content;
+    margin-top: 70px;
 }
 
 .category-title {
