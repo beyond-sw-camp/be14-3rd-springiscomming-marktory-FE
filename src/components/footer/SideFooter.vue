@@ -2,7 +2,7 @@
     사이드에 있는 Footer
 -->
 <template>
-    <footer class="footer">
+    <footer v-if="isNarrow" class="footer">
         <div class="footer-info">
             <p>마크토리</p>
             <p>사업자등록번호 : 123-45-67899</p>
@@ -18,17 +18,36 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const isNarrow = ref(false)
+
+const checkWidth = () => {
+  isNarrow.value = window.innerWidth >= 2000
+}
+
+onMounted(() => {
+  checkWidth()
+  window.addEventListener('resize', checkWidth)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkWidth)
+})
 </script>
 
-<style scoped>
+<style>
 .footer {
+    display: none;
+
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 172px;
-    height: 125px;
+		width: 20%; /* ✅ px 대신 % */
+		min-width: 100px; /* 너무 작아지는 것 방지 */
+    height: 150px;
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 10px;
+    font-size: 15px;
     font-weight: bold;
     color: #D4D4D4;
     padding: 6px 8px;              /* ✅ 줄임 */
@@ -38,7 +57,10 @@
     box-sizing: border-box;
     overflow: hidden;              /* ✅ 안전 */
     z-index: 100;
+		margin-bottom: 25px;
+		padding-bottom: 10px;
 }
+
 
 .footer-info p {
     margin: 0 0 2px 0;
