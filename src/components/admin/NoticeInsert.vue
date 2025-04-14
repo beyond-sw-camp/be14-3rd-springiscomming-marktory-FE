@@ -1,33 +1,32 @@
 <template>
-  <div class="editor-popup" v-if="modelValue">
-    <!-- 제목 입력 -->
-    <input
-      v-model="title"
-      class="title-input"
-      type="text"
-      placeholder="제목을 입력하세요"
-    />
+  <div v-if="modelValue">
+    <!-- 블러 배경 -->
+    <div class="blur-overlay"></div>
 
-    <!-- 툴바 (시각적 요소용) -->
-    <div class="editor-toolbar">
-      <span>H1</span><span>H2</span><span>H3</span><span>H4</span>
-      <span class="divider" />
-      <span><b>B</b></span><span><i>I</i></span>
-      <span>🟰</span><span>❝❞</span><span>🖼️</span><span>🔗</span><span>&lt;/&gt;</span>
-    </div>
+    <!-- 작성 모달 -->
+    <div class="editor-popup">
+      <!-- 제목 입력 -->
+      <input
+        v-model="title"
+        class="title-input"
+        type="text"
+        placeholder="제목을 입력하세요"
+      />
+      <hr/>
 
-    <!-- 내용 입력 -->
-    <div
-      class="editor-content"
-      contenteditable="true"
-      @input="onContentInput"
-      ref="contentRef"
-    ></div>
+      <!-- 내용 입력 -->
+      <div
+        class="editor-content"
+        contenteditable="true"
+        @input="onContentInput"
+        ref="contentRef">
+      </div>
 
-    <!-- 버튼 -->
-    <div class="editor-footer">
-      <button class="close" @click="close">취소</button>
-      <button class="submit" @click="submit">등록하기</button>
+      <!-- 버튼 -->
+      <div class="editor-footer">
+        <button class="close" @click="close">취소</button>
+        <button class="submit" @click="submit">등록하기</button>
+      </div>
     </div>
   </div>
 </template>
@@ -35,30 +34,25 @@
 <script setup>
 import { ref } from 'vue'
 
-// props & emits
 const props = defineProps({
   modelValue: Boolean
 })
-const emit = defineEmits(['update:modelValue', 'submit'])
+const emit = defineEmits(['update:modelValue', 'submitNotice'])
 
-// 상태
 const title = ref('')
 const content = ref('')
 const contentRef = ref(null)
 
-// 입력 감지
 const onContentInput = () => {
   content.value = contentRef.value.innerHTML
 }
 
-// 모달 닫기 및 초기화
 const close = () => {
   title.value = ''
   content.value = ''
-  emit('update:modelValue', false) // 부모에서 모달 닫히도록
+  emit('update:modelValue', false)
 }
 
-// 등록 처리 → JSON 서버에 POST 요청
 const submit = async () => {
   const newNotice = {
     title: title.value,
@@ -77,7 +71,7 @@ const submit = async () => {
     if (!res.ok) throw new Error('등록 실패')
 
     const added = await res.json()
-    emit('submit', added) // 부모 컴포넌트로 새 항목 전달
+    emit('submitNotice', added)
     close()
   } catch (err) {
     console.error('공지사항 등록 실패:', err)
@@ -85,29 +79,39 @@ const submit = async () => {
   }
 }
 </script>
+
 <style scoped>
 .editor-popup {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 850px;
-  height: 595px;
-  background-color: #1e1e1e;
+  width: 1200px;
+  height: 850px;
+  background-color: rgba(30, 30, 30, 0.95);
   color: #fff;
-  border-radius: 12px;
-  padding: 24px;
+  border-radius: 16px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   font-family: 'Helvetica Neue', sans-serif;
+  z-index: 1001;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+}
+
+.blur-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
   z-index: 1000;
 }
 
 .title-input {
   width: 100%;
-  font-size: 20px;
-  padding: 8px 12px;
-  border-radius: 8px;
+  font-size: 22px;
+  padding: 12px 16px;
+  border-radius: 10px;
   border: none;
   outline: none;
   background-color: #2a2a2a;
@@ -142,6 +146,8 @@ const submit = async () => {
   color: #ccc;
   outline: none;
   overflow-y: auto;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .editor-footer {
@@ -158,6 +164,7 @@ button {
   border-radius: 24px;
   font-weight: bold;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .close {
