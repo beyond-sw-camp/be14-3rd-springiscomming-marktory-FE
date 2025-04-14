@@ -110,6 +110,24 @@ const router = createRouter({
         {
             path: '/findpw',
             component: () => import('../pages/FindPwPage.vue')
+        },
+        {
+            path: '/mypage/kasey',
+            component: () => import('../pages/OtherMyPage.vue'),
+            children: [
+                {
+                    path: '/mypage/kasey',
+                    redirect: '/mypage/kasey/post'
+                },
+                {
+                    path: 'post',
+                    component: () => import('../components/mypage/PostCardList.vue')
+                },
+                {
+                    path: 'temp',
+                    component: () => import('../components/mypage/TempCardList.vue')
+                }
+            ]
         }
     ]
 });

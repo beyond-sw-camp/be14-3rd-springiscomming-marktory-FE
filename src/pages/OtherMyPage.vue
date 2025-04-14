@@ -6,12 +6,12 @@
         <header class="header">
             <div class="mypage-title">LGTM</div>
             <div class="mypagemenu-row">
-                <RouterLink to="/mypage/post" class="tab" active-class="active">
+                <RouterLink to="/mypage/kasey/post" class="tab" active-class="active">
                     <div class="post">
                         <span class="post-label">게시글</span>
                     </div>
                 </RouterLink>
-                <RouterLink to="/mypage/temp" class="tab" active-class="active">
+                <RouterLink to="/mypage/kasey/temp" class="tab" active-class="active">
                     <div class="temp">
                         <span class="temp-label">템플릿</span>
                     </div>
@@ -24,8 +24,10 @@
         <main>
             <div class="mypage-row">
                 <div class="mypage-left">
-                    <SideProfile />
-                    <Category />
+                    <OtherSideProfile/>
+                    <div class="category">
+                        <Category />
+                    </div>
                 </div>
                 <div class="mypage-postcardlist">
                     <RouterView/>    
@@ -37,7 +39,7 @@
 
 <script setup>
     import AppHeader from '../components/AppHeader.vue';
-    import SideProfile from '../components/mypage/SideProfile.vue';
+    import OtherSideProfile from '../components/mypage/OtherSideProfile.vue';
     import Category from '../components/post/Category.vue';
     import { RouterLink, RouterView } from 'vue-router';
 </script>
@@ -128,6 +130,10 @@
         width: 262px;
         display: flex;
         flex-direction: column;
+    }
+
+    .category {
+        padding-top: 50px;
     }
 
     .tab {
