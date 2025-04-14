@@ -56,7 +56,11 @@
                             <img src="../assets/icons/settings.svg" alt="설정 아이콘" class="menu-icon"/>    
                             <p class="dropdown-font">설정</p>
                         </li>
-                        <li @click="goTo('notice')">
+                        <li v-if="isAdmin" @click="goTo('adminPage')">
+                            <img src="../assets/icons/admin-key.svg" alt="관리자 아이콘" class="menu-icon"/>
+                            <p class="dropdown-font">관리자 페이지</p>
+                        </li>
+                        <li v-else @click="goTo('notice')">
                             <img src="../assets/icons/notice.svg" alt="공지사항 아이콘" class="menu-icon"/>
                             <p class="dropdown-font">공지사항</p>
                         </li>
@@ -83,7 +87,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useMemberStore } from '../stores/memberStore'
 import defaultProfile from '../assets/icons/defaultProfile.png'
@@ -92,6 +96,9 @@ const router = useRouter()
 const memberStore = useMemberStore()
 const showDropdown = ref(false)
 const dropdownRef = ref(null)
+
+/* 관리자인지 비교를 위해 */
+const isAdmin = computed(() => memberStore.user?.role === 'admin')
 
 function goHome() {
     router.push('/').then(() => window.location.reload())
@@ -104,23 +111,28 @@ function toggleDropdown() {
 function logout() {
     memberStore.logout()
     showDropdown.value = false
-    router.push('/') 
+    router.push('/post/all'); 
 }
 
 function goTo(page) {
     showDropdown.value = false
     switch (page) {
         case 'settings':
-        router.push('/settings')
+            router.push('/settings').then(() => window.location.reload());
+            break;
         break
         case 'notice':
-        router.push('/notices')
-        break
+            router.push('/notices').then(() => window.location.reload());
+            break;
         case 'activity':
-        router.push('/activity')
+            router.push('/activity').then(() => window.location.reload());
+            break;
         case 'login':
-            router.push('/login');
-        break
+            router.push('/login').then(() => window.location.reload());
+            break;
+        case 'adminPage':
+            router.push('/adminPage').then(() => window.location.reload());
+            break;
     }
 }
 
