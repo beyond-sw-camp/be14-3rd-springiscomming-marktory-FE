@@ -10,10 +10,17 @@
 </template>
   
 <script setup>
+import { useRouter } from 'vue-router';
+import { useMemberStore } from '../../stores/memberStore';
+
 const emit = defineEmits(['close']); // 부모 컴포넌트에 이벤트 전달
+const router = useRouter();
+const memberStore = useMemberStore();
 
 // 모달 닫기 함수
 const closeModal = () => {
+  memberStore.logout();
+  router.push('/');
   emit('close'); // 부모 컴포넌트에 'close' 이벤트 전달
 };
 </script>
