@@ -1,6 +1,6 @@
 export function mapHashtag(raw) {
     return {
-        id: raw.id,
+        id: Number(raw.id),
         name: raw.name
     };
 }

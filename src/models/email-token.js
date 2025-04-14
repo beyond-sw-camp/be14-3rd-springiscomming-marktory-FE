@@ -1,6 +1,6 @@
 export function mapEmailToken(raw) {
     return {
-        id: raw.id,
+        id: Number(raw.id),
         email: raw.email,
         token: raw.token,
         expirationTime: raw.expiration_time,

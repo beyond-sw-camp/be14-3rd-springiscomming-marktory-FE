@@ -1,11 +1,11 @@
 export function mapPublicTemplate(raw) {
     return {
-        id: raw.id,
+        id: Number(raw.id),
         title: raw.title,
         content: raw.content,
         writtenDate: raw.written_date,
         deleteDate: raw.delete_date,
-        usageCount: raw.usage_count,
-        writerId: raw.writer_id
+        usageCount: Number(raw.usage_count),
+        writerId: Number(raw.writer_id)
     };
 }

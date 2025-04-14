@@ -1,8 +1,8 @@
 export function mapCategory(raw) {
     return {
-        id: raw.id,
+        id: Number(raw.id),
         name: raw.name,
-        memberId: raw.member_id
+        memberId: Number(raw.member_id)
     };
 }
 

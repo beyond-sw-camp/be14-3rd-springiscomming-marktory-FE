@@ -1,6 +1,6 @@
 export function mapMemberRole(raw) {
     return {
-        memberId: raw.member_id,
-        authorityId: raw.authority_id
+        memberId: Number(raw.member_id),
+        authorityId: Number(raw.authority_id)
     };
 }

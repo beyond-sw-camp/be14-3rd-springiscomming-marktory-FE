@@ -5,7 +5,7 @@ function formatDate(dateStr) {
 
 export function mapPost(raw, hashtags = [], member = null, category = null) {
     return {
-        id: raw.id,
+        id: Number(raw.id),
         title: raw.title,
         content: raw.content,
         image: '/src/assets/post/content-img.png', // 하드코딩된 이미지 경로 사용
