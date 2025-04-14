@@ -61,7 +61,8 @@ function goTo(menuName) {
 <style scoped>
 .sidebar {
   width: 240px;
-  height: 1024px;
+  height: 900px;
+  margin-top: 116px;
   padding: 32px 24px;
   border-right: 1px solid #FD6F22;
   display: flex;

@@ -36,6 +36,7 @@
   <style scoped>
   .pagination {
     position: sticky;
+    margin-top: 100px;
     bottom: 50px;
     justify-content: center;
     gap: 8px;
