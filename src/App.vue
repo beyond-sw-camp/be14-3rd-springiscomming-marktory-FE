@@ -10,12 +10,14 @@
   
   <main id="app" class="theme-dark">
     <RouterView />
+    <SideFooter/>
   </main>
 
 </template>
 
 <script setup>
 import { RouterView } from 'vue-router';
+import SideFooter from "@/components/footer/SideFooter.vue";
 </script>
 
 <style>
