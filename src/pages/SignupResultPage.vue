@@ -91,7 +91,7 @@ onBeforeUnmount(() => {
 .logo {
 	width: 658px;
 	margin-bottom: 24px;
-	margin-top: -60px;
+	margin-top: 60px;
 }
 
 .title {

@@ -120,7 +120,7 @@ const sendEmail = async () => {
 
 /* 왼쪽 */
 .welcome-section {
-  margin-top: -50px;
+  margin-top: 50px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -150,7 +150,7 @@ const sendEmail = async () => {
 
 /* 오른쪽 */
 .login-section {
-  margin-top: -50px;
+  margin-top: 50px;
   flex: 1;
   display: flex;
   flex-direction: column;

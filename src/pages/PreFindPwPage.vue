@@ -145,6 +145,7 @@ onBeforeUnmount(() => {
 }
 
 .findpw-container {
+  margin-top: 50px;
   width: 1920px;
   height: 1080px;
   font-family: 'Noto Sans KR', sans-serif;
@@ -158,7 +159,6 @@ onBeforeUnmount(() => {
 
 .logo {
   width: 500px;
-  margin-top: -50px;
 }
 
 .error {
