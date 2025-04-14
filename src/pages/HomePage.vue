@@ -11,7 +11,9 @@
         </div>
       </div>
       <div class="filter-row">
-        <span class="filter-label">전체</span>
+        <!-- <span class="filter-label">전체</span> -->
+        <PageModal v-if="activeTab === 'post'" />
+        <TemplateModal v-else />
       </div>
     </header>
     <main>
@@ -41,6 +43,8 @@ import { useRoute, useRouter } from 'vue-router'
 import AppHeader from '@/components/AppHeader.vue'
 import PostCardList from '@/components/mypage/PostCardList.vue'
 import TempCardList from '@/components/mypage/TempCardList.vue'
+import PageModal from '../components/PageModal.vue'
+import TemplateModal from '../components/TemplateModal.vue'
 
 const route = useRoute()
 const router = useRouter()
