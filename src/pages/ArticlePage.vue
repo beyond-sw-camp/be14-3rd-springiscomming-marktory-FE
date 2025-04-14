@@ -1,13 +1,12 @@
 <template>
   <main class="page-layout">
     <aside class="left-sidebar">
-      <!-- <AuthorProfile /> -->
-      <!-- 작성자 정보 컴포넌트 -->
+      <!-- <AuthorProfile v-if="postData" :member="postData.member" /> -->
     </aside>
 
     <article class="main-content">
-      <Post :post="postData" />
-      <Comment />
+      <Post v-if="postData" :post="postData" />
+      <Comment v-if="postData && commentTree.length" :comments="commentTree" :post-id="postData.id" />
     </article>
 
     <aside class="right-sidebar">
@@ -18,72 +17,68 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
+
 import Comment from "../components/comment/Comment.vue";
 import Post from "../components/post/Post.vue";
-import Category from "../components/post/category.vue";
-import contentImg from "@/assets/post/content-img.png";
-import { getPostById } from '@/api/post.api'
-import { mapPost } from '@/models/post.js'
+import Category from "../components/post/Category.vue";
+import AuthorProfile from "../components/mypage/SideProfile.vue";
+
+import { getPostById } from '@/api/post.api';
+import { getMembers } from '@/api/member.api';
+import { getCategories } from '@/api/category.api';
+import { getHashtags, getPostHashtag } from '@/api/hashtag.api';
+import { getComments } from '@/api/comment.api';
+
+import { mapPost } from '@/models/post.js';
+
+const route = useRoute();
+
+const postData = ref(null);
+const categoryList = ref([]);
+const commentTree = ref([]);
 
 onMounted(async () => {
-  try {
-    const postId = 2
-    console.log(postId);
-    const postRaw = await getPostById(postId)
-    const raw = Array.isArray(postRaw) ? postRaw[0] : postRaw
-    const post = mapPost(raw)
-    console.log('🧾 postRaw:', postRaw)
-    console.log('✅ mappedPost:', post)
-  } catch (err) {
-    console.error('게시글 로드 실패:', err)
-  }
-})
+  const postId = Number(route.params.id || 1);
 
-const postData = {
-  title: "BEYOND 14기 365주차 프론트엔드 인공지능, 안드로이드, PHP 주간 회고",
-  date: "2025년 2월 25일",
-  tags: [
-    "JAVA",
-    "JPA",
-    "안드로이드",
-    "PHP",
-    "IOS",
-    "AI",
-    "MSA",
-    "개발자",
-    "JAR",
-    "IntelliJ",
-  ],
-  image: contentImg, // public 폴더에 넣은 이미지 경로
-  content: `이번 SQLD 자격증 시험을 계기로 DB 사용과 설계에 대한 자신감이 붙은 거 같다. 
-하지만 시험에는 떨어질 것만 같다. 
-같은 날 시험을 본 동기들과 이야기해 봤는데 내 어린짐작으로는 제법 많이 틀린 거 같다 😭 
-떨어지면 떨어진 대로 어차피 SQL은 공부할수록 이득이니까 계속 공부해서 다음 기회를 노려봐야겠다.
-이번 SQLD 자격증 시험을 계기로 DB 사용과 설계에 대한 자신감이 붙은 거 같다. 
-하지만 시험에는 떨어질 것만 같다. 
-같은 날 시험을 본 동기들과 이야기해 봤는데 내 어린짐작으로는 제법 많이 틀린 거 같다 😭 
-떨어지면 떨어진 대로 어차피 SQL은 공부할수록 이득이니까 계속 공부해서 다음 기회를 노려봐야겠다.
-이번 SQLD 자격증 시험을 계기로 DB 사용과 설계에 대한 자신감이 붙은 거 같다. 
-하지만 시험에는 떨어질 것만 같다. 
-같은 날 시험을 본 동기들과 이야기해 봤는데 내 어린짐작으로는 제법 많이 틀린 거 같다 😭 
-떨어지면 떨어진 대로 어차피 SQL은 공부할수록 이득이니까 계속 공부해서 다음 기회를 노려봐야겠다.
-이번 SQLD 자격증 시험을 계기로 DB 사용과 설계에 대한 자신감이 붙은 거 같다. 
-하지만 시험에는 떨어질 것만 같다. 
-같은 날 시험을 본 동기들과 이야기해 봤는데 내 어린짐작으로는 제법 많이 틀린 거 같다 😭 
-떨어지면 떨어진 대로 어차피 SQL은 공부할수록 이득이니까 계속 공부해서 다음 기회를 노려봐야겠다.
-이번 SQLD 자격증 시험을 계기로 DB 사용과 설계에 대한 자신감이 붙은 거 같다. 
-하지만 시험에는 떨어질 것만 같다. 
-같은 날 시험을 본 동기들과 이야기해 봤는데 내 어린짐작으로는 제법 많이 틀린 거 같다 😭 
-떨어지면 떨어진 대로 어차피 SQL은 공부할수록 이득이니까 계속 공부해서 다음 기회를 노려봐야겠다.
-이번 SQLD 자격증 시험을 계기로 DB 사용과 설계에 대한 자신감이 붙은 거 같다. 
-하지만 시험에는 떨어질 것만 같다. 
-같은 날 시험을 본 동기들과 이야기해 봤는데 내 어린짐작으로는 제법 많이 틀린 거 같다 😭 
-떨어지면 떨어진 대로 어차피 SQL은 공부할수록 이득이니까 계속 공부해서 다음 기회를 노려봐야겠다.
-이번 SQLD 자격증 시험을 계기로 DB 사용과 설계에 대한 자신감이 붙은 거 같다. 
-하지만 시험에는 떨어질 것만 같다. 
-같은 날 시험을 본 동기들과 이야기해 봤는데 내 어린짐작으로는 제법 많이 틀린 거 같다 😭 
-떨어지면 떨어진 대로 어차피 SQL은 공부할수록 이득이니까 계속 공부해서 다음 기회를 노려봐야겠다.`,
-};
+  const [postRaw, members, categories, hashtags, postHashtags, comments] = await Promise.all([
+    getPostById(postId),
+    getMembers(),
+    getCategories(),
+    getHashtags(),
+    getPostHashtag(),
+    getComments()
+  ]);
+
+  const member = members.find(m => m.id === postRaw.member_id);
+  const category = categories.find(c => c.id === postRaw.category_id);
+  const hashtagNames = postHashtags
+    .filter(ph => ph.post_id === postRaw.id)
+    .map(ph => hashtags.find(h => h.id === ph.hashtag_id)?.name)
+    .filter(Boolean);
+
+  postData.value = mapPost(postRaw, hashtagNames, member, category);
+  categoryList.value = categories;
+
+  // 댓글 작성자 매핑
+  const filtered = comments
+    .filter(c => Number(c.post_id) === Number(postRaw.id) && !c.is_deleted)
+    .map(c => ({
+      ...c,
+      member: members.find(m => m.id === c.member_id) || null
+    }));
+
+  // 1단계 대댓글 트리 구성
+  const parents = filtered.filter(c => c.type === 1);
+  const replies = filtered.filter(c => c.type === 2);
+
+  commentTree.value = parents.map(parent => ({
+    ...parent,
+    replies: replies.filter(reply => reply.above_id === parent.id)
+  }));
+  console.log('✅ commentTree:', commentTree.value);
+  console.log('✅ sample comment:', commentTree.value[0]);
+});
 </script>
 
 <style scoped>
