@@ -1,0 +1,114 @@
+{
+  "commentTree": [
+    {
+      "id": 1,
+      "content": "좋은 정보 감사합니다! 😊",
+      "written_date": "2024-03-10T20:37:39",
+      "modify_date": null,
+      "is_deleted": false,
+      "type": 1,
+      "above_id": null,
+      "member_id": 2,
+      "post_id": 1,
+      "member": {
+        "id": 2,
+        "nickname": "서준작가",
+        "image": "https://example.com/images/seojun.jpg",
+        "status": "is_delete"
+      },
+      "replies": [
+        {
+          "id": 4,
+          "content": "진짜 ㅋㅋ 우웩",
+          "written_date": "2024-03-13T10:03:03",
+          "modify_date": null,
+          "is_deleted": false,
+          "type": 2,
+          "above_id": 1,
+          "member_id": 3,
+          "post_id": 1,
+          "member": {
+            "id": 3,
+            "nickname": "정훈운동짱",
+            "image": "https://example.com/images/junghoon.jpg",
+            "status": "is_black"
+          },
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "content": "여행 체크리스트 유용하네요!✈️",
+      "written_date": "2024-03-11T13:50:13",
+      "modify_date": null,
+      "is_deleted": false,
+      "type": 1,
+      "above_id": null,
+      "member_id": 3,
+      "post_id": 2,
+      "member": {
+        "id": 3,
+        "nickname": "정훈운동짱",
+        "image": "https://example.com/images/junghoon.jpg",
+        "status": "is_black"
+      },
+      "replies": [
+        {
+          "id": 5,
+          "content": "풉 ㅋㅋ",
+          "written_date": "2024-03-14T02:29:19",
+          "modify_date": null,
+          "is_deleted": false,
+          "type": 2,
+          "above_id": 2,
+          "member_id": 1,
+          "post_id": 2,
+          "member": {
+            "id": 1,
+            "nickname": "서영아지트",
+            "image": "https://example.com/images/seoyoung.jpg",
+            "status": "is_delete"
+          },
+          "replies": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "content": "운동 루틴 공유해주셔서 감사합니다!💪",
+      "written_date": "2024-03-12T17:13:45",
+      "modify_date": null,
+      "is_deleted": false,
+      "type": 1,
+      "above_id": null,
+      "member_id": 1,
+      "post_id": 3,
+      "member": {
+        "id": 1,
+        "nickname": "서영아지트",
+        "image": "https://example.com/images/seoyoung.jpg",
+        "status": "is_delete"
+      },
+      "replies": []
+    },
+    {
+      "id": 6,
+      "content": "삭제된 댓글입니다.",
+      "written_date": "2024-03-15T08:22:35",
+      "modify_date": "2025-03-16T07:31:38",
+      "is_deleted": true,
+      "type": 1,
+      "above_id": null,
+      "member_id": 2,
+      "post_id": 3,
+      "member": {
+        "id": 2,
+        "nickname": "서준작가",
+        "image": "https://example.com/images/seojun.jpg",
+        "status": "is_delete"
+      },
+      "replies": []
+    }
+  ]
+}

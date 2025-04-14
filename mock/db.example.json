@@ -1,0 +1,541 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "email": "seoyoung.lee@example.com",
+      "password": "hashed-password-1",
+      "name": "이서영",
+      "nickname": "서영아지트",
+      "birthday": "2000-11-11",
+      "image": "https://example.com/images/seoyoung.jpg",
+      "status": "is_delete",
+      "black_date": null,
+      "assigned_date": "2023-05-10 14:23:45",
+      "delete_date": "2024-01-20 09:15:30",
+      "report_count": 0,
+      "is_terms": true,
+      "mypage_title": "서영의 공방일기"
+    },
+    {
+      "id": 2,
+      "email": "seojun.oh@example.com",
+      "password": "hashed-password-2",
+      "name": "오서준",
+      "nickname": "서준작가",
+      "birthday": "1999-05-10",
+      "image": "https://example.com/images/seojun.jpg",
+      "status": "is_delete",
+      "black_date": null,
+      "assigned_date": "2023-07-15 16:40:20",
+      "delete_date": "2024-02-10 11:05:50",
+      "report_count": 0,
+      "is_terms": true,
+      "mypage_title": "서준의 사진일기"
+    },
+    {
+      "id": 3,
+      "email": "junghoon.kim@example.com",
+      "password": "hashed-password-3",
+      "name": "김정훈",
+      "nickname": "정훈운동짱",
+      "birthday": "1990-07-19",
+      "image": "https://example.com/images/junghoon.jpg",
+      "status": "is_black",
+      "black_date": "2025-01-30 18:20:10",
+      "assigned_date": "2023-08-05 10:30:00",
+      "delete_date": null,
+      "report_count": 7,
+      "is_terms": true,
+      "mypage_title": "정훈의 헬스일지"
+    },
+    {
+      "id": 4,
+      "email": "user4@example.com",
+      "password": "hashed-password-4",
+      "name": "회원4",
+      "nickname": "멤버4",
+      "birthday": "1992-01-01",
+      "image": "https://example.com/images/default.jpg",
+      "status": "is_active",
+      "black_date": null,
+      "assigned_date": "2024-01-04T12:00:00",
+      "delete_date": null,
+      "report_count": 0,
+      "is_terms": true,
+      "mypage_title": "멤버4의 일상"
+    },
+    {
+      "id": 5,
+      "email": "user5@example.com",
+      "password": "hashed-password-5",
+      "name": "회원5",
+      "nickname": "멤버5",
+      "birthday": "1993-02-02",
+      "image": "https://example.com/images/default.jpg",
+      "status": "is_active",
+      "black_date": null,
+      "assigned_date": "2024-01-05T12:00:00",
+      "delete_date": null,
+      "report_count": 1,
+      "is_terms": true,
+      "mypage_title": "멤버5 블로그"
+    },
+    {
+      "id": 6,
+      "email": "user6@example.com",
+      "password": "hashed-password-6",
+      "name": "회원6",
+      "nickname": "멤버6",
+      "birthday": "1994-03-03",
+      "image": "https://example.com/images/default.jpg",
+      "status": "is_active",
+      "black_date": null,
+      "assigned_date": "2024-01-06T12:00:00",
+      "delete_date": null,
+      "report_count": 0,
+      "is_terms": true,
+      "mypage_title": "멤버6 마이페이지"
+    },
+    {
+      "id": 7,
+      "email": "admin@example.com",
+      "password": "hashed-password-7",
+      "name": "관리자",
+      "nickname": "관리자계정",
+      "birthday": "1990-01-01",
+      "image": "https://example.com/images/admin.jpg",
+      "status": "is_active",
+      "black_date": null,
+      "assigned_date": "2023-01-01 00:00:00",
+      "delete_date": null,
+      "report_count": 0,
+      "is_terms": true,
+      "mypage_title": "관리자 블로그"
+    },
+    {
+      "id": 8,
+      "email": "user8@example.com",
+      "password": "hashed-password-8",
+      "name": "회원8",
+      "nickname": "멤버8",
+      "birthday": "1995-04-04",
+      "image": "https://example.com/images/default.jpg",
+      "status": "is_active",
+      "black_date": null,
+      "assigned_date": "2024-01-08T12:00:00",
+      "delete_date": null,
+      "report_count": 0,
+      "is_terms": true,
+      "mypage_title": "멤버8 일기장"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "개발 & 프로그래밍",
+      "member_id": 1
+    },
+    {
+      "id": 2,
+      "name": "여행 & 맛집",
+      "member_id": 2
+    },
+    {
+      "id": 3,
+      "name": "건강 & 운동",
+      "member_id": 3
+    },
+    {
+      "id": 4,
+      "name": "일상 & 자유게시판",
+      "member_id": 1
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "파이썬 기초 문법 정리",
+      "content": "# 파이썬 변수 선언\n```python\nx = 10\ny = \"hello\"\n```",
+      "post_url": "https://s3.example.com/posts/python-basic-grammar.html",
+      "thumbnail": "https://s3.example.com/thumbnails/python-basic-grammar.jpg",
+      "written_date": "2024-03-01T00:30:52",
+      "delete_date": null,
+      "visibility": "public",
+      "member_id": 1,
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "title": "여행 준비 체크리스트 ✈️",
+      "content": "- 여권\n- 항공권\n- 호텔 예약",
+      "post_url": "https://s3.example.com/posts/travel-checklist.html",
+      "thumbnail": "https://s3.example.com/thumbnails/travel-checklist.jpg",
+      "written_date": "2024-03-02T06:36:42",
+      "delete_date": null,
+      "visibility": "public",
+      "member_id": 2,
+      "category_id": 2
+    },
+    {
+      "id": 3,
+      "title": "초보자를 위한 헬스 가이드 💪",
+      "content": "- 월: 가슴\n- 화: 등\n- 수: 하체",
+      "post_url": "https://s3.example.com/posts/fitness-guide.html",
+      "thumbnail": "https://s3.example.com/thumbnails/fitness-guide.jpg",
+      "written_date": "2024-03-03T03:36:26",
+      "delete_date": null,
+      "visibility": "public",
+      "member_id": 3,
+      "category_id": 3
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "content": "좋은 정보 감사합니다! 😊",
+      "written_date": "2024-03-10T20:37:39",
+      "modify_date": null,
+      "is_deleted": false,
+      "type": 1,
+      "above_id": null,
+      "member_id": 2,
+      "post_id": 1
+    },
+    {
+      "id": 2,
+      "content": "여행 체크리스트 유용하네요!✈️",
+      "written_date": "2024-03-11T13:50:13",
+      "modify_date": null,
+      "is_deleted": false,
+      "type": 1,
+      "above_id": null,
+      "member_id": 3,
+      "post_id": 2
+    },
+    {
+      "id": 3,
+      "content": "운동 루틴 공유해주셔서 감사합니다!💪",
+      "written_date": "2024-03-12T17:13:45",
+      "modify_date": null,
+      "is_deleted": false,
+      "type": 1,
+      "above_id": null,
+      "member_id": 1,
+      "post_id": 3
+    },
+    {
+      "id": 4,
+      "content": "진짜 ㅋㅋ 우웩",
+      "written_date": "2024-03-13T10:03:03",
+      "modify_date": null,
+      "is_deleted": false,
+      "type": 2,
+      "above_id": 1,
+      "member_id": 3,
+      "post_id": 1
+    },
+    {
+      "id": 5,
+      "content": "풉 ㅋㅋ",
+      "written_date": "2024-03-14T02:29:19",
+      "modify_date": null,
+      "is_deleted": false,
+      "type": 2,
+      "above_id": 2,
+      "member_id": 1,
+      "post_id": 2
+    },
+    {
+      "id": 6,
+      "content": "삭제된 댓글입니다.",
+      "written_date": "2024-03-15T08:22:35",
+      "modify_date": "2025-03-16T07:31:38",
+      "is_deleted": true,
+      "type": 1,
+      "above_id": null,
+      "member_id": 2,
+      "post_id": 3
+    }
+  ],
+  "likes": [
+    {
+      "id": 1,
+      "type": "post",
+      "post_id": 1,
+      "comment_id": null,
+      "member_id": 2
+    },
+    {
+      "id": 2,
+      "type": "post",
+      "post_id": 2,
+      "comment_id": null,
+      "member_id": 3
+    },
+    {
+      "id": 3,
+      "type": "post",
+      "post_id": 3,
+      "comment_id": null,
+      "member_id": 1
+    },
+    {
+      "id": 4,
+      "type": "comment",
+      "post_id": null,
+      "comment_id": 1,
+      "member_id": 3
+    },
+    {
+      "id": 5,
+      "type": "comment",
+      "post_id": null,
+      "comment_id": 2,
+      "member_id": 1
+    },
+    {
+      "id": 6,
+      "type": "comment",
+      "post_id": null,
+      "comment_id": 4,
+      "member_id": 2
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "content": "욕설이 포함된 댓글입니다.",
+      "status": false,
+      "date": "2024-04-01T10:15:30",
+      "type": "comment",
+      "member_id": 1,
+      "comment_id": 4,
+      "post_id": null,
+      "template_id": null
+    },
+    {
+      "id": 2,
+      "content": "홍보성 글로 보입니다.",
+      "status": false,
+      "date": "2024-04-02T12:25:30",
+      "type": "post",
+      "member_id": 2,
+      "comment_id": null,
+      "post_id": 3,
+      "template_id": null
+    },
+    {
+      "id": 3,
+      "content": "부정확한 정보가 포함되어 있습니다.",
+      "status": false,
+      "date": "2024-04-03T14:30:00",
+      "type": "template",
+      "member_id": 1,
+      "comment_id": null,
+      "post_id": null,
+      "template_id": 3
+    }
+  ],
+  "hashtags": [
+    {
+      "id": 1,
+      "name": "개발자"
+    },
+    {
+      "id": 2,
+      "name": "운동"
+    },
+    {
+      "id": 3,
+      "name": "맛집"
+    },
+    {
+      "id": 4,
+      "name": "SQLD"
+    }
+  ],
+  "post_hashtag": [
+    {
+      "post_id": 1,
+      "hashtag_id": 1
+    },
+    {
+      "post_id": 1,
+      "hashtag_id": 4
+    },
+    {
+      "post_id": 2,
+      "hashtag_id": 3
+    },
+    {
+      "post_id": 3,
+      "hashtag_id": 2
+    },
+    {
+      "post_id": 3,
+      "hashtag_id": 4
+    }
+  ],
+  "subscribe": [
+    {
+      "id": 1,
+      "is_notification": "Y",
+      "subscriber_id": 1,
+      "subscribed_id": 2
+    },
+    {
+      "id": 2,
+      "is_notification": "N",
+      "subscriber_id": 2,
+      "subscribed_id": 3
+    },
+    {
+      "id": 3,
+      "is_notification": "Y",
+      "subscriber_id": 3,
+      "subscribed_id": 1
+    }
+  ],
+  "template_space": [
+    {
+      "id": 1,
+      "member_id": 1
+    },
+    {
+      "id": 2,
+      "member_id": 2
+    },
+    {
+      "id": 3,
+      "member_id": 3
+    }
+  ],
+  "member_template": [
+    {
+      "id": 1,
+      "title": "기본 템플릿",
+      "description": "기본 설명",
+      "content": "# Hello Template",
+      "thumbnail": "https://s3.example.com/templates/default.jpg",
+      "visibility": "public",
+      "written_date": "2024-03-10T08:15:30",
+      "delete_date": null,
+      "usage_count": 0,
+      "is_copy": "N",
+      "repository_id": 1
+    },
+    {
+      "id": 2,
+      "title": "비공개 템플릿",
+      "description": "숨겨진 템플릿",
+      "content": "# 비밀 콘텐츠",
+      "thumbnail": "https://s3.example.com/templates/private.jpg",
+      "visibility": "private",
+      "written_date": "2024-03-12T09:00:00",
+      "delete_date": null,
+      "usage_count": 3,
+      "is_copy": "Y",
+      "repository_id": 2
+    },
+    {
+      "id": 3,
+      "title": "추가된 템플릿",
+      "description": "리포트 대상",
+      "content": "# 추가 템플릿 콘텐츠",
+      "thumbnail": "https://s3.example.com/templates/template-3.jpg",
+      "visibility": "private",
+      "written_date": "2024-04-01T10:00:00",
+      "delete_date": null,
+      "usage_count": 0,
+      "is_copy": "N",
+      "repository_id": 1
+    }
+  ],
+  "public_template": [
+    {
+      "id": 1,
+      "title": "공유용 템플릿",
+      "content": "<h1>공개 콘텐츠입니다.</h1>",
+      "written_date": "2024-03-15T11:30:10",
+      "delete_date": null,
+      "usage_count": 5,
+      "writer_id": 2
+    }
+  ],
+  "authority": [
+    {
+      "id": 1,
+      "name": "ROLE_ADMIN"
+    },
+    {
+      "id": 2,
+      "name": "ROLE_MEMBER"
+    }
+  ],
+  "member_roles": [
+    {
+      "member_id": 1,
+      "authority_id": 2
+    },
+    {
+      "member_id": 2,
+      "authority_id": 2
+    },
+    {
+      "member_id": 3,
+      "authority_id": 2
+    },
+    {
+      "member_id": 4,
+      "authority_id": 2
+    },
+    {
+      "member_id": 5,
+      "authority_id": 2
+    },
+    {
+      "member_id": 6,
+      "authority_id": 2
+    },
+    {
+      "member_id": 7,
+      "authority_id": 1
+    },
+    {
+      "member_id": 8,
+      "authority_id": 2
+    }
+  ],
+  "notice": [
+    {
+      "id": 1,
+      "title": "서비스 점검 안내",
+      "date": "2025-04-10T08:30:00",
+      "content": "4월 11일 새벽 2시부터 시스템 점검이 진행됩니다.",
+      "member_id": 7
+    },
+    {
+      "id": 2,
+      "title": "버전 2.0 업데이트 공지",
+      "date": "2025-04-12T10:45:00",
+      "content": "새로운 기능이 추가되었습니다.",
+      "member_id": 7
+    }
+  ],
+  "email_token": [
+    {
+      "id": 1,
+      "email": "testuser@example.com",
+      "token": "e2a45d2a-4f6d-4e13-aec0-9d839b27afc1",
+      "expiration_time": "2025-04-15T23:59:59",
+      "is_verified": false
+    },
+    {
+      "id": 2,
+      "email": "already.verified@example.com",
+      "token": "f82394fa-1d23-466c-9126-cedb4036a2e7",
+      "expiration_time": "2025-04-16T23:59:59",
+      "is_verified": true
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 <template>
   <main class="page-layout">
     <aside class="left-sidebar">
-      <AuthorProfile />
+      <!-- <AuthorProfile /> -->
       <!-- 작성자 정보 컴포넌트 -->
     </aside>
 
@@ -17,10 +17,27 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
 import Comment from "../components/comment/Comment.vue";
 import Post from "../components/post/Post.vue";
 import Category from "../components/post/category.vue";
 import contentImg from "@/assets/post/content-img.png";
+import { getPostById } from '@/api/post.api'
+import { mapPost } from '@/models/post.js'
+
+onMounted(async () => {
+  try {
+    const postId = 2
+    console.log(postId);
+    const postRaw = await getPostById(postId)
+    const raw = Array.isArray(postRaw) ? postRaw[0] : postRaw
+    const post = mapPost(raw)
+    console.log('🧾 postRaw:', postRaw)
+    console.log('✅ mappedPost:', post)
+  } catch (err) {
+    console.error('게시글 로드 실패:', err)
+  }
+})
 
 const postData = {
   title: "BEYOND 14기 365주차 프론트엔드 인공지능, 안드로이드, PHP 주간 회고",
