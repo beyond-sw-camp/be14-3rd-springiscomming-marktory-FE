@@ -45,11 +45,11 @@ const router = createRouter({
                 },
                 {
                     path: 'post',
-                    component: () => import('../components/mypage/PostCardList.vue')
+                    component: () => import('../components/mypage/DPostCardList.vue')
                 },
                 {
                     path: 'temp',
-                    component: () => import('../components/mypage/TempCardList.vue')
+                    component: () => import('../components/mypage/DTempCardList.vue')
                 }
             ]
         },
@@ -98,7 +98,7 @@ const router = createRouter({
                 },
                 {
                     path: 'post',
-                    component: () => import('../components/activity/LikedPostCardList.vue')
+                    component: () => import('../components/mypage/PostCardList.vue')
                 },
                 {
                     path: 'likecomment',
@@ -128,11 +128,11 @@ const router = createRouter({
                 },
                 {
                     path: 'post',
-                    component: () => import('../components/mypage/PostCardList.vue')
+                    component: () => import('../components/mypage/KaseyPostCardList.vue')
                 },
                 {
                     path: 'temp',
-                    component: () => import('../components/mypage/TempCardList.vue')
+                    component: () => import('../components/mypage/KaseyTempCardList.vue')
                 }
             ]
         }

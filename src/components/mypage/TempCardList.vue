@@ -24,7 +24,7 @@
     })
 
     const fetchData = async () => {
-      const res = await fetch('http://localhost:3001/templates')
+      const res = await fetch('http://localhost:3001/alltemplates')
       const data = await res.json()
       tempList.value = props.filterType === 'subscribe'
     ? data.filter(post => post.id % 2 === 0)
@@ -34,87 +34,6 @@
     onMounted(fetchData)
 
     watch(() => props.filterType, fetchData)
-    // import imgage from './D_profile_IMG.png';
-      
-    // const postList = [
-    //   {
-    //     title: '템플릿 1',
-    //     date: '2024-03-01',
-    //     thumbnailImg: imgage,
-    //     profileImg: imgage,
-    //     nickname: 'Dong'
-    //   },
-    //   {
-    //     title: '템플릿 2',
-    //     date: '2024-03-02',
-    //     thumbnailImg: imgage,
-    //     profileImg: imgage,
-    //     nickname: 'Jisoo'
-    //   },
-    //   {
-    //     title: '템플릿 3',
-    //     date: '2024-03-03',
-    //     thumbnailImg: imgage,
-    //     profileImg: imgage,
-    //     nickname: 'Ironman'
-    //   },
-    //   {
-    //     title: '템플릿 4',
-    //     date: '2024-03-01',
-    //     thumbnailImg: imgage,
-    //     profileImg: imgage,
-    //     nickname: 'Dong'
-    //   },
-    //   {
-    //     title: '템플릿 5',
-    //     date: '2024-03-02',
-    //     thumbnailImg: imgage,
-    //     profileImg: imgage,
-    //     nickname: 'Jisoo'
-    //   },
-    //   {
-    //     title: '템플릿 6',
-    //     date: '2024-03-03',
-    //     thumbnailImg: imgage,
-    //     profileImg: imgage,
-    //     nickname: 'Ironman'
-    //   },
-    //   {
-    //     title: '템플릿 7',
-    //     date: '2024-03-01',
-    //     thumbnailImg: imgage,
-    //     profileImg: imgage,
-    //     nickname: 'Dong'
-    //   },
-    //   {
-    //     title: '템플릿 8',
-    //     date: '2024-03-02',
-    //     thumbnailImg: imgage,
-    //     profileImg: imgage,
-    //     nickname: 'Jisoo'
-    //   },
-    //   {
-    //     title: '템플릿 9',
-    //     date: '2024-03-03',
-    //     thumbnailImg: imgage,
-    //     profileImg: imgage,
-    //     nickname: 'Ironman'
-    //   },
-    //   {
-    //     title: '템플릿 10',
-    //     date: '2024-03-02',
-    //     thumbnailImg: imgage,
-    //     profileImg: imgage,
-    //     nickname: 'Jisoo'
-    //   },
-    //   {
-    //     title: '템플릿 11',
-    //     date: '2024-03-03',
-    //     thumbnailImg: imgage,
-    //     profileImg: imgage,
-    //     nickname: 'Ironman'
-    //   }
-    // ];
   </script>
       
   <style scoped>

@@ -39,6 +39,11 @@
   
   <script setup>
   import FollowUserList from '../follow/FollowUserList.vue'
+  import D from '@/assets/images/profile/D.png';
+  import morris from '@/assets/images/profile/morris.jpeg';
+  import dong from '@/assets/images/profile/dong.jpeg';
+  import alex from '@/assets/images/profile/alex.jpeg';
+  import tim from '@/assets/images/profile/tim.png';
   import { ref, computed, onMounted } from 'vue'
   
   const member = ref({})
@@ -46,7 +51,7 @@
   const hovering = ref(false)
   
   onMounted(async () => {
-    const res = await fetch('http://localhost:3001/members?id=11')
+    const res = await fetch('http://localhost:3001/members?id=12')
     const data = await res.json()
     member.value = data[0]
   })
@@ -62,11 +67,19 @@
   }
   
   const dummyUsers = [
-    { id: 1, nickname: 'Kasey', email: 'meow@mail.com', image: '/src/assets/follow1.png' },
-    { id: 2, nickname: 'Morris', email: 'meow@mail.com', image: '/src/assets/follow2.png' },
-    { id: 3, nickname: 'Dong', email: 'rainyday@mail.com', image: '/src/assets/follow3.png' },
-    { id: 4, nickname: 'Alex', email: 'woo@mail.com', image: '/src/assets/follow4.png' }
-  ]
+    { id: 1, nickname: 'D', email: 'D1112@mail.com', image: D },
+    { id: 2, nickname: 'Morris', email: 'meow@mail.com', image: morris },
+    { id: 3, nickname: 'Dong', email: 'rainyday@mail.com', image: dong },
+    { id: 4, nickname: 'Alex', email: 'woo@mail.com', image: alex },
+    { id: 5, nickname: 'Tim', email: 'tommy@mail.com', image: tim },
+    { id: 6, nickname: 'Morris', email: 'meow@mail.com', image: morris },
+    { id: 7, nickname: 'Dong', email: 'rainyday@mail.com', image: dong },
+    { id: 8, nickname: 'Alex', email: 'woo@mail.com', image: alex },
+    { id: 9, nickname: 'D', email: 'D1112@mail.com', image: D },
+    { id: 10, nickname: 'Tim', email: 'tommy@mail.com', image: tim },
+    { id: 11, nickname: 'Dong', email: 'rainyday@mail.com', image: dong },
+    { id: 12, nickname: 'Alex', email: 'woo@mail.com', image: alex }
+  ];
   
   function toggleFollow() {
     isFollowing.value = !isFollowing.value

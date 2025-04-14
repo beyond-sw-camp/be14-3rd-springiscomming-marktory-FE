@@ -4,7 +4,7 @@
     </header>
     <div class="mypage">
         <header class="header">
-            <div class="mypage-title">LGTM</div>
+            <div class="mypage-title">코딩하는 고먐미</div>
             <div class="mypagemenu-row">
                 <RouterLink to="/mypage/kasey/post" class="tab" active-class="active">
                     <div class="post">
@@ -134,7 +134,8 @@
     }
 
     .category {
-        padding-top: 50px;
+        z-index: 1;
+        margin-top: 50px;
     }
 
     .tab {

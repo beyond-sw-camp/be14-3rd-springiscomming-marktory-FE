@@ -25,7 +25,7 @@
     })
 
     const fetchData = async () => {
-      const res = await fetch('http://localhost:3001/allposts')
+      const res = await fetch('http://localhost:3001/Dposts')
       const data = await res.json()
       postList.value = props.filterType === 'subscribe'
     ? data.filter(post => post.id % 2 === 0)
