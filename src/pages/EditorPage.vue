@@ -36,7 +36,9 @@ import {
     createHashtag
 } from '@/api/hashtag.api'
 import { getTemplateSpaceByMember, createTemplate } from '../api/template.api';
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const showSheet = ref(false)
 const content = ref('# 시작해볼까요?')
 const form = reactive({
@@ -83,7 +85,8 @@ const handlePublish = async (data) => {
             }
             await createHashtag({ post_id: postId, hashtag_id: hashtagId })
         }
-
+        // ✅ 새로 생성된 게시물로 이동
+        router.push(`/article/${postId}`)
         console.log('✅ 게시글 출간 완료')
     } else {
         const templateSpace = await getTemplateSpaceByMember(1)
