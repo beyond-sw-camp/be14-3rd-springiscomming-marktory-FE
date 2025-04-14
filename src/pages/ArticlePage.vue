@@ -7,7 +7,7 @@
 
     <article class="main-content">
       <Post v-if="postData" :post="postData" />
-      <Comment v-if="postData && commentTree.length" :comments="commentTree" :post-id="postData.id" />
+      <Comment v-if="postData" :comments="commentTree" :post-id="postData.id" />
     </article>
 
     <aside class="right-sidebar">

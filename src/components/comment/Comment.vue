@@ -2,10 +2,11 @@
     <section class="comment-section">
         <CommentInput @submit="handleSubmitNewComment" />
 
-        <CommentList :comments="comments" :current-user-id="currentUserId" :expanded-comment-ids="expandedCommentIds"
-            :replying-comment-id="replyingCommentId" :editing-comment-id="editingCommentId" :edit-content="editContent"
-            @toggle-replies="handleToggleReplies" @reply-to="handleReplyTo" @start-edit="handleStartEdit"
-            @update-edit-content="(val) => (editContent = val)" @cancel-edit="cancelEdit" @submit-edit="submitEdit" />
+        <CommentList v-if="comments.length" :comments="comments" :current-user-id="currentUserId"
+            :expanded-comment-ids="expandedCommentIds" :replying-comment-id="replyingCommentId"
+            :editing-comment-id="editingCommentId" :edit-content="editContent" @toggle-replies="handleToggleReplies"
+            @reply-to="handleReplyTo" @start-edit="handleStartEdit" @update-edit-content="(val) => (editContent = val)"
+            @cancel-edit="cancelEdit" @submit-edit="submitEdit" />
     </section>
 </template>
 
