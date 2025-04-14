@@ -35,6 +35,7 @@ import {
     getHashtags,
     createHashtag
 } from '@/api/hashtag.api'
+import { getTemplateSpaceByMember, createTemplate } from '../api/template.api';
 
 const showSheet = ref(false)
 const content = ref('# 시작해볼까요?')
