@@ -136,7 +136,7 @@ onBeforeUnmount(() => {
 }
 
 .login-container {
-  margin-top: -50px;
+  margin-top: 50px;
   display: flex;
   width: 1920px;
   height: 1080px;
@@ -154,7 +154,6 @@ onBeforeUnmount(() => {
   gap: 24px;
   padding: 40px;
   box-sizing: border-box;
-  margin-top: -50px;
 }
 
 .welcome-title {

@@ -249,7 +249,7 @@ onBeforeUnmount(() => {
   align-items: center;
   gap: 24px;
   padding: 40px;
-  margin-top: -50px;
+  margin-top: 50px;
 }
 .cat-image {
   width: 260px;
@@ -272,7 +272,7 @@ onBeforeUnmount(() => {
   align-items: center;
   gap: 16px;
   padding: 40px;
-  margin-top: -80px;
+  margin-top: 80px;
 }
 .logo {
   width: 500px;
