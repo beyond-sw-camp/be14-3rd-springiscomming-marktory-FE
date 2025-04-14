@@ -108,7 +108,7 @@
     }
 
     .mypage-title {
-        margin-top: 94px;
+        margin-top: 70px;
         padding-left: 91px;
         padding-top: 94px;
         font-size: 96px;
