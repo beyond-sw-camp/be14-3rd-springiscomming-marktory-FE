@@ -15,7 +15,8 @@
       "report_count": 0,
       "is_terms": true,
       "followerCount": 31,
-      "followingCount": 21
+      "followingCount": 21,
+      "role" : "member"
     },
     {
       "id": 2,
@@ -32,7 +33,8 @@
       "report_count": 0,
       "is_terms": true,
       "followerCount": 35,
-      "followingCount": 34
+      "followingCount": 34,
+      "role" : "member"
     },
     {
       "id": 3,
@@ -49,7 +51,8 @@
       "report_count": 7,
       "is_terms": true,
       "followerCount": 46,
-      "followingCount": 11
+      "followingCount": 11,
+      "role" : "member"
     },
     {
       "id": 4,
@@ -66,7 +69,8 @@
       "report_count": 5,
       "is_terms": true,
       "followerCount": 17,
-      "followingCount": 4
+      "followingCount": 4,
+      "role" : "member"
     },
     {
       "id": 5,
@@ -83,7 +87,8 @@
       "report_count": 2,
       "is_terms": true,
       "followerCount": 12,
-      "followingCount": 40
+      "followingCount": 40,
+      "role" : "member"
     },
     {
       "id": 6,
@@ -100,14 +105,15 @@
       "report_count": 0,
       "is_terms": true,
       "followerCount": 26,
-      "followingCount": 1
+      "followingCount": 1,
+      "role" : "member"
     },
     {
       "id": 7,
-      "email": "minseok.yoon@example.com",
+      "email": "admin1@mail.com",
       "password": "$2a$12$DEoGO.i/553jJ./MNZvVweHDeJchnPCt0Ej1Ok8PRmY0NfIUCNmlC",
-      "name": "윤민석",
-      "nickname": "민석의하루",
+      "name": "김민준",
+      "nickname": "민준의하루",
       "birthday": "1995-04-23",
       "image": "https://example.com/images/minseok.jpg",
       "status": "is_active",
@@ -117,7 +123,8 @@
       "report_count": 0,
       "is_terms": true,
       "followerCount": 28,
-      "followingCount": 43
+      "followingCount": 43,
+      "role" : "admin"
     },
     {
       "id": 8,
@@ -134,7 +141,8 @@
       "report_count": 1,
       "is_terms": true,
       "followerCount": 35,
-      "followingCount": 50
+      "followingCount": 50,
+      "role" : "member"
     },
     {
       "id": 9,
@@ -151,7 +159,8 @@
       "report_count": 0,
       "is_terms": true,
       "followerCount": 7,
-      "followingCount": 19
+      "followingCount": 19,
+      "role" : "member"
     },
     {
       "id": 10,
@@ -168,7 +177,8 @@
       "report_count": 1,
       "is_terms": true,
       "followerCount": 41,
-      "followingCount": 7
+      "followingCount": 7,
+      "role" : "member"
     },
     {
       "id": 11,

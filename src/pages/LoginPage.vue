@@ -61,7 +61,7 @@ const handleLogin = async () => {
   }
 
   try {
-    const res = await fetch(`http://localhost:3000/members?email=${encodeURIComponent(email.value)}`)
+    const res = await fetch(`http://localhost:3001/members?email=${encodeURIComponent(email.value)}`)
     const members = await res.json()
 
     if (members.length === 0) {
@@ -80,8 +80,8 @@ const handleLogin = async () => {
       alert('❌ 비밀번호가 일치하지 않습니다.')
     }
   } catch (err) {
-    console.error('로그인 중 오류 발생:', err)
-    alert('로그인 중 오류가 발생했습니다.')
+    console.error('로그인 중 오류 발생:', err);
+    alert(err.message);
   }
 }
 

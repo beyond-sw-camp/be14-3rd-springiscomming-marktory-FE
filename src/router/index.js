@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useMemberStore } from '../stores/memberStore'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -138,4 +139,12 @@ const router = createRouter({
     ]
 });
 
+router.beforeEach((to, from, next) => {
+    const memberStore = useMemberStore()
+    if (memberStore.isLogined && memberStore.checkLoginExpired()) {
+        alert('세션이 만료되어 로그아웃되었습니다.')
+        return next('/login')
+    }
+    next()
+});
 export default router
