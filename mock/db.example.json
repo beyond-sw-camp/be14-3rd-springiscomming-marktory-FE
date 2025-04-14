@@ -3,7 +3,7 @@
     {
       "id": 1,
       "email": "seoyoung.lee@example.com",
-      "password": "hashed-password-1",
+      "password": "$2a$12$qRN4y0dTIAyPnLdFzTAIXOnD5HDFXjrXo7MKgzz2YNyss2FjDLbyq",
       "name": "이서영",
       "nickname": "서영아지트",
       "birthday": "2000-11-11",
@@ -14,12 +14,13 @@
       "delete_date": "2024-01-20 09:15:30",
       "report_count": 0,
       "is_terms": true,
-      "mypage_title": "서영의 공방일기"
+      "mypage_title": "서영의 공방일기",
+      "role": "member"
     },
     {
       "id": 2,
       "email": "seojun.oh@example.com",
-      "password": "hashed-password-2",
+      "password": "$2a$12$T5pZVvXEKxkThFQZN2dUlucO2cQsiR9AL5pJyjeHGgJ6snfr9dADm",
       "name": "오서준",
       "nickname": "서준작가",
       "birthday": "1999-05-10",
@@ -30,12 +31,13 @@
       "delete_date": "2024-02-10 11:05:50",
       "report_count": 0,
       "is_terms": true,
-      "mypage_title": "서준의 사진일기"
+      "mypage_title": "서준의 사진일기",
+      "role": "member"
     },
     {
       "id": 3,
       "email": "junghoon.kim@example.com",
-      "password": "hashed-password-3",
+      "password": "$2a$12$KWtci/1Bld/V8ypHElWUs.1N6Lb/ucrHtx4reKN5.wuHI7krmcvRW",
       "name": "김정훈",
       "nickname": "정훈운동짱",
       "birthday": "1990-07-19",
@@ -46,12 +48,13 @@
       "delete_date": null,
       "report_count": 7,
       "is_terms": true,
-      "mypage_title": "정훈의 헬스일지"
+      "mypage_title": "정훈의 헬스일지",
+      "role": "member"
     },
     {
       "id": 4,
       "email": "user4@example.com",
-      "password": "hashed-password-4",
+      "password": "$2a$12$1Fu6TYRaaic64HOEqdkAmeFLtNBiAhOGSXNUU50jFtJmMu7x1YvvK",
       "name": "회원4",
       "nickname": "멤버4",
       "birthday": "1992-01-01",
@@ -62,12 +65,13 @@
       "delete_date": null,
       "report_count": 0,
       "is_terms": true,
-      "mypage_title": "멤버4의 일상"
+      "mypage_title": "멤버4의 일상",
+      "role": "member"
     },
     {
       "id": 5,
       "email": "user5@example.com",
-      "password": "hashed-password-5",
+      "password": "$2a$12$FGghs0HHU8Fk2y0BzhBtVuUv3akzXe1dJEqrwnp.Bp.Fns7MIOz9O",
       "name": "회원5",
       "nickname": "멤버5",
       "birthday": "1993-02-02",
@@ -78,12 +82,13 @@
       "delete_date": null,
       "report_count": 1,
       "is_terms": true,
-      "mypage_title": "멤버5 블로그"
+      "mypage_title": "멤버5 블로그",
+      "role": "member"
     },
     {
       "id": 6,
       "email": "user6@example.com",
-      "password": "hashed-password-6",
+      "password": "$2a$12$BGPLRrCaZPryrCDD01SehuEP444AoEtZgGJhh40.kdchPMLXLZqyK",
       "name": "회원6",
       "nickname": "멤버6",
       "birthday": "1994-03-03",
@@ -94,13 +99,14 @@
       "delete_date": null,
       "report_count": 0,
       "is_terms": true,
-      "mypage_title": "멤버6 마이페이지"
+      "mypage_title": "멤버6 마이페이지",
+      "role": "member"
     },
     {
       "id": 7,
       "email": "admin@example.com",
-      "password": "hashed-password-7",
-      "name": "관리자",
+      "password": "$2a$12$DEoGO.i/553jJ./MNZvVweHDeJchnPCt0Ej1Ok8PRmY0NfIUCNmlC",
+      "name": "김민준",
       "nickname": "관리자계정",
       "birthday": "1990-01-01",
       "image": "https://example.com/images/admin.jpg",
@@ -110,12 +116,13 @@
       "delete_date": null,
       "report_count": 0,
       "is_terms": true,
-      "mypage_title": "관리자 블로그"
+      "mypage_title": "관리자 블로그",
+      "role": "admin"
     },
     {
       "id": 8,
       "email": "user8@example.com",
-      "password": "hashed-password-8",
+      "password": "$2a$12$/L686p7Jumg4c6bq3mdpJ.MBLSTNwcfCMxGCMLAh79XXw0536Itw2",
       "name": "회원8",
       "nickname": "멤버8",
       "birthday": "1995-04-04",
@@ -126,7 +133,8 @@
       "delete_date": null,
       "report_count": 0,
       "is_terms": true,
-      "mypage_title": "멤버8 일기장"
+      "mypage_title": "멤버8 일기장",
+      "role": "member"
     }
   ],
   "categories": [
