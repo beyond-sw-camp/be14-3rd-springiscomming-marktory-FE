@@ -1,6 +1,7 @@
 <template>
   <div class="admin-wrapper">
     <main class="notice-content">
+      
       <div class="filter">
         <ArrayModal />
       </div>
@@ -171,9 +172,9 @@ function goToDetail(id) {
 }
 
 .write-button {
-  position: absolute;
-  bottom: 270px;
-  right: 10px;
+  position: fixed;
+  bottom: 230px;
+  right: 430px;
 }
 
 .write-button button {

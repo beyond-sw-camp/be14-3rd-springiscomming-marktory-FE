@@ -88,7 +88,7 @@ function handleFilter(type) {
 
 function handleStatusClick(item) {
   if (item.status === '처리완료') {
-    router.push(`/memberAdmin/${item.id}`)
+    router.push(`/adminPage/member`)
   } else {
     router.push(`/reportDetail/${item.id}`)
   }
