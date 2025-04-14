@@ -25,29 +25,29 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
+import { useRouter } from 'vue-router'
+import MarkdownIt from 'markdown-it'
+
 import MarkdownEditor from '../components/post/MarkdownEditor.vue'
 import MarkdownViewer from '../components/post/MarkdownViewer.vue'
 import PublishBottomSheet from '../components/post/PublishBottomSheet.vue'
-import MarkdownIt from 'markdown-it'
+
 import { getCategories } from '../api/category.api'
 import { createPost } from '../api/post.api'
 import {
     getHashtags,
-    createHashtag
-} from '@/api/hashtag.api'
-import { getTemplateSpaceByMember, createTemplate } from '../api/template.api';
-import { useRouter } from 'vue-router'
+    createHashtag,
+    createPostHashtag
+} from '../api/hashtag.api'
+import { getTemplateSpaceByMember, createTemplate } from '../api/template.api'
 
 const router = useRouter()
 const showSheet = ref(false)
 const content = ref('# 시작해볼까요?')
 const form = reactive({
-    title: '', tags: []
+    title: '',
+    tags: []
 })
-
-// const handlePublish = (data) => {
-//     console.log('출간 데이터:', data)
-// }
 
 // ✅ 마크다운 → HTML 변환기 세팅
 const md = new MarkdownIt({ html: true, linkify: true })
@@ -59,6 +59,7 @@ const handlePublish = async (data) => {
     const categoryId = category?.id ?? null
 
     if (data.type === 'post') {
+        // 게시글 저장
         const postPayload = {
             title: form.title,
             content: html,
@@ -67,29 +68,37 @@ const handlePublish = async (data) => {
             written_date: new Date().toISOString(),
             delete_date: null,
             visibility: data.visibility,
-            member_id: 1,
+            member_id: '1',
             category_id: categoryId
         }
 
         const savedPost = await createPost(postPayload)
         const postId = savedPost.id
 
+        // 해시태그 처리
         const existingHashtags = await getHashtags()
         const nameToIdMap = Object.fromEntries(existingHashtags.map(h => [h.name, h.id]))
 
         for (const tag of form.tags) {
             let hashtagId = nameToIdMap[tag]
+
             if (!hashtagId) {
                 const newHashtag = await createHashtag({ name: tag })
                 hashtagId = newHashtag.id
             }
-            await createHashtag({ post_id: postId, hashtag_id: hashtagId })
+
+            await createPostHashtag({
+                post_id: String(postId),
+                hashtag_id: String(hashtagId)
+            })
         }
-        // ✅ 새로 생성된 게시물로 이동
+
+        // ✅ 작성된 게시글 페이지로 이동
         router.push(`/article/${postId}`)
         console.log('✅ 게시글 출간 완료')
     } else {
-        const templateSpace = await getTemplateSpaceByMember(1)
+        // 템플릿 저장
+        const templateSpace = await getTemplateSpaceByMember('1')
         const templatePayload = {
             title: form.title,
             description: data.description,
@@ -109,7 +118,6 @@ const handlePublish = async (data) => {
 
     showSheet.value = false
 }
-
 </script>
 
 <style scoped>

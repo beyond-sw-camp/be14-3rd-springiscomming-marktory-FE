@@ -22,19 +22,25 @@ export async function getPostHashtag() {
  */
 
 // 해시태그 생성 함수
-export async function createHashtag(hashtagData) {
-    const hashtags = await getHashtags();  // 기존 해시태그 가져오기
+export async function createHashtag(data) {
+    const hashtags = await getHashtags()
+    const newId = Math.max(...hashtags.map(h => parseInt(h.id || 0))) + 1
 
-    // 가장 큰 id를 찾아서 +1한 값으로 새로운 id 생성
-    const newId = hashtags.length ? Math.max(...hashtags.map(h => parseInt(h.id))) + 1 : 1;
+    const newHashtag = { id: String(newId), name: data.name }
+    const res = await api.post('/hashtags', newHashtag)
+    return res.data
+}
 
-    // 새로운 해시태그 데이터에 새 id 추가
-    const hashtagWithId = {
-        ...hashtagData,
-        id: newId
-    };
+export async function createPostHashtag(data) {
+    const all = await api.get('/post_hashtag')
+    const newId = Math.max(...all.data.map(ph => parseInt(ph.id || 0))) + 1
 
-    // json-server에 해시태그 저장
-    const res = await api.post('/hashtags', hashtagWithId);
-    return res.data;
+    const postHashtag = {
+        id: String(newId),
+        post_id: String(data.post_id),
+        hashtag_id: String(data.hashtag_id)
+    }
+
+    const res = await api.post('/post_hashtag', postHashtag)
+    return res.data
 }
