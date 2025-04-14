@@ -1,20 +1,14 @@
 <template>
-  <div class="admin-wrapper theme-dark">
-    <!-- 상단 헤더 -->
+  <div class="admin-wrapper">
     <AppHeader />
-
-    <!-- 본문: 사이드바 + 콘텐츠 -->
-    <div class="admin-body">
-      <AdminSidebar
-        :activeMenu="activeMenu"
-        @update:menu="updateMenu"
-      />
-      <main class="admin-content">
-        <router-view />
-      </main>
-    </div>
-
-    <!-- 하단 푸터 -->
+      <div class="admin-body">
+        <AdminSidebar
+          :activeMenu="activeMenu"
+          @update:menu="updateMenu"/>
+            <main class="admin-content">
+              <router-view />
+            </main>
+      </div>
     <AppFooter />
   </div>
 </template>
@@ -22,26 +16,30 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import AdminSidebar from '../components/AdminSidebar.vue'
+
+// 공통 레이아웃 컴포넌트
+import AdminSidebar from '../components/admin/AdminSidebar.vue'
 import AppHeader from '../components/AppHeader.vue'
-import AppFooter from '../components/AppFooter.vue'
+import AppFooter from '../components/footer/AppFooter.vue'
 
 const route = useRoute()
 const router = useRouter()
 const activeMenu = ref('')
 
-// URL에 따라 메뉴 강조
+// 주소 변경에 따라 활성 메뉴 자동 설정
 watch(route, () => {
-  if (route.path.includes('/notice')) {
+  const path = route.path
+  if (path.includes('/notice')) {
     activeMenu.value = '공지사항 관리'
-  } else if (route.path.includes('/report')) {
+  } else if (path.includes('/report')) {
     activeMenu.value = '신고 관리'
-  } else if (route.path.includes('/member')) {
+  } else if (path.includes('/member')) {
     activeMenu.value = '회원 관리'
   }
 })
 
-const updateMenu = (menu) => {
+// 사이드바에서 메뉴 클릭 시 경로 이동
+function updateMenu(menu) {
   activeMenu.value = menu
   const routes = {
     '공지사항 관리': '/adminPage/notice',
@@ -64,7 +62,6 @@ const updateMenu = (menu) => {
 /* 본문 레이아웃: 사이드바 + 콘텐츠 */
 .admin-body {
   display: flex;
-  flex: 1;
 }
 
 /* 콘텐츠 영역 */

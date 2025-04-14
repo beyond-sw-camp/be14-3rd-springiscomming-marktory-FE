@@ -59,8 +59,8 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import AdminPagination from '../components/AdminPagination.vue'
-import NoticeInsert from '../components/NoticeInsert.vue'
+import AdminPagination from '../admin/AdminPagination.vue'
+import NoticeInsert from '../admin/NoticeInsert.vue'
 
 const router = useRouter()
 const isInsertOpen = ref(false)   // 모달 상태
@@ -120,7 +120,7 @@ function goToDetail(id) {
 <style scoped>
 .notice-container {
   max-width: 1006px;
-  margin-bottom: 450px;
+  margin-top: 90px;
   padding: 40px;
   height: 578px;
   flex: 1;

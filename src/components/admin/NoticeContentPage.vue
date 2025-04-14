@@ -33,7 +33,7 @@
 <script setup>
     import { ref, onMounted } from 'vue'
     import { useRoute, useRouter } from 'vue-router'
-    import NoticeEditModal from '../components/NoticeEditModal.vue'
+    import NoticeEditModal from '../admin/NoticeEditModal.vue'
 
     // 라우터 사용
     const route = useRoute()
@@ -70,7 +70,7 @@ onMounted(async () => {
     notice.value = data
     } catch (err) {
     console.error('❌ 공지사항 불러오기 실패:', err)
-  }
+    }
 })
 
     // 수정 모달 저장
