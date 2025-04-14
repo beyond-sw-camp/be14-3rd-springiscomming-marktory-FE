@@ -101,7 +101,6 @@ const triedSubmit = ref(false)
 const route = useRoute();
 const router = useRouter();
 const verifiedEmail = ref('');
-const verifiedToken = ref('');
 
 const validPassword = computed(() =>
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,16}$/.test(password.value)
@@ -131,10 +130,11 @@ const handleSignup = async () => {
   const salt = bcrypt.genSaltSync(12); // 12단계 보안
   const hashedPassword = bcrypt.hashSync(password.value, salt); // 🔐 여기서 해싱
   // 목업 데이터 연결
-  const birthday = new Date(birthday.value).toISOString().split("T")[0]; // "YYYY-MM-DD"만 추출
+  const formattedBirthday = new Date(birth.value).toISOString().split("T")[0]; // "YYYY-MM-DD"만 추출
+  const now = new Date().toISOString().replace('T', ' ').substring(0, 19);
 
   try {
-    const response = await fetch('http://localhost:3000/members', {
+    const response = await fetch('http://localhost:3001/members', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -142,14 +142,15 @@ const handleSignup = async () => {
         password: hashedPassword, // 🔐 해시된 비밀번호
         name: name.value,
         nickname: nickname.value,
-        birthday: birthday,
+        birthday: formattedBirthday,
         image: null,
         status: 'is_active',
         black_date: null,
         assigned_date: now,
         delete_date: null,
         report_count: 0,
-        is_terms: agree.value
+        is_terms: agree.value,
+        role: 'member'
       })
     });
 
@@ -158,10 +159,14 @@ const handleSignup = async () => {
     const result = await response.json();
     console.log('회원가입 성공:', result);
     alert('🎉 회원가입 완료!');
+
+    // ✅ 인증 관련 로컬 스토리지 삭제
+    localStorage.removeItem('isEmailVerified')
+    localStorage.removeItem('verifiedEmail')
     router.push('/login');
   } catch (err) {
     console.error(err);
-    alert('회원가입 중 문제가 발생했습니다.');
+    alert(err.message);
   }
 };
 
@@ -192,6 +197,14 @@ onMounted( async () => {
   updateScale()
   window.addEventListener('resize', updateScale)
 
+  const isEmailVerified = localStorage.getItem('isEmailVerified') === 'true'
+
+  if (isEmailVerified) {
+    verifiedEmail.value = localStorage.getItem('verifiedEmail') || ''
+    return
+  }
+
+
   const email = route.query.email;
   const token = route.query.token;
 
@@ -205,21 +218,27 @@ onMounted( async () => {
 
     const data = await res.json()
 
+    if (res.status == 410) {
+      alert(data.exceptionMessage)
+      router.push('/presignup')
+      return
+    }
     if (!res.ok) {
-      alert(data.message)
+      alert(data.exceptionMessage)
       router.push('/')
       return
     }
 
-    // ✅ 성공 시 로컬 상태에 저장
+    // ✅ 인증 성공 시 상태 + localStorage 저장
     verifiedEmail.value = email
-    verifiedToken.value = token
+    localStorage.setItem('isEmailVerified', 'true')
+    localStorage.setItem('verifiedEmail', email)
 
     // ✅ 쿼리스트링 제거한 URL로 교체 (뒤로가기 누르면 이 URL만 보임)
     router.replace({ path: '/signup' });
     alert(data.verifyMessage);
   } catch (err) {
-    alert('인증 중 오류가 발생했습니다.')
+    alert(err.message);
     router.push('/presignup');
   }
 })
