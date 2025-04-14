@@ -68,13 +68,16 @@ const router = createRouter({
                 {
                     path: 'notice', 
                     component: () => import('../components/admin/NoticeAdmin.vue')
+                },
+                {
+                    path: 'report', 
+                    component: () => import('../components/admin/ReportAdmin.vue')
                 }
-
-            ]},
-            {
-                path: '/adminPage/notice/:id',
-                component: () => import('../components/admin/NoticeContentPage.vue')
-
+            ]
+        },
+        {
+            path: '/adminPage/notice/:id',
+            component: () => import('../components/admin/NoticeContentPage.vue')
         },
         {
             path: '/findid/result',
