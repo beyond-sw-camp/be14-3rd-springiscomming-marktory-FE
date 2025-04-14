@@ -1,9 +1,7 @@
 <template>
-    <header>
-        <AppHeader />
-    </header>
     <div class="categorypage">
         <header class="header">
+            <AppHeader />
             <div class="mypage-title">LGTM</div>
             <div class="category-row">
                 <div class="category">
