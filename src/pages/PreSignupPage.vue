@@ -65,14 +65,36 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', updateScale)
 })
 
-const sendEmail = () => {
+const sendEmail = async () => {
   if (!email.value) {
-    alert('이메일을 입력해주세요.')
-    return
+    alert('이메일을 입력해주세요.');
+    return;
   }
 
-  alert(`이메일이 전송되었습니다. ${email.value}`)
-}
+  try {
+    const response = await fetch('http://localhost:8000/member-server/regist/api/member/signup-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify({ email: email.value }),
+    });
+
+    const data = await response.json(); // ✅ JSON 형태로 받기
+
+    if (response.status !== 201) {
+      alert(`이메일 전송 실패: ${data.exceptionMessage}`);
+      return;
+    }
+
+    alert(data.message); // 예: "이메일이 전송되었습니다."
+  } catch (err) {
+    console.error('요청 중 오류 발생:', err);
+    alert('서버와의 통신 중 문제가 발생했습니다.');
+  }
+};
+
 </script>
 
 <style scoped>

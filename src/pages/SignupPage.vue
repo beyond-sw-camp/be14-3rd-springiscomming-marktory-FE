@@ -79,6 +79,7 @@
 </template>
 
 <script setup>
+import { useRoute, useRouter } from 'vue-router'
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import InputField from '@/components/login/InputField.vue'
 import LoginButton from '@/components/login/LoginButton.vue'
@@ -86,6 +87,7 @@ import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/footer/AppFooter.vue'
 import BirthDateField from '@/components/login/BirthDateField.vue'
 import BaseModal from '@/components/BaseModal.vue'
+import bcrypt from 'bcryptjs'
 
 const name = ref('')
 const nickname = ref('')
@@ -96,12 +98,17 @@ const agree = ref(false)
 const showModal = ref(false)
 const triedSubmit = ref(false)
 
+const route = useRoute();
+const router = useRouter();
+const verifiedEmail = ref('');
+const verifiedToken = ref('');
+
 const validPassword = computed(() =>
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,16}$/.test(password.value)
 )
 const passwordsMatch = computed(() => password.value === confirmPassword.value)
 
-const handleSignup = () => {
+const handleSignup = async () => {
   triedSubmit.value = true
 
   const validations = [
@@ -121,8 +128,42 @@ const handleSignup = () => {
     }
   }
 
-  alert('🎉 회원가입 성공! (실제 API 연결은 아직)')
-}
+  const salt = bcrypt.genSaltSync(12); // 12단계 보안
+  const hashedPassword = bcrypt.hashSync(password.value, salt); // 🔐 여기서 해싱
+  // 목업 데이터 연결
+  const now = new Date().toISOString().replace("T", " ").substring(0, 19);
+
+  try {
+    const response = await fetch('http://localhost:3000/members', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: verifiedEmail.value,
+        password: hashedPassword, // 🔐 해시된 비밀번호
+        name: name.value,
+        nickname: nickname.value,
+        birthday: birth.value,
+        image: null,
+        status: 'is_active',
+        black_date: null,
+        assigned_date: now,
+        delete_date: null,
+        report_count: 0,
+        is_terms: agree.value
+      })
+    });
+
+    if (!response.ok) throw new Error('회원가입 실패');
+
+    const result = await response.json();
+    console.log('회원가입 성공:', result);
+    alert('🎉 회원가입 완료!');
+    router.push('/login');
+  } catch (err) {
+    console.error(err);
+    alert('회원가입 중 문제가 발생했습니다.');
+  }
+};
 
 const scaleStyle = ref({})
 const baseWidth = 1920
@@ -147,9 +188,40 @@ const updateScale = () => {
   }
 }
 
-onMounted(() => {
+onMounted( async () => {
   updateScale()
   window.addEventListener('resize', updateScale)
+
+  const email = route.query.email;
+  const token = route.query.token;
+
+  try {
+    const res = await fetch('http://localhost:8000/member-server/regist/api/member/signup-email/verification', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({ email,token })
+    })
+
+    const data = await res.json()
+
+    if (!res.ok) {
+      alert(data.message)
+      router.push('/')
+      return
+    }
+
+    // ✅ 성공 시 로컬 상태에 저장
+    verifiedEmail.value = email
+    verifiedToken.value = token
+
+    // ✅ 쿼리스트링 제거한 URL로 교체 (뒤로가기 누르면 이 URL만 보임)
+    router.replace({ path: '/signup' });
+    alert(data.verifyMessage);
+  } catch (err) {
+    alert('인증 중 오류가 발생했습니다.')
+    router.push('/presignup');
+  }
 })
 onBeforeUnmount(() => {
   window.removeEventListener('resize', updateScale)
