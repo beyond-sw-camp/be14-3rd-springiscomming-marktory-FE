@@ -10,6 +10,7 @@
             placeholder="이메일"
             required
           />
+          <p v-if="emailError" class="error-text">{{ emailError }}</p>
           <input
             type="password"
             v-model="password"
@@ -17,6 +18,7 @@
             placeholder="비밀번호"
             required
           />
+          <p v-if="passwordError" class="error-text">{{ passwordError }}</p>
           <div class="modal-actions">
             <button type="button" class="cancel-button" @click="closeModal">취소</button>
             <button type="submit" class="confirm-button">확인</button>
@@ -28,9 +30,12 @@
   
   <script setup>
   import { ref } from 'vue';
+  import bcrypt from 'bcryptjs';
   
   const email = ref(''); // 이메일 입력값
   const password = ref(''); // 비밀번호 입력값
+  const emailError = ref('');
+  const passwordError = ref('');
   const emit = defineEmits(['close', 'confirm']);
   
   // 모달 닫기
@@ -40,10 +45,42 @@
   
   
   // 폼 제출 처리
-  const handleSubmit = () => {
-    console.log('이메일:', email.value);
-    console.log('비밀번호:', password.value);
-    emit('confirm'); // 부모 컴포넌트에 확인 이벤트 전달
+  const handleSubmit = async() => {
+
+    emailError.value = '';
+    passwordError.value = '';
+
+    if (!email.value || !password.value) {
+      if (!email.value) emailError.value = '이메일을 입력해주세요.';
+      if (!password.value) passwordError.value = '비밀번호를 입력해주세요.';
+      return;
+    }
+
+    try {  
+      const res = await fetch(`http://localhost:3001/members?email=${email.value}`);
+      const users = await res.json();
+      const user = users[0];
+
+      if (!user) {
+      emailError.value = '존재하지 않는 이메일입니다.';
+      return;
+      }
+
+      // 2. bcrypt로 비밀번호 비교
+      const isMatch = await bcrypt.compare(password.value, user.password);
+      if (!isMatch) {
+        passwordError.value = '비밀번호가 일치하지 않습니다.';
+        return;
+      }
+
+      // 모든 정합성 통과 → 다음 모달 호출
+      emit('confirm', user.id); // 아이디도 넘기면 나중에 유용
+    } catch (err) {
+      console.error('에러 발생:', err);
+      alert('서버 오류가 발생했습니다.');
+    }
+    // console.log('이메일:', email.value);
+    // console.log('비밀번호:', password.value);
   };
   </script>
   
@@ -138,4 +175,13 @@
   .confirm-button:hover {
     background: #e65c00;
   }
+  .error-text {
+  color: #ff5f5f;
+  font-size: 12px;
+  margin-top: -12px;
+  margin-bottom: 12px;
+  text-align: left;
+  padding-left: 4px;
+}
+
   </style>
