@@ -61,10 +61,12 @@ const router = createRouter({
                     path: 'notice', 
                     component: () => import('../components/admin/NoticeAdmin.vue')
                 }
+
             ]},
             {
                 path: '/adminPage/notice/:id',
                 component: () => import('../components/admin/NoticeContentPage.vue')
+
         },
         {
             path: '/findid/result',
@@ -79,6 +81,28 @@ const router = createRouter({
             component: () => import('../pages/SettingPage.vue')
         },
         {
+            path: '/activity',
+            component: () => import('../pages/ActivityPage.vue'),
+            children: [
+                {
+                    path: '/activity',
+                    redirect: '/activity/post'
+                },
+                {
+                    path: 'post',
+                    component: () => import('../components/activity/LikedPostCardList.vue')
+                },
+                {
+                    path: 'likecomment',
+                    component: () => import('../components/activity/LikedCmtCardList.vue')
+                },
+                {
+                    path: 'writecomment',
+                    component: () => import('../components/activity/WrittenCmtCardList.vue')
+                }
+            ]
+        },
+        {
             path: '/prefindpw',
             component: () => import('../pages/PreFindPwPage.vue')
         },
@@ -86,7 +110,7 @@ const router = createRouter({
             path: '/findpw',
             component: () => import('../pages/FindPwPage.vue')
         }
-    ],
+    ]
 });
 
 export default router

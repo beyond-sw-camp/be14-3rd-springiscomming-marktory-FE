@@ -131,7 +131,7 @@ const handleSignup = async () => {
   const salt = bcrypt.genSaltSync(12); // 12단계 보안
   const hashedPassword = bcrypt.hashSync(password.value, salt); // 🔐 여기서 해싱
   // 목업 데이터 연결
-  const now = new Date().toISOString().replace("T", " ").substring(0, 19);
+  const birthday = new Date(birthday.value).toISOString().split("T")[0]; // "YYYY-MM-DD"만 추출
 
   try {
     const response = await fetch('http://localhost:3000/members', {
@@ -142,7 +142,7 @@ const handleSignup = async () => {
         password: hashedPassword, // 🔐 해시된 비밀번호
         name: name.value,
         nickname: nickname.value,
-        birthday: birth.value,
+        birthday: birthday,
         image: null,
         status: 'is_active',
         black_date: null,

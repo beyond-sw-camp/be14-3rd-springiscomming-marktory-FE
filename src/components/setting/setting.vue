@@ -1,13 +1,14 @@
 <template>
-  <div class="settings-container">
+  <div v-if="isVisible" class="settings-container">
     <div class="profile-section">
       <div class="profile-left">
         <div class="profile-image">
+          <!-- <img :src="profileImage" alt="Profile Image" /> -->
           <img src="@/assets/icons/doeun-profile.svg" alt="Profile Image" />
         </div>
         <div class="button-group">
           <button class="upload-button">이미지 업로드</button>
-          <button class="remove-button">이미지 제거</button>
+          <button class="remove-button" @click="openImageDeleteModal">이미지 제거</button>
         </div>
       </div>
       <div class="profile-right">
@@ -17,19 +18,29 @@
 
         <div class="setting-group">
           <div class="setting-item">
-            <div class="section-header">
+            <div class="section-header nickname-header">
               <div class="section-title">
                 <h2>닉네임</h2>
               </div>
               <div class="nickname-container">
-                <span class="status-text">우석짱짱맨</span>
-              </div>
-              <div class="right-content">
-                <span class="edit-tag">수정</span>
-              </div>
-            </div>
-            <p class="description">회원의 개성을 나타내는 닉네임입니다.</p>
-          </div>
+      <span v-if="!isEditingNickname" class="nickname-container">{{ nickname }}</span>
+      <input
+        v-else
+        type="text"
+        v-model="nickname"
+        class="nickname-input"
+        placeholder="닉네임을 입력하세요"
+      />
+    </div>
+
+    <div class="right-content">
+      <span v-if="!isEditingNickname" class="edit-tag" @click="isEditingNickname = true">수정</span>
+      <button v-else class="save-button" @click="isEditingNickname = false">저장</button>
+    </div>
+  </div>
+
+  <p class="description">회원의 개성을 나타내는 닉네임입니다.</p>
+</div>
 
           <div class="setting-item">
             <div class="section-header">
@@ -49,10 +60,38 @@
                 <h2>비밀번호</h2>
               </div>
               <div class="right-content">
-                <span class="edit-tag">수정</span>
+                <span
+                  v-if="!isEditingPassword"
+                  class="edit-tag"
+                  @click="isEditingPassword = true"
+                >
+                  수정
+                </span>
               </div>
             </div>
-            <p class="description">회원 인증을 위한 비밀번호입니다.</p>
+
+            <div v-if="isEditingPassword" class="password-edit-container">
+              <input
+                type="password"
+                class="password-input"
+                placeholder="현재 비밀번호를 입력해주세요"
+              />
+              <input
+                type="password"
+                class="password-input"
+                placeholder="새 비밀번호를 입력해주세요"
+              />
+              <input
+                type="password"
+                class="password-input"
+                placeholder="새 비밀번호를 확인해주세요"
+              />
+              <div class="password-actions">
+                <button class="cancel-button" @click="isEditingPassword = false">취소</button>
+                <button class="save-button" @click="isEditingPassword = false">저장</button>
+              </div>
+            </div>
+            <p v-else class="description">회원 인증을 위한 비밀번호입니다.</p>
           </div>
 
           <div class="setting-item">
@@ -79,20 +118,101 @@
               <h2>회원 탈퇴</h2>
             </div>
             <div class="right-content">
-              <button class="withdrawal-button">회원 탈퇴</button>
+              <button class="withdrawal-button" @click="openWithdrawalModal">회원 탈퇴</button>
             </div>
           </div>
           <p class="description">탈퇴 시 작성하신 포스트 및 댓글이 모두 삭제되며 복구되지 않습니다.</p>
         </div>
       </div>
     </div>
-  </div>
+
+
+  <!-- 회원 탈퇴 입력 모달 -->
+  <WithdrawalInput
+      v-if="isWithdrawalInputVisible"
+      @close="closeAllModals"
+      @confirm="openConfirmWithdrawal"
+    />
+
+    <ConfirmWithdrawal
+      v-if="isConfirmWithdrawalVisible"
+      @close="closeAllModals"
+      @confirm="openWithdrawalEnd"
+    />
+
+    <WithdrawalEnd
+      v-if="isWithdrawalEndVisible"
+      @close="closeAllModals"
+      @confirm="closeAllModals"
+      />
+
+    <ImageDelete
+      v-if="isImageDeleteVisible"
+      @close="closeImageDeleteModal"
+      @confirm="handleImageDelete"
+
+    />
+    </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import WithdrawalInput from '@/components/setting/WithdrawalInput.vue';
+import ConfirmWithdrawal from '@/components/setting/ConfirmWithdrawal.vue';
+import WithdrawalEnd from '@/components/setting/WithdrawalEnd.vue';
+import ImageDelete from '@/components/setting/ImageDelete.vue';
+
+const isWithdrawalInputVisible = ref(false);
+const isConfirmWithdrawalVisible = ref(false);
+const isWithdrawalEndVisible = ref(false);
+const isImageDeleteVisible = ref(false);
+
+const closeAllModals = () => {
+  isWithdrawalEndVisible.value = false;
+  isConfirmWithdrawalVisible.value = false;
+  isWithdrawalInputVisible.value = false;
+};
+
+const openWithdrawalModal = () => {
+  isWithdrawalInputVisible.value = true;
+};
+const openConfirmWithdrawal = () => {
+  isConfirmWithdrawalVisible.value = true;
+};
+
+const openWithdrawalEnd = () => {
+  console.log('탈퇴버튼 눌리나나');
+  isWithdrawalEndVisible.value = true;
+};
+
+// 모달 열기
+const openImageDeleteModal = () => {
+  isImageDeleteVisible.value = true;
+};
+
+// 모달 닫기
+const closeImageDeleteModal = () => {
+  isImageDeleteVisible.value = false;
+};
+
+
 
 const notificationEnabled = ref(false);
+const isEditingNickname = ref(false);
+const nickname = ref('우석짱짱맨');
+
+const isEditingPassword = ref(false);
+const isVisible = ref(true); // 로컬 창 표시 여부
+
+const profileImage = ref('@/assets/icons/doeun-profile.svg'); // 현재 프로필 이미지 경로
+const defaultImage = '@/assets/icons/default-profile.svg';     // 기본 이미지 경로
+
+const handleImageDelete = () => {
+  profileImage.value = defaultImage; // 이미지 초기화
+  isImageDeleteVisible.value = false; // 모달 닫기
+};
+
+
 </script>
 
 <style scoped>
@@ -105,6 +225,14 @@ const notificationEnabled = ref(false);
   font-weight: bold;
   display: flex;
   justify-content: center;
+
+  height:auto;
+  overflow: visible;
+}
+
+.settings-container.scrollable {
+  overflow-y: hidden; /* 세로 스크롤바 표시 */
+  max-height: 100vh; /* 최대 높이 설정 */
 }
 
 .profile-section {
@@ -122,6 +250,8 @@ const notificationEnabled = ref(false);
   align-items: center;
   width: 196px;
 }
+
+
 
 .profile-right {
   flex-grow: 1;
@@ -163,6 +293,7 @@ const notificationEnabled = ref(false);
 
 .setting-item {
   margin-bottom: 0;
+  overflow: hidden;
 }
 
 .withdrawal-section {
@@ -173,7 +304,7 @@ const notificationEnabled = ref(false);
 .section-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* y축 중앙 정렬 */
   margin-bottom: 8px;
   position: relative;
   min-height: 28px;
@@ -225,18 +356,40 @@ const notificationEnabled = ref(false);
   justify-content: flex-end;
 }
 
-.nickname-container, .email-container, .toggle-container {
-  position: absolute;
-  left: 400px;
+.nickname-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.nickname-container {
+  margin-left: 30px; /* 원하는 거리만큼만 이동 */
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 14px;
+  font-weight: bold;
+  gap: 8px;
+
 }
 
 .status-text {
   color: #666;
   font-size: 14px;
-  display: inline-block;
   font-weight: bold;
 }
 
+.email-container {
+  position: absolute;
+  left: 400px;
+}
+
+.toggle-container {
+ position: absolute;
+  left: 400px;
+  margin-top: 8px;
+}
 .email {
   color: #666;
   font-size: 14px;
@@ -279,7 +432,7 @@ const notificationEnabled = ref(false);
   position: relative;
   display: inline-block;
   width: 85px;
-  height: 40px;
+  height: 35px;
 }
 
 .switch input {
@@ -322,15 +475,13 @@ input:checked + .slider:before {
 }
 
 .withdrawal-button {
-  background: #FF4B4B;
+  background: #ff0000;
   color: white;
   border: none;
-  width: 80px;
-  height: 30px;
-  border-radius: 4px;
+  padding: 6px 14px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 14px;
-  padding: 0;
 }
 
 .withdrawal-description {
@@ -352,5 +503,100 @@ input:checked + .slider:before {
   color: #666;
   font-size: 16px;
   font-weight: bold;
+}
+
+.nickname-edit {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nickname-input {
+  width: 200px;
+  height: 25px;
+  border: 1px solid #FD6F22; /* 주황색 테두리 */
+  border-radius: 4px;
+  margin-left: 140px;
+  padding: 0 8px;
+  font-size: 14px;
+  background-color: #000; /* 검정색 배경 */
+  color: #fff; /* 흰색 텍스트 */
+}
+
+.save-button {
+  background: #FD6F22;
+  color: white;
+  border: none;
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.password-edit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  padding: 16px 0;
+  overflow: hidden;
+}
+.password-edit-container.scrollable {
+  overflow-y:hidden; /* 세로 스크롤바 표시 */
+}
+.password-input {
+  width: 95%;
+  height: 50px;
+  border: 1px solid #ccc; /* 회색 테두리 */
+  
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: 14px;
+  background-color: #000; /* 검정색 배경 */
+  color: #fff; /* 흰색 텍스트 */
+  overflow: visible;
+}
+
+.password-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  overflow: visible;
+}
+
+.cancel-button {
+  background: #2a2a2a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width:60px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.save-button {
+  background: #fd6f22;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button, .save-button {
+  display: flex; /* 플렉스 박스를 사용하여 텍스트를 중앙 정렬 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  text-align: center; /* 텍스트 정렬 */
+  padding: 0; /* 내부 여백 제거 */
+}
+
+html, body {
+  overflow: hidden;
+  height: 100%;
 }
 </style>
