@@ -33,9 +33,9 @@
                     <span>{{ comment.replies.length }}</span>
                 </button>
 
-                <button class="like-btn" :class="{ liked: comment.liked }" @click="toggleLike">
-                    <img :src="comment.liked ? filledHeart : emptyHeart" alt="like" class="heart-icon" />
-                    <span>{{ comment.likeCount }}</span>
+                <button class="like-btn" :class="{ liked: likedState }" @click="toggleLike">
+                    <img :src="likedState ? filledHeart : emptyHeart" alt="like" class="heart-icon" />
+                    <span v-if="likeCount > 0">{{ likeCount }}</span>
                 </button>
             </div>
         </template>
@@ -43,10 +43,11 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 import filledHeart from '@/assets/icons/heart-icon.svg';
 import emptyHeart from '@/assets/icons/heart-icon-empty.svg';
 import CommentInput from './CommentInput.vue';
+import { createLike, deleteLike } from '@/api/like.api';
 
 const props = defineProps({
     comment: Object,
@@ -67,12 +68,34 @@ const emit = defineEmits([
 
 const isMine = computed(() => props.comment.userId === props.currentUserId);
 
+const likedState = ref(Boolean(props.comment.liked));
+const likeCount = ref(Number(props.comment.likeCount ?? 0));
+let likeId = props.comment.likeId;
+
 const formatDate = (dateStr) => {
     if (!dateStr) return '날짜 없음';
     return dateStr.split('T')[0];
 };
-const toggleLike = () => {
-    console.log('좋아요 토글:', props.comment.id);
+
+const toggleLike = async () => {
+    try {
+        if (likedState.value) {
+            await deleteLike(likeId);
+            likedState.value = false;
+            likeCount.value = Math.max(0, likeCount.value - 1);
+        } else {
+            const res = await createLike({
+                type: 'comment',
+                comment_id: props.comment.id,
+                member_id: props.currentUserId,
+            });
+            likedState.value = true;
+            likeCount.value += 1;
+            likeId = res.id;
+        }
+    } catch (err) {
+        console.error('좋아요 처리 실패:', err);
+    }
 };
 </script>
 
@@ -173,9 +196,14 @@ const toggleLike = () => {
 .heart-icon {
     width: 20px;
     height: 20px;
+    filter: brightness(1);
 }
 
 .liked {
     color: #f87171;
+}
+
+.liked .heart-icon {
+    filter: brightness(1.3);
 }
 </style>

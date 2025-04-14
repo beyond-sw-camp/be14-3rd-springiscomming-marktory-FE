@@ -5,9 +5,9 @@
         <CommentList :comments="comments" :current-user-id="currentUserId" :expanded-comment-ids="expandedCommentIds"
             :replying-comment-id="replyingCommentId" :editing-comment-id="editingCommentId" :edit-content="editContent"
             @toggle-replies="handleToggleReplies" @reply-to="handleReplyTo" @start-edit="handleStartEdit"
-            @update-edit-content="(val) => (editContent = val)" @cancel-edit="cancelEdit" @submit-edit="submitEdit" />
+            @update-edit-content="(val) => (editContent = val)" @cancel-edit="cancelEdit" @submit-edit="submitEdit"
+            @submit-reply="handleSubmitReply" />
 
-        <!-- 스크롤 앵커 -->
         <div ref="scrollAnchor" style="height: 1px;"></div>
     </section>
 </template>
@@ -80,6 +80,26 @@ function getKSTISOString() {
     return new Date(now.getTime() + kstOffset).toISOString()
 }
 
+function buildCommentTree(flatComments) {
+    const map = new Map()
+    const roots = []
+
+    flatComments.forEach(c => {
+        c.replies = []
+        map.set(c.id, c)
+    })
+
+    flatComments.forEach(c => {
+        if (c.type === 2 && c.above_id && map.has(c.above_id)) {
+            map.get(c.above_id).replies.push(c)
+        } else if (c.type === 1) {
+            roots.push(c)
+        }
+    })
+
+    return roots
+}
+
 async function handleSubmitNewComment(content) {
     try {
         await createComment({
@@ -95,8 +115,9 @@ async function handleSubmitNewComment(content) {
 
         const updated = await getComments()
         const filtered = updated.filter(c => c.post_id === props.postId && !c.is_deleted)
+        const tree = buildCommentTree(filtered)
 
-        emit('update:comments', filtered)
+        emit('update:comments', tree)
 
         await nextTick()
         scrollAnchor.value?.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -104,9 +125,34 @@ async function handleSubmitNewComment(content) {
         console.error('댓글 저장 실패:', err)
     }
 }
+
+async function handleSubmitReply(content) {
+    try {
+        await createComment({
+            content,
+            written_date: getKSTISOString(),
+            modify_date: null,
+            is_deleted: false,
+            type: 2,
+            above_id: replyingCommentId.value,
+            member_id: props.currentUserId,
+            post_id: props.postId
+        })
+
+        const updated = await getComments()
+        const filtered = updated.filter(c => c.post_id === props.postId && !c.is_deleted)
+        const tree = buildCommentTree(filtered)
+
+        replyingCommentId.value = null
+        emit('update:comments', tree)
+
+        await nextTick()
+        scrollAnchor.value?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    } catch (err) {
+        console.error('답글 저장 실패:', err)
+    }
+}
 </script>
-
-
 
 <style scoped>
 .comment-section {
