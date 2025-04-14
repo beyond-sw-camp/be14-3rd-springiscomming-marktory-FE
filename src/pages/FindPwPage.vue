@@ -34,6 +34,7 @@ import AppFooter from '@/components/footer/AppFooter.vue'
 import InputField from '@/components/login/InputField.vue'
 import LoginButton from '@/components/login/LoginButton.vue'
 import BirthDateField from '@/components/login/BirthDateField.vue'
+import bcrypt from 'bcryptjs'
 
 const router = useRouter()
 
@@ -43,22 +44,27 @@ const triedSubmit = ref(false)
 
 const email = ref('')
 const actualEmail = ref('')
+const memberId = ref('');
 
 onMounted(async () => {
   const stored = sessionStorage.getItem('FindPw')
-  const { memberId } = stored ? JSON.parse(stored) : {}
+  const parsed = stored ? JSON.parse(stored) : {}
 
-  if (!memberId) {
+  if (!parsed.memberId) {
     console.warn('❗ memberId 없음!')
     return
   }
 
+  memberId.value = parsed.memberId
+
   try {
-    const res = await fetch(`http://localhost:3000/members/${memberId}`)
+    const res = await fetch(`http://localhost:3000/members/${memberId.value}`)
     const member = await res.json()
 
     console.log('✅ 가져온 사용자 정보:', member)
-		actualEmail.value = member.email
+    name.value = member.name
+    birth.value = member.birthday
+    actualEmail.value = member.email
   } catch (err) {
     console.error('❌ 사용자 정보 가져오기 실패:', err)
   }
@@ -74,18 +80,64 @@ const formatBirthToISO = (birthInput) => {
   return ''
 }
 
-const sendEmail = () => {
+const sendEmail = async () => {
   if (!email.value) {
     alert('이메일을 입력해주세요.')
     return
   }
 
-	if (email.value !== actualEmail.value) {
+  if (email.value !== actualEmail.value) {
     alert('입력한 이메일이 사용자 정보와 일치하지 않습니다.')
     return
   }
 
-  alert(`임시 비밀번호가 ${email.value}로 전송되었습니다.`)
+  const requestVo = {
+    email: email.value,
+    name: name.value,
+    birthday: birth.value,
+  }
+
+  try {
+    const response = await fetch('http://localhost:8000/member-server/check/api/member/password/reset', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify(requestVo),
+    })
+
+    const contentType = response.headers.get('content-type')
+    const data = contentType && contentType.includes('application/json') ? await response.json() : {}
+
+    if (!response.ok) {
+      alert(data.exceptionMessage || '비밀번호 찾기에 실패했습니다.')
+      return
+    }
+
+    alert(data.message) // 예: "임시 비밀번호가 전송되었습니다."
+    console.log(data.password)
+
+    // 👉 bcrypt 암호화
+    const salt = bcrypt.genSaltSync(10)
+    const hashedPw = bcrypt.hashSync(data.password, salt)
+
+    // 👉 mock 데이터에 암호화된 비밀번호 반영
+    if (memberId.value) {
+      await fetch(`http://localhost:3000/members/${memberId.value}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          password: hashedPw,
+        }),
+      })
+    }
+  } catch (err) {
+    console.error('요청 중 오류 발생:', err)
+    alert('서버와의 통신 중 문제가 발생했습니다.')
+  }
 }
 
 const handleFindId = async () => {

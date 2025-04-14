@@ -198,10 +198,10 @@
     {
       "id": "237a",
       "email": "rainyday1367@naver.com",
-      "password": "$2b$12$f90D7ZyB6TxDwOvT6jz/o.f.b9SXbRxAuSyOKTNq4/LX3ZUjp38t2",
+      "password": "$2b$10$HSejfAB3MKiC/Lzxk8vAPeROxMPyAXyhyEJ6TtTR8tO53moXgOcLS",
       "name": "뉴덩할",
       "nickname": "뉴뉴덩할",
-      "birthday": "2025-04-13T15:00:00.000Z",
+      "birthday": "2025-04-13",
       "image": null,
       "status": "is_active",
       "black_date": null,
