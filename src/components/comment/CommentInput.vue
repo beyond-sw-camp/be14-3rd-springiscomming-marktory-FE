@@ -5,24 +5,46 @@
                 maxlength="500"></textarea>
             <div class="char-count">{{ inputText.length }}/500</div>
         </div>
-        <button class="submit-btn" :disabled="!inputText.trim()" @click="submitComment">
-            등록
-        </button>
+        <div class="action-row">
+            <button class="cancel-btn" v-if="isEdit" @click="$emit('cancel')">취소</button>
+            <button class="submit-btn" :disabled="!inputText.trim()" @click="submitComment">
+                등록
+            </button>
+        </div>
     </section>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from 'vue';
 
-const inputText = ref("");
+const props = defineProps({
+    initialText: {
+        type: String,
+        default: '',
+    },
+    isEdit: {
+        type: Boolean,
+        default: false,
+    },
+});
+
+const emit = defineEmits(['submit', 'cancel']);
+
+const inputText = ref(props.initialText);
 const isFocused = ref(false);
 
-const emit = defineEmits(["submit"]);
+watch(
+    () => props.initialText,
+    (newVal) => {
+        inputText.value = newVal;
+    },
+    { immediate: true }
+);
 
 const submitComment = () => {
     if (!inputText.value.trim()) return;
-    emit("submit", inputText.value.trim());
-    inputText.value = "";
+    emit('submit', inputText.value.trim());
+    inputText.value = '';
 };
 </script>
 
@@ -74,8 +96,29 @@ textarea::placeholder {
     color: #ccc;
 }
 
+.action-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.cancel-btn {
+    background-color: #BDBDBD;
+    color: white;
+    font-weight: bold;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cancel-btn:hover {
+    color: #fff;
+    background-color: #444;
+}
+
 .submit-btn {
-    align-self: flex-end;
     background-color: #f58220;
     color: white;
     font-weight: bold;

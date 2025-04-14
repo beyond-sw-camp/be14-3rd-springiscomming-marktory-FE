@@ -1,54 +1,74 @@
 <template>
     <div class="comment-item">
-        <div class="comment-header">
-            <img :src="comment.profileImage" alt="profile" class="profile-img" />
-            <div class="user-info">
-                <div class="nickname">{{ comment.nickname }}</div>
-                <div class="date">{{ formatDate(comment.createdAt) }}</div>
+        <!-- 수정 모드 -->
+        <CommentInput v-if="isEditing" :initial-text="editContent" :is-edit="true"
+            @submit="(content) => $emit('submit-edit', content)" @cancel="$emit('cancel-edit')" />
+
+        <!-- 일반 모드 -->
+        <template v-else>
+            <div class="comment-header" @click="$emit('toggle-replies')">
+                <img :src="comment.profileImage" alt="profile" class="profile-img" />
+                <div class="user-info">
+                    <div class="nickname">{{ comment.nickname }}</div>
+                    <div class="date">{{ formatDate(comment.createdAt) }}</div>
+                </div>
+
+                <div class="comment-actions">
+                    <template v-if="isMine">
+                        <button class="action-btn" @click.stop="$emit('start-edit')">수정</button>
+                        <button class="action-btn" @click.stop>삭제</button>
+                    </template>
+                    <template v-else>
+                        <button class="action-btn" @click.stop>신고</button>
+                    </template>
+                </div>
             </div>
 
-            <div class="comment-actions">
-                <template v-if="isMine">
-                    <button class="action-btn">수정</button>
-                    <button class="action-btn">삭제</button>
-                </template>
-                <template v-else>
-                    <button class="action-btn">신고</button>
-                </template>
+            <div class="comment-content">{{ comment.content }}</div>
+
+            <div class="comment-footer">
+                <button class="reply-btn" @click="$emit('reply-to')">
+                    <img src="@/assets/icons/reply-icon.svg" alt="reply" class="reply-icon" />
+                    답글 달기
+                    <span>{{ comment.replies.length }}</span>
+                </button>
+
+                <button class="like-btn" :class="{ liked: comment.liked }" @click="toggleLike">
+                    <img :src="comment.liked ? filledHeart : emptyHeart" alt="like" class="heart-icon" />
+                    <span>{{ comment.likeCount }}</span>
+                </button>
             </div>
-        </div>
-
-        <div class="comment-content">{{ comment.content }}</div>
-
-        <div class="comment-footer">
-            <button class="reply-btn" @click="$emit('reply')">
-                <img src="@/assets/icons/reply-icon.svg" alt="reply" class="reply-icon" />
-                답글 달기
-                <span>{{ comment.replies.length }}</span>
-            </button>
-
-            <button class="like-btn" :class="{ liked: comment.liked }" @click="toggleLike">
-                <img :src="comment.liked ? filledHeart : emptyHeart" alt="like" class="heart-icon" />
-                <span>{{ comment.likeCount }}</span>
-            </button>
-        </div>
+        </template>
     </div>
 </template>
 
 <script setup>
-import { computed } from "vue";
-import filledHeart from "@/assets/icons/heart-icon.svg";
-import emptyHeart from "@/assets/icons/heart-icon.svg";
+import { computed } from 'vue';
+import filledHeart from '@/assets/icons/heart-icon.svg';
+import emptyHeart from '@/assets/icons/heart-icon-empty.svg';
+import CommentInput from './CommentInput.vue';
 
 const props = defineProps({
     comment: Object,
     currentUserId: String,
+    isExpanded: Boolean,
+    isReplying: Boolean,
+    isEditing: Boolean,
+    editContent: String,
 });
 
+const emit = defineEmits([
+    'toggle-replies',
+    'reply-to',
+    'start-edit',
+    'submit-edit',
+    'cancel-edit',
+]);
+
 const isMine = computed(() => props.comment.userId === props.currentUserId);
-const formatDate = (dateStr) => dateStr.split("T")[0];
+const formatDate = (dateStr) => dateStr.split('T')[0];
 const toggleLike = () => {
-    console.log("좋아요 토글:", props.comment.id);
+    console.log('좋아요 토글:', props.comment.id);
 };
 </script>
 
@@ -114,7 +134,6 @@ const toggleLike = () => {
 .comment-footer {
     display: flex;
     justify-content: space-between;
-    /* ✅ 좌우 정렬 */
     align-items: center;
     margin-top: 1rem;
 }
