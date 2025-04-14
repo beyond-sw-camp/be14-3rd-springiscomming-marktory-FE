@@ -1,6 +1,6 @@
 <template>
     <section class="comment-section">
-        <div v-for="comment in comments" :key="comment.id">
+        <div v-for="comment in comments" :key="comment.id" :ref="el => registerRef(comment.id, el)">
             <CommentItem :comment="comment" :current-user-id="currentUserId"
                 :is-expanded="expandedCommentIds.has(comment.id)" :is-replying="replyingCommentId === comment.id"
                 :is-editing="editingCommentId === comment.id" :edit-content="editContent"
@@ -21,9 +21,15 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import CommentItem from "./CommentItem.vue";
 import ReplyItem from "./ReplyItem.vue";
 import CommentInput from "./CommentInput.vue";
+const commentRefs = ref({})
+
+function registerRef(id, el) {
+    if (el) commentRefs.value[id] = el
+}
 
 const props = defineProps({
     comments: Array,

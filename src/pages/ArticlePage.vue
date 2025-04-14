@@ -7,7 +7,7 @@
 
     <article class="main-content">
       <Post v-if="postData" :post="postData" />
-      <Comment v-if="postData" :comments="commentTree" :post-id="postData.id" />
+      <Comment v-if="postData" :comments="commentTree" :post-id="postData.id" @update:comments="updateCommentTree" />
     </article>
 
     <aside class="right-sidebar">
@@ -81,6 +81,30 @@ onMounted(async () => {
   console.log('✅ commentTree:', commentTree.value);
   console.log('✅ sample comment:', commentTree.value[0]);
 });
+
+function updateCommentTree(newComments) {
+  commentTree.value = buildCommentTree(newComments)
+}
+
+// 댓글들을 트리 구조로 변환
+function buildCommentTree(comments) {
+  const map = {}
+  const roots = []
+
+  comments.forEach(c => {
+    map[c.id] = { ...c, replies: [] }
+  })
+
+  comments.forEach(c => {
+    if (c.above_id) {
+      map[c.above_id]?.replies.push(map[c.id])
+    } else {
+      roots.push(map[c.id])
+    }
+  })
+
+  return roots
+}
 </script>
 
 <style scoped>
