@@ -1,7 +1,7 @@
 <!--
     사이드에 있는 Footer
 -->
-<!-- <template>
+<template>
     <footer v-if="isNarrow" class="footer">
         <div class="footer-info">
             <p>마크토리</p>
@@ -84,4 +84,4 @@ onBeforeUnmount(() => {
 .footer-links a:hover {
     text-decoration: none;    /* ✅ hover 시에도 변화 없음 */
 }
-</style> -->
+</style>
