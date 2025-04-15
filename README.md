@@ -158,7 +158,8 @@
 ## 📑DB모델링
 
 <br>
-
+### 3️⃣ 논리모델링
+<img src="https://github.com/user-attachments/assets/bf47f0ca-7cf4-49d7-92cd-6c14674ebc37" width=700>
 <hr>
 
 <br>
