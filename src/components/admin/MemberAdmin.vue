@@ -1,9 +1,9 @@
 <template>
   <div class="member-wrapper">
     <!-- 정렬 버튼 -->
-    <div class="filter">
+    <!-- <div class="filter">
         <ArrayModal />
-    </div>
+    </div> -->
 
     <!-- 회원 테이블 -->
     <table class="member-table">
@@ -126,12 +126,12 @@ function toggleStatus(member) {
   min-height: 100vh;
 }
 
-.filter {
+/* .filter {
   position: absolute;
   right: 20px;
   top: 40px;
   padding: 0;
-}
+} */
 
 .member-table {
   position: absolute;
