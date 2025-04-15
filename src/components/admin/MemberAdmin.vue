@@ -1,9 +1,9 @@
 <template>
   <div class="member-wrapper">
-    <!-- 정렬 버튼 -->
-    <!-- <div class="filter">
-        <ArrayModal />
-    </div> -->
+
+    <div class="filter">
+        <PageModal />
+    </div>
 
     <!-- 회원 테이블 -->
     <table class="member-table">
@@ -64,7 +64,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import ArrayModal from '../ArrayModal.vue'
+import PageModal from '../PageModal.vue'
 
 const members = ref([
   { id: 1, name: '김돌돌', nickname: 'Tim', email: 'tim123@naver.com', birth: '2000-02-02', joined: '2024-12-08', status: '활성화' },

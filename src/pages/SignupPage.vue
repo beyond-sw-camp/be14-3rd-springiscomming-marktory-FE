@@ -129,8 +129,12 @@ const handleSignup = async () => {
 
   const salt = bcrypt.genSaltSync(12); // 12단계 보안
   const hashedPassword = bcrypt.hashSync(password.value, salt); // 🔐 여기서 해싱
-  // 목업 데이터 연결
-  const formattedBirthday = new Date(birth.value).toISOString().split("T")[0]; // "YYYY-MM-DD"만 추출
+  const date = new Date(birth.value);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // 0부터 시작하니 +1
+  const day = String(date.getDate()).padStart(2, '0');
+
+  const formattedBirthday = `${year}-${month}-${day}`;
   const now = new Date().toISOString().replace('T', ' ').substring(0, 19);
 
   try {
