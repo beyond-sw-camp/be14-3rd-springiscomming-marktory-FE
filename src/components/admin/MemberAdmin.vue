@@ -1,6 +1,6 @@
 <template>
   <div class="member-wrapper">
-    <!-- 정렬 버튼 -->
+
     <div class="filter">
         <PageModal />
     </div>
@@ -126,12 +126,12 @@ function toggleStatus(member) {
   min-height: 100vh;
 }
 
-.filter {
+/* .filter {
   position: absolute;
   right: 20px;
   top: 40px;
   padding: 0;
-}
+} */
 
 .member-table {
   position: absolute;
