@@ -72,6 +72,10 @@ const router = createRouter({
                 {
                     path: 'report', 
                     component: () => import('../components/admin/ReportAdmin.vue')
+                },
+                {
+                    path: 'member', 
+                    component: () => import('../components/admin/MemberAdmin.vue')
                 }
             ]
         },

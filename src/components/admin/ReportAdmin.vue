@@ -88,7 +88,7 @@ function handleFilter(type) {
 
 function handleStatusClick(item) {
   if (item.status === '처리완료') {
-    router.push(`/memberAdmin/${item.id}`)
+    router.push(`/adminPage/member`)
   } else {
     router.push(`/reportDetail/${item.id}`)
   }
@@ -119,7 +119,7 @@ function handleStatusClick(item) {
     }
     
     .filter {
-        padding-left: 830px;
+        padding-left: 890px;
         padding-top: 20px;
     }
 
