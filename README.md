@@ -155,14 +155,20 @@
 
 <br>
 
-## 📑DB모델링
+# 📑DB모델링
 
 <br>
-### 3️⃣ 논리모델링
+
+### 1️⃣ 플로우차트
+
+### 2️⃣ 논리모델링
+
 <img src="https://github.com/user-attachments/assets/bf47f0ca-7cf4-49d7-92cd-6c14674ebc37" width=700>
-<hr>
 
+### 3️⃣ 물리모델링
+<img src="https://github.com/user-attachments/assets/cdc3f2e9-83c3-4612-ba14-2028e9f8e311" width=700>
 <br>
+
 
 # 3. 산출물
 ## 📍와이어프레임
