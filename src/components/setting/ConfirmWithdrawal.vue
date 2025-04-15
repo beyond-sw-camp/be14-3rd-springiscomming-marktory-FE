@@ -17,11 +17,10 @@
   <script setup>
   import { ref } from 'vue';
   import WithdrawalEnd from '@/components/setting/WithdrawalEnd.vue';
+  import { useMemberStore } from '../../stores/memberStore';
 
   const isWithdrawalEndVisible = ref(false);
-
-
-  
+  const memberStore = useMemberStore();
   const emit = defineEmits(['close', 'confirm']);
 
   // 모달 닫기
@@ -30,13 +29,42 @@
   };
   
   // 탈퇴 확인
-  const confirmWithdrawal = () => {
-    console.log('회원 탈퇴 완료');
-    emit('confirm'); // 부모 컴포넌트에 탈퇴 확인 이벤트 전달
+  const confirmWithdrawal = async () => {
+    const memberId = memberStore.user?.id;
+
+    if (!memberId) {
+      alert('회원 정보가 없습니다.');
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:3001/members/${memberId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          status: 'is_delete',
+          delete_date: new Date().toISOString()
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('탈퇴 요청 실패');
+      }
+
+      console.log('회원 탈퇴 완료');
+      isWithdrawalEndVisible.value = true;
+
+    } catch (err) {
+      console.error('탈퇴 실패:', err);
+      alert('탈퇴 처리 중 오류가 발생했습니다.');
+    }
   };
 
   const closeWithdrawalEnd = () => {
     isWithdrawalEndVisible.value = false;
+    emit('close');
   };
 
 

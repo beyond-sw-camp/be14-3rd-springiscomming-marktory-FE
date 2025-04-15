@@ -2,6 +2,8 @@
 
 ![메인이미지](./docs/banner/front_banner.png)
 
+
+
 <br>
 
 # :cherry_blossom: 봄이오조 :cherry_blossom:
@@ -25,9 +27,9 @@
   </tr>
 </table>
 
-<br>
 
-## 기술스택
+# 기술스택
+
 
 ## 🛠️ Backend
 ![Java](https://img.shields.io/badge/Java-17-007396.svg?&logo=java&color=red)
@@ -236,5 +238,3 @@
 | 곽우석       ||
 | 이상모       ||
 | 정동한       ||
-
-

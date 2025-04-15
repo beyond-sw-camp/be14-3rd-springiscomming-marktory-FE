@@ -7,7 +7,7 @@
         <!-- 일반 모드 -->
         <template v-else>
             <div class="comment-header" @click="$emit('toggle-replies')">
-                <img :src="comment.profileImage" alt="profile" class="profile-img" />
+                <img :src="comment.profileImage || D" alt="profile" class="profile-img" />
                 <div class="user-info">
                     <div class="nickname">{{ comment.nickname }}</div>
                     <div class="date">{{ formatDate(comment.written_date) }}</div>
@@ -48,6 +48,7 @@ import filledHeart from '@/assets/icons/heart-icon.svg';
 import emptyHeart from '@/assets/icons/heart-icon-empty.svg';
 import CommentInput from './CommentInput.vue';
 import { createLike, deleteLike } from '@/api/like.api';
+import D from '@/assets/images/profile/D.png';
 
 const props = defineProps({
     comment: Object,

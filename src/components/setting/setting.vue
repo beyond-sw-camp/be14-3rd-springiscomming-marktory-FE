@@ -4,24 +4,27 @@
       <div class="profile-left">
         <div class="profile-image">
           <!-- <img :src="profileImage" alt="Profile Image" /> -->
-          <img src="@/assets/icons/doeun-profile.svg" alt="Profile Image" />
+          <img
+            :src="memberStore.user?.image || defaultProfile"
+            alt="프로필 이미지"
+          />
         </div>
         <div class="button-group">
           <button class="upload-button" @click="triggerFileSelect">이미지 업로드</button>
 
           <input
-  ref="fileInput"
-  type="file"
-  accept="image/*"
-  @change="handleImageUpload"
-  style="display: none"
-/>
+            ref="fileInput"
+            type="file"
+            accept="image/*"
+            @change="handleImageUpload"
+            style="display: none"
+          />
           <button class="remove-button" @click="openImageDeleteModal">이미지 제거</button>
         </div>
       </div>
       <div class="profile-right">
         <div class="setting-item">
-          <h1 class="user-name">곽우석</h1>
+          <h1 class="user-name">{{ memberStore.user?.name }}</h1>
         </div>
 
         <div class="setting-group">
@@ -31,7 +34,7 @@
                 <h2>닉네임</h2>
               </div>
               <div class="nickname-container">
-      <span v-if="!isEditingNickname" class="nickname-container">{{ nickname }}</span>
+      <span v-if="!isEditingNickname" class="nickname-container">{{ memberStore.user?.nickname }}</span>
       <input
         v-else
         type="text"
@@ -56,7 +59,9 @@
                 <h2>이메일 주소</h2>
               </div>
               <div class="email-container">
-                <a href="mailto:dntjr9999@gmail.com" class="email">dntjr9999@gmail.com</a>
+                <a :href="`mailto:${memberStore.user?.email}`" class="email">
+                    {{ memberStore.user?.email }}
+                </a>
               </div>
             </div>
             <p class="description">회원 인증을 위한 이메일 주소입니다.</p>
@@ -158,7 +163,6 @@
       v-if="isImageDeleteVisible"
       @close="closeImageDeleteModal"
       @confirm="handleImageDelete"
-
     />
     </div>
 </template>
@@ -169,11 +173,14 @@ import WithdrawalInput from '@/components/setting/WithdrawalInput.vue';
 import ConfirmWithdrawal from '@/components/setting/ConfirmWithdrawal.vue';
 import WithdrawalEnd from '@/components/setting/WithdrawalEnd.vue';
 import ImageDelete from '@/components/setting/ImageDelete.vue';
+import { useMemberStore } from '../../stores/memberStore';
+import defaultProfile from '../../assets/icons/defaultProfile.png';
 
 const isWithdrawalInputVisible = ref(false);
 const isConfirmWithdrawalVisible = ref(false);
 const isWithdrawalEndVisible = ref(false);
 const isImageDeleteVisible = ref(false);
+const memberStore = useMemberStore()
 
 const closeAllModals = () => {
   isWithdrawalEndVisible.value = false;
@@ -183,9 +190,14 @@ const closeAllModals = () => {
 
 const openWithdrawalModal = () => {
   isWithdrawalInputVisible.value = true;
+
 };
 const openConfirmWithdrawal = () => {
   isConfirmWithdrawalVisible.value = true;
+
+  // 회원 탈퇴
+
+  
 };
 
 const openWithdrawalEnd = () => {
@@ -207,7 +219,7 @@ const closeImageDeleteModal = () => {
 
 const notificationEnabled = ref(false);
 const isEditingNickname = ref(false);
-const nickname = ref('우석짱짱맨');
+const nickname = ref('');
 
 const isEditingPassword = ref(false);
 const isVisible = ref(true); // 로컬 창 표시 여부
@@ -235,6 +247,7 @@ const handleImageUpload = async (event) => {
   const formData = new FormData();
   formData.append('image', file);
 
+  /* 이미지 업로드는 백엔드에서 해야함 */
   try {
     // 예시 - axios로 서버에 이미지 업로드
     const response = await axios.post('/api/upload', formData, {

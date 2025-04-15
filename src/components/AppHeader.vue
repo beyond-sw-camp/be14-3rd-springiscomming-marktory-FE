@@ -21,7 +21,7 @@
             </button>
 
             <template v-if="memberStore.isLogined">
-                <button class="write-btn">글 쓰기</button>
+                <button class="write-btn" @click="goTo('editor')">글 쓰기</button>
 
                 <!-- 프로필 & 드롭다운 버튼 그룹 -->
                 <div class="profile-wrapper" ref="dropdownRef">
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <ul class="menu-list">
-                        <li @click="goTo('settings')">
+                        <li @click="goTo('setting')">
                             <img src="../assets/icons/settings.svg" alt="설정 아이콘" class="menu-icon"/>    
                             <p class="dropdown-font">설정</p>
                         </li>
@@ -117,8 +117,8 @@ function logout() {
 function goTo(page) {
     showDropdown.value = false
     switch (page) {
-        case 'settings':
-            router.push('/settings').then(() => window.location.reload());
+        case 'setting':
+            router.push('/setting').then(() => window.location.reload());
             break;
         break
         case 'notice':
@@ -132,6 +132,9 @@ function goTo(page) {
             break;
         case 'adminPage':
             router.push('/adminPage').then(() => window.location.reload());
+            break;
+        case 'editor':
+            router.push('/editor').then(() => window.location.reload());
             break;
     }
 }

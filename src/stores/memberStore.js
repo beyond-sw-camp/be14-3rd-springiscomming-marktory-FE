@@ -20,7 +20,8 @@ export const useMemberStore = defineStore('member', {
                 email: userData.email.trim(),
                 name: userData.name,
                 nickname: userData.nickname,
-                role: userData.role
+                role: userData.role,
+                image: userData.image
             }
 
             const loginTime = new Date().toLocaleString('ko-KR', {
