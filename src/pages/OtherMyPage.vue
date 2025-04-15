@@ -15,7 +15,7 @@
                     </div>
                 </RouterLink>
                 <div class="filter">
-                    <ArrayModal/>
+                    <PageModal/>
                 </div>
             </div>
         </header>
@@ -39,7 +39,7 @@
     import AppHeader from '../components/AppHeader.vue';
     import OtherSideProfile from '../components/mypage/OtherSideProfile.vue';
     import Category from '../components/post/Category.vue';
-    import ArrayModal from '../components/ArrayModal.vue';
+    import PageModal from '../components/PageModal.vue';
     import { RouterLink, RouterView } from 'vue-router';
 </script>
 

@@ -3,7 +3,7 @@
     <main class="notice-content">
       
       <div class="filter">
-        <ArrayModal />
+        <!-- <ArrayModal /> -->
       </div>
 
       <table class="notice-table">
@@ -55,8 +55,6 @@ import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import AdminPagination from '../admin/AdminPagination.vue'
 import NoticeInsert from '../admin/NoticeInsert.vue'
-import ArrayModal from '../ArrayModal.vue'
-
 const router = useRouter()
 const isInsertOpen = ref(false)
 const notices = ref([])

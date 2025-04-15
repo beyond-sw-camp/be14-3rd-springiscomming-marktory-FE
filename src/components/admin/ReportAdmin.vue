@@ -4,7 +4,7 @@
       
       <main class="report-content">
         <div class="filter">
-          <ArrayModal @filter-update="handleFilter"/>
+          <PageModal @filter-update="handleFilter"/>
         </div>
   
         <table class="report-table">
@@ -47,7 +47,7 @@
   import { ref, computed, onMounted } from 'vue'
   import { useRouter } from 'vue-router'
   import AdminPagination from '../admin/AdminPagination.vue'
-  import ArrayModal from '../ArrayModal.vue'
+  import PageModal from '../PageModal.vue'
   
     const router = useRouter()
     const reports = ref([])           // 공지사항 데이터 (로컬 상태)

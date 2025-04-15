@@ -78,7 +78,7 @@
             </div>
         </template>
         <template v-else>
-            <button class="write-btn" @click="goTo('login')">글 쓰기</button>
+            <button class="write-btn" @click="goTo('editor')">글 쓰기</button>
             <button class="login-btn" @click="goTo('login')">로그인</button>
         </template>
         </div>
@@ -134,7 +134,7 @@ function goTo(page) {
             router.push('/adminPage').then(() => window.location.reload());
             break;
         case 'editor':
-            router.push('/editor').then(() => window.location.reload());
+            window.location.href = 'https://8351-183-109-116-251.ngrok-free.app/editor';
             break;
     }
 }
