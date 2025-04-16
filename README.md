@@ -160,19 +160,12 @@
 
 # 📑DB모델링
 
-### 2️⃣ 논리모델링
-![논리모델링이미지](./docs/modeling/논리모델링.png)
 
-### 3️⃣ 물리모델링
-![물리모델링이미지](./docs/modeling/물리모델링.png)
+### 1️⃣ 논리모델링
+<img src="https://github.com/user-attachments/assets/bf47f0ca-7cf4-49d7-92cd-6c14674ebc37" >
 
-<br>
-
-### 2️⃣ 논리모델링
-<img src="https://github.com/user-attachments/assets/bf47f0ca-7cf4-49d7-92cd-6c14674ebc37" width=700>
-
-### 3️⃣ 물리모델링
-<img src="https://github.com/user-attachments/assets/cdc3f2e9-83c3-4612-ba14-2028e9f8e311" width=700>
+### 2️⃣  물리모델링
+<img src="https://github.com/user-attachments/assets/cdc3f2e9-83c3-4612-ba14-2028e9f8e311">
 <br>
 
 
