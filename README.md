@@ -174,7 +174,6 @@
 <br>
 
 ### 2️⃣ 논리모델링
-
 <img src="https://github.com/user-attachments/assets/bf47f0ca-7cf4-49d7-92cd-6c14674ebc37" width=700>
 
 ### 3️⃣ 물리모델링
@@ -184,23 +183,681 @@
 
 # 3. 산출물
 ## 📍와이어프레임
+
 <details>
-   <summary> </summary>
+   <summary>회원가입</summary>
+   <img src="./docs/image/와이어프레임/회원가입_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>약관동의</summary>
+   <img src="./docs/image/와이어프레임/약관동의_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>로그인</summary>
+   <img src="./docs/image/와이어프레임/로그인_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>아이디찾기</summary>
+   <img src="./docs/image/와이어프레임/아이디찾기_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>비밀번호찾기</summary>
+   <img src="./docs/image/와이어프레임/비밀번호찾기_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>닉네임수정</summary>
+   <img src="./docs/image/와이어프레임/닉네임수정_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>비밀번호수정</summary>
+   <img src="./docs/image/와이어프레임/비밀번호수정_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>프로필이미지수정</summary>
+   <img src="./docs/image/와이어프레임/프로필이미지수정_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>회원탈퇴</summary>
+   <img src="./docs/image/와이어프레임/회원탈퇴_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>로그아웃</summary>
+   <img src="./docs/image/와이어프레임/로그아웃_와이어프레임.png" width=700>
+</details>
+
+### 🍀 관리자
+<details>
+   <summary>관리자 로그인</summary>
+   <img src="./docs/image/와이어프레임/관리자로그인_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>회원계정상태변경</summary>
+   <img src="./docs/image/와이어프레임/회원계정상태변경_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>전체회원조회</summary>
+   <img src="./docs/image/와이어프레임/전체회원조회_와이어프레임.png" width=700>
+</details>
+
+### 🍀신고관리
+<details>
+   <summary>게시글신고</summary>
+   <img src="./docs/image/와이어프레임/게시글신고_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>댓글신고</summary>
+   <img src="./docs/image/와이어프레임/댓글신고_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>템플릿신고</summary>
+   <img src="./docs/image/와이어프레임/템플릿신고_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>신고내역조회</summary>
+   <img src="./docs/image/와이어프레임/신고내역조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>신고처리</summary>
+   <img src="./docs/image/와이어프레임/신고처리_와이어프레임.png" width=700>
+</details>
+
+
+### 🍀 게시글
+
+<details>
+   <summary>본인게시글조회</summary>
+   <img src="./docs/image/와이어프레임/본인게시글조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>좋아요누른게시글조회</summary>
+   <img src="./docs/image/와이어프레임/좋아요누른게시글조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>타회원게시글조회</summary>
+   <img src="./docs/image/와이어프레임/타회원게시글조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>게시글작성</summary>
+   <img src="./docs/image/와이어프레임/게시글작성_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>게시글수정</summary>
+   <img src="./docs/image/와이어프레임/좋아요누른게시글조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>게시글삭제</summary>
+   <img src="./docs/image/와이어프레임/게시글삭제_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>게시글카테고리적용</summary>
+   <img src="./docs/image/와이어프레임/게시글카테고리적용_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>게시글해시태그등록</summary>
+   <img src="./docs/image/와이어프레임/게시글해시태그등록_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>게시글공개범위설정</summary>
+   <img src="./docs/image/와이어프레임/게시글공개범위설정_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>게시글좋아요</summary>
+   <img src="./docs/image/와이어프레임/게시글좋아요_와이어프레임.png" width=700>
+</details>
+
+
+### 🍀 템플릿
+
+<details>
+   <summary>템플릿선택</summary>
+   <img src="./docs/image/와이어프레임/템플릿선택_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>템플릿조회</summary>
+   <img src="./docs/image/와이어프레임/템플릿조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>템플릿작성</summary>
+   <img src="./docs/image/와이어프레임/템플릿작성_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>템플릿수정</summary>
+   <img src="./docs/image/와이어프레임/템플릿수정_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>템플릿삭제</summary>
+   <img src="./docs/image/와이어프레임/템플릿삭제_와이어프레임.png" width=700>
+</details>
+
+### 🍀 마이페이지
+
+<details>
+   <summary>본인게시글조회</summary>
+   <img src="./docs/image/와이어프레임/본인게시글조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>본인템플릿조회</summary>
+   <img src="./docs/image/와이어프레임/본인템플릿조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>타회원게시글조회</summary>
+   <img src="./docs/image/와이어프레임/타회원게시글조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>타회원템플릿조회</summary>
+   <img src="./docs/image/와이어프레임/타회원템플릿조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>좋아요누른게시글조회</summary>
+   <img src="./docs/image/와이어프레임/좋아요누른게시글조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>좋아요누른댓글조회</summary>
+   <img src="./docs/image/와이어프레임/좋아요누른댓글조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>내가남긴댓글조회</summary>
+   <img src="./docs/image/와이어프레임/내가남긴댓글조회_와이어프레임.png" width=700>
+</details>
+
+### 🍀 카테고리
+
+<details>
+   <summary>카테고리조회</summary>
+   <img src="./docs/image/와이어프레임/카테고리조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>카테고리등록</summary>
+   <img src="./docs/image/와이어프레임/카테고리등록_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>카테고리수정</summary>
+   <img src="./docs/image/와이어프레임/카테고리수정_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>카테고리삭제</summary>
+   <img src="./docs/image/와이어프레임/카테고리삭제_와이어프레임.png" width=700>
+</details>
+
+### 🍀 댓글
+
+<details>
+   <summary>댓글조회</summary>
+   <img src="./docs/image/와이어프레임/댓글조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>댓글등록</summary>
+   <img src="./docs/image/와이어프레임/댓글등록_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>댓글수정</summary>
+   <img src="./docs/image/와이어프레임/댓글수정_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>댓글삭제</summary>
+   <img src="./docs/image/와이어프레임/댓글삭제_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>대댓글조회</summary>
+   <img src="./docs/image/와이어프레임/대댓글조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>대댓글등록</summary>
+   <img src="./docs/image/와이어프레임/대댓글등록_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>대댓글수정</summary>
+   <img src="./docs/image/와이어프레임/대댓글수정_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>대댓글삭제</summary>
+   <img src="./docs/image/와이어프레임/대댓글삭제_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>댓글좋아요</summary>
+   <img src="./docs/image/와이어프레임/댓글좋아요_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>댓글좋아요취소</summary>
+   <img src="./docs/image/와이어프레임/댓글좋아요취소_와이어프레임.png" width=700>
+</details>
+
+### 🍀 구독
+
+<details>
+   <summary>본인을구독한목록조회</summary>
+   <img src="./docs/image/와이어프레임/본인을구독한목록 조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>본인이구독한목록조회</summary>
+   <img src="./docs/image/와이어프레임/본인이구독한목록조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>구독추가</summary>
+   <img src="./docs/image/와이어프레임/구독취소_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>구독취소</summary>
+   <img src="./docs/image/와이어프레임/구독취소_와이어프레임.png" width=700>
+</details>
+
+### 🍀 공지사항
+
+<details>
+   <summary>공지사항조회</summary>
+   <img src="./docs/image/와이어프레임/공지사항조회_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>공지사항작성</summary>
+   <img src="./docs/image/와이어프레임/공지사항작성_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>공지사항수정</summary>
+   <img src="./docs/image/와이어프레임/공지사항수정_와이어프레임.png" width=700>
+</details>
+
+<details>
+   <summary>공지사항삭제</summary>
+   <img src="./docs/image/와이어프레임/공지사항삭제_와이어프레임.png" width=700>
 </details>
 
 <br>
 
 ## 📍스토리보드
+
+### 🍀 회원관리
+
 <details>
-   <summary> </summary>
+   <summary>회원가입</summary>
+   <img src="./docs/image/스토리보드/회원가입_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>약관동의</summary>
+   <img src="./docs/image/스토리보드/약관동의_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>로그인</summary>
+   <img src="./docs/image/스토리보드/로그인_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>아이디찾기</summary>
+   <img src="./docs/image/스토리보드/아이디찾기_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>비밀번호찾기</summary>
+   <img src="./docs/image/스토리보드/비밀번호찾기_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>닉네임수정</summary>
+   <img src="./docs/image/스토리보드/닉네임수정_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>비밀번호수정</summary>
+   <img src="./docs/image/스토리보드/비밀번호수정_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>프로필이미지수정</summary>
+   <img src="./docs/image/스토리보드/프로필이미지수정_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>회원탈퇴</summary>
+   <img src="./docs/image/스토리보드/회원탈퇴_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>로그아웃</summary>
+   <img src="./docs/image/스토리보드/로그아웃_스토리보드.png" width=700>
+</details>
+
+### 🍀 관리자
+<details>
+   <summary>관리자 로그인</summary>
+   <img src="./docs/image/스토리보드/관리자로그인_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>회원계정상태변경</summary>
+   <img src="./docs/image/스토리보드/회원계정상태변경_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>전체회원조회</summary>
+   <img src="./docs/image/스토리보드/전체회원조회_스토리보드.png" width=700>
+</details>
+
+### 🍀신고관리
+<details>
+   <summary>게시글신고</summary>
+   <img src="./docs/image/스토리보드/게시글신고_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>댓글신고</summary>
+   <img src="./docs/image/스토리보드/댓글신고_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>템플릿신고</summary>
+   <img src="./docs/image/스토리보드/템플릿신고_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>신고내역조회</summary>
+   <img src="./docs/image/스토리보드/신고내역조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>신고처리</summary>
+   <img src="./docs/image/스토리보드/신고처리_스토리보드.png" width=700>
+</details>
+
+
+### 🍀 게시글
+
+<details>
+   <summary>본인게시글조회</summary>
+   <img src="./docs/image/스토리보드/본인게시글조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>좋아요누른게시글조회</summary>
+   <img src="./docs/image/스토리보드/좋아요누른게시글조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>타회원게시글조회</summary>
+   <img src="./docs/image/스토리보드/타회원게시글조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>게시글작성</summary>
+   <img src="./docs/image/스토리보드/게시글작성_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>게시글수정</summary>
+   <img src="./docs/image/스토리보드/좋아요누른게시글조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>게시글삭제</summary>
+   <img src="./docs/image/스토리보드/게시글삭제_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>게시글카테고리적용</summary>
+   <img src="./docs/image/스토리보드/게시글카테고리적용_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>게시글해시태그등록</summary>
+   <img src="./docs/image/스토리보드/게시글해시태그등록_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>게시글공개범위설정</summary>
+   <img src="./docs/image/스토리보드/게시글공개범위설정_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>게시글좋아요</summary>
+   <img src="./docs/image/스토리보드/게시글좋아요_스토리보드.png" width=700>
+</details>
+
+
+### 🍀 템플릿
+
+<details>
+   <summary>템플릿선택</summary>
+   <img src="./docs/image/스토리보드/템플릿선택_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>템플릿조회</summary>
+   <img src="./docs/image/스토리보드/템플릿조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>템플릿작성</summary>
+   <img src="./docs/image/스토리보드/템플릿작성_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>템플릿수정</summary>
+   <img src="./docs/image/스토리보드/템플릿수정_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>템플릿삭제</summary>
+   <img src="./docs/image/스토리보드/템플릿삭제_스토리보드.png" width=700>
+</details>
+
+### 🍀 마이페이지
+
+<details>
+   <summary>본인게시글조회</summary>
+   <img src="./docs/image/스토리보드/본인게시글조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>본인템플릿조회</summary>
+   <img src="./docs/image/스토리보드/본인템플릿조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>타회원게시글조회</summary>
+   <img src="./docs/image/스토리보드/타회원게시글조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>타회원템플릿조회</summary>
+   <img src="./docs/image/스토리보드/타회원템플릿조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>좋아요누른게시글조회</summary>
+   <img src="./docs/image/스토리보드/좋아요누른게시글조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>좋아요누른댓글조회</summary>
+   <img src="./docs/image/스토리보드/좋아요누른댓글조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>내가남긴댓글조회</summary>
+   <img src="./docs/image/스토리보드/내가남긴댓글조회_스토리보드.png" width=700>
+</details>
+
+### 🍀 카테고리
+
+<details>
+   <summary>카테고리조회</summary>
+   <img src="./docs/image/스토리보드/카테고리조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>카테고리등록</summary>
+   <img src="./docs/image/스토리보드/카테고리등록_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>카테고리수정</summary>
+   <img src="./docs/image/스토리보드/카테고리수정_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>카테고리삭제</summary>
+   <img src="./docs/image/스토리보드/카테고리삭제_스토리보드.png" width=700>
+</details>
+
+### 🍀 댓글
+
+<details>
+   <summary>댓글조회</summary>
+   <img src="./docs/image/스토리보드/댓글조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>댓글등록</summary>
+   <img src="./docs/image/스토리보드/댓글등록_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>댓글수정</summary>
+   <img src="./docs/image/스토리보드/댓글수정_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>댓글삭제</summary>
+   <img src="./docs/image/스토리보드/댓글삭제_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>대댓글조회</summary>
+   <img src="./docs/image/스토리보드/대댓글조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>대댓글등록</summary>
+   <img src="./docs/image/스토리보드/대댓글등록_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>대댓글수정</summary>
+   <img src="./docs/image/스토리보드/대댓글수정_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>대댓글삭제</summary>
+   <img src="./docs/image/스토리보드/대댓글삭제_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>댓글좋아요</summary>
+   <img src="./docs/image/스토리보드/댓글좋아요_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>댓글좋아요취소</summary>
+   <img src="./docs/image/스토리보드/댓글좋아요취소_스토리보드.png" width=700>
+</details>
+
+### 🍀 구독
+
+<details>
+   <summary>본인을구독한목록조회</summary>
+   <img src="./docs/image/스토리보드/본인을구독한목록조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>본인이구독한목록조회</summary>
+   <img src="./docs/image/스토리보드/본인이구독한목록조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>구독추가</summary>
+   <img src="./docs/image/스토리보드/구독취소_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>구독취소</summary>
+   <img src="./docs/image/스토리보드/구독취소_스토리보드.png" width=700>
+</details>
+
+### 🍀 공지사항
+
+<details>
+   <summary>공지사항조회</summary>
+   <img src="./docs/image/스토리보드/공지사항조회_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>공지사항작성</summary>
+   <img src="./docs/image/스토리보드/공지사항작성_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>공지사항수정</summary>
+   <img src="./docs/image/스토리보드/공지사항수정_스토리보드.png" width=700>
+</details>
+
+<details>
+   <summary>공지사항삭제</summary>
+   <img src="./docs/image/스토리보드/공지사항삭제_스토리보드.png" width=700>
 </details>
 
 <br>
 
 ## 📍Test Case
 
-<br>
+### 🍄 admin
+<details>
+   <summary>공지사항삭제</summary>
+   <img src="./docs/testcase/admin/공지사항작성-1.gif" width=700>
+</details>
 
+<br>_
+_
 ## 📍결과 화면
 
 ### admin
