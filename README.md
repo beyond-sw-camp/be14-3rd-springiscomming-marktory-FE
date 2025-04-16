@@ -898,15 +898,15 @@
    <img src="./docs/result/comment/댓글쓰기.gif" width=700>
 </details>
 
-### 🍏 email_find
+### 🍏 pw_find
 <details>
    <summary>비밀번호 찾기</summary>
    <img src="./docs/result/pw_find/비밀번호 찾고 재로그인-1.gif" width=700>
 </details>
 
-### 🍏 pw_find
+### 🍏 email_find
 <details>
-   <summary>비밀번호찾고</summary>
+   <summary>이메일찾기</summary>
    <img src="./docs/result/email_find/회원 이메일 찾기-1.gif" width=700>
 </details>
 
