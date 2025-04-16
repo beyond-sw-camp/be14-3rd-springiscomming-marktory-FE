@@ -1,12 +1,12 @@
 # MarkTory, 기술을 넘어 이야기를 담는 공간
 
-![메인이미지](./docs/banner/front_banner.png)
+![front_banner.png](docs/banner/front_banner.png)
 
 
 
 <br>
 
-# :cherry_blossom: 봄이오조 :cherry_blossom:
+# 🌸 봄이오조 🌸
 
 <table>
   <tr>
@@ -55,8 +55,6 @@
 <br>
 
 <hr>
-
-<br>
 
 # 목차
 1. [프로젝트 개요](#프로젝트-개요)
@@ -117,7 +115,7 @@
 <br>
 
 ## 💡차별성
-![차별성이미지](./docs/necessity/necessity.png)
+![necessity.png](docs/necessity/necessity.png)
 
 ### 1️⃣ 개발자 중심의 기능 제공
 기존 플랫폼들이 가지는 Markdown 지원 미흡, 제한적인 커스터마이징 등의 문제를 해결하여 개발자 친화적인 환경을 제공합니다.
@@ -133,22 +131,20 @@
 
 # 2. 설계 문서
 ## [📑WBS](https://docs.google.com/spreadsheets/d/10wFU0Njthf9K6DVC--dq2i9O4aNY2OBRSh7FM0_pSks/edit?gid=1950899492#gid=1950899492)
-[![img.png](img.png)]
+![WBS.png](docs/image/WBS/WBS.png)
 
+
+## [📑요구사항 명세서](https://docs.google.com/spreadsheets/d/1y6dd31EJpapN8iQiyh6ReCPN7Th8u9reJwvpR0xLoE8/edit?gid=1622427168#gid=1622427168)
+![요구사항명세서.png](docs/image/ReQ/%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EB%AA%85%EC%84%B8%EC%84%9C.png)
 <br>
 
-## [📑기능 명세서](https://docs.google.com/spreadsheets/d/1y6dd31EJpapN8iQiyh6ReCPN7Th8u9reJwvpR0xLoE8/edit?gid=1622427168#gid=1622427168)
-![요구사항명세서이미지](./docs/reqDoc/요구사항명세서.png)
-
-<br>
-
-## 📑System Architecture
-- Project Server 구조
+## 📑 System Architecture
+### Project Server 구조
 ![아키텍쳐이미지](./docs/architecture/server.jpg)
 
 <br>
 
-## 📑FLOW CHART
+## 📑 FLOW CHART
 ![플로우차트이미지](./docs/flowchart/플로우차트_메인.png)
 
 <br>
@@ -159,7 +155,6 @@
 
 ### 2️⃣ Context Mapping
 ![컨텍스트메핑이미지](./docs/ddd/mapping.jpg)
-
 
 <br>
 
@@ -182,7 +177,9 @@
 
 
 # 3. 산출물
-## 📍와이어프레임
+##  📍와이어프레임
+
+### 🍀 회원
 
 <details>
    <summary>회원가입</summary>
@@ -250,7 +247,7 @@
    <img src="./docs/image/와이어프레임/전체회원조회_와이어프레임.png" width=700>
 </details>
 
-### 🍀신고관리
+### 🍀 신고관리
 <details>
    <summary>게시글신고</summary>
    <img src="./docs/image/와이어프레임/게시글신고_와이어프레임.png" width=700>
@@ -569,6 +566,7 @@
 </details>
 
 ### 🍀 관리자
+
 <details>
    <summary>관리자 로그인</summary>
    <img src="./docs/image/스토리보드/관리자로그인_스토리보드.png" width=700>
@@ -584,7 +582,8 @@
    <img src="./docs/image/스토리보드/전체회원조회_스토리보드.png" width=700>
 </details>
 
-### 🍀신고관리
+### 🍀 신고관리
+
 <details>
    <summary>게시글신고</summary>
    <img src="./docs/image/스토리보드/게시글신고_스토리보드.png" width=700>
@@ -848,21 +847,186 @@
 
 <br>
 
-## 📍Test Case
+## [📍Test Case](https://docs.google.com/spreadsheets/d/1_wK79gFhs6kM5uMWQg5YFL_vusLwLg0lMSjNjLFVfWg/edit?gid=1748785766#gid=1748785766)
 
-### 🍄 admin
+![WBS.png](docs/image/WBS/WBS.png)
+
+
+<br>
+
+## 결과화면
+
+### Category
+
 <details>
-   <summary>공지사항삭제</summary>
-   <img src="./docs/testcase/admin/공지사항작성-1.gif" width=700>
+   <summary>카테고리 등록</summary>
+   <img src="docs/result/admin/카테고리생성-1.gif" width=700>
 </details>
 
-<br>_
-_
-## 📍결과 화면
-
-### admin
 <details>
-   <summary>공지사항 삭제</summary>
+   <summary>카테고리 수정</summary>
+   <img src="docs/result/admin/카테고리 수정-1.gif" width=700>
+</details>
+
+<details>
+   <summary>카테고리 삭제</summary>
+   <img src="docs/result/admin/카테고리삭제-1.gif" width=700>
+</details>
+
+### Comment
+<details>
+   <summary>댓글쓰기</summary>
+   <img src="docs/result/admin/댓글쓰기.gif" width=700>
+</details>
+
+### Member
+
+<details>
+   <summary>이메일인증 예외처리</summary>
+   <img src="docs/result/admin/이메일예외처리.gif" width=700>
+</details>
+
+<details>
+   <summary>회원가입 이메일 받기</summary>
+   <img src="docs/result/admin/회원가입 이메일 받기-1.gif" width=700>
+</details>
+
+<details>
+   <summary>회원가입</summary>
+   <img src="docs/result/admin/회원가입완료-1.gif" width=700>
+</details>
+
+<details>
+   <summary>일반 회원 로그인</summary>
+   <img src="docs/result/admin/일반 회원 로그인-1.gif" width=700>
+</details>
+
+<details>
+   <summary>비밀번호 불일치 </summary>
+   <img src="docs/result/admin/비밀번호불일치-1.gif" width=700>
+</details>
+
+<details>
+   <summary>회원 이메일 찾기</summary>
+   <img src="docs/result/admin/회원 이메일 찾기-1.gif" width=700>
+</details>
+
+<details>
+   <summary>비밀번호 찾기</summary>
+   <img src="docs/result/admin/비밀번호 찾고 재로그인-1.gif" width=700>
+</details>
+
+<details>
+   <summary>로그아웃</summary>
+   <img src="docs/result/admin/회원 로그아웃-1.gif" width=700>
+</details>
+
+### Myactivity
+
+<details>
+   <summary>내가 작성한 댓글 조회</summary>
+   <img src="docs/result/admin/내가작성한댓글-1.gif" width=700>
+</details>
+
+<details>
+   <summary>내가 좋아요한 게시글 조회</summary>
+   <img src="./docs/t글stcase/admin/내가좋아요한게시-1.gif" width=700>
+</details>
+
+<details>
+   <summary>내가 좋아요한 댓글 조회</summary>
+   <img src="docs/result/admin/내가좋아요한댓글-1.gif" width=700>
+</details>
+
+### Mypage
+
+<details>
+   <summary>내가 작성한 게시글 조회</summary>
+   <img src="docs/result/admin/내가작성한게시글-1.gif" width=700>
+</details>
+
+<details>
+   <summary>내가 작성한 템플릿 조회</summary>
+   <img src="docs/result/admin/내가작성한템플릿-1.gif" width=700>
+</details>
+
+<details>
+   <summary>다른 사람의 마이페이지 방문</summary>
+   <img src="docs/result/admin/다른사람의마이페이지방문-1.gif" width=700>
+</details>
+
+<details>
+   <summary>다른사람이 작성한 게시글 조회</summary>
+   <img src="docs/result/admin/다른사람이작성한게시글조회-1.gif" width=700>
+</details>
+
+<details>
+   <summary>다른사람이 작성한 템플릿 조회</summary>
+   <img src="docs/result/admin/다른사람이작성한템플릿조회-1.gif" width=700>
+</details>
+
+<details>
+   <summary>팔로워 조회</summary>
+   <img src="docs/result/admin/팔로워조회-1.gif" width=700>
+</details>
+
+<details>
+   <summary>팔로잉 조회</summary>
+   <img src="docs/result/admin/팔로잉조회-1.gif" width=700>
+</details>
+
+### Post
+<details>
+   <summary>게시글 작성</summary>
+   <img src="docs/result/admin/글쓰기.gif" width=700>
+</details>
+
+<details>
+   <summary>전체 게시글 조회</summary>
+   <img src="docs/result/admin/게시글전체.gif" width=700>
+</details>
+
+<details>
+   <summary>게시글 좋아요순 조회</summary>
+   <img src="docs/result/admin/게시글좋아요.gif" width=700>
+</details>
+
+<details>
+   <summary>게시글 최신순 조회</summary>
+   <img src="docs/result/admin/게시글최신순.gif" width=700>
+</details>
+
+### Template
+<details>
+   <summary>템플릿 전체 조회</summary>
+   <img src="docs/result/admin/템플릿전체.gif" width=700>
+</details>
+
+<details>
+   <summary>템플릿 사용순 조회</summary>
+   <img src="docs/result/admin/템플릿사용순.gif" width=700>
+</details>
+
+<details>
+   <summary>템플릿 최신순 조회</summary>
+   <img src="docs/result/admin/템플릿최신순.gif" width=700>
+</details>
+
+### Setting
+
+<details>
+   <summary>회원 설정페이지 조회</summary>
+   <img src="docs/result/admin/설정방문.gif" width=700>
+</details>
+
+<details>
+   <summary>설정페이지 내 회원탈퇴</summary>
+   <img src="docs/result/admin/회원탈퇴-1 복사본.gif" width=700>
+</details>
+
+<details>
+   <summary>회원탈퇴시 비밀번호 작성 예외처리 </summary>
+   <img src="docs/result/admin/회원탈퇴비밀번호틀림-1 복사본.gif" width=700>
 </details>
 
 <br>
