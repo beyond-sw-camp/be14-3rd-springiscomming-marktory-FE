@@ -30,7 +30,6 @@
 
 # 기술스택
 
-
 ## 🛠️ Backend
 ![Java](https://img.shields.io/badge/Java-17-007396.svg?&logo=java&color=red)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3-6DB33F.svg?&logo=spring-boot&color=lightgreen)
@@ -133,33 +132,46 @@
 <br>
 
 # 2. 설계 문서
-## [📑WBS](https://docs.google.com/spreadsheets/d/1DkXVfFpTnMltTDK30AYLfIE4DF1XI41m6rV6_ur3oXA/edit?gid=1599321018#gid=1599321018)
+## [📑WBS](https://docs.google.com/spreadsheets/d/10wFU0Njthf9K6DVC--dq2i9O4aNY2OBRSh7FM0_pSks/edit?gid=1950899492#gid=1950899492)
 [![img.png](img.png)]
 
 <br>
 
-## [📑기능 명세서]()
+## [📑기능 명세서](https://docs.google.com/spreadsheets/d/1y6dd31EJpapN8iQiyh6ReCPN7Th8u9reJwvpR0xLoE8/edit?gid=1622427168#gid=1622427168)
 ![요구사항명세서이미지](./docs/reqDoc/요구사항명세서.png)
 
 <br>
 
 ## 📑System Architecture
+- Project Server 구조
+![아키텍쳐이미지](./docs/architecture/server.jpg)
 
 <br>
 
 ## 📑FLOW CHART
+![플로우차트이미지](./docs/flowchart/플로우차트_메인.png)
 
 <br>
 
 ## 📑DDD
+### 1️⃣ Bounded Context
+![바운디드컨텍스트이미지](./docs/ddd/bounded.jpg)
+
+### 2️⃣ Context Mapping
+![컨텍스트메핑이미지](./docs/ddd/mapping.jpg)
+
 
 <br>
 
 # 📑DB모델링
 
-<br>
+### 2️⃣ 논리모델링
+![논리모델링이미지](./docs/modeling/논리모델링.png)
 
-### 1️⃣ 플로우차트
+### 3️⃣ 물리모델링
+![물리모델링이미지](./docs/modeling/물리모델링.png)
+
+<br>
 
 ### 2️⃣ 논리모델링
 
@@ -172,10 +184,16 @@
 
 # 3. 산출물
 ## 📍와이어프레임
+<details>
+   <summary> </summary>
+</details>
 
 <br>
 
 ## 📍스토리보드
+<details>
+   <summary> </summary>
+</details>
 
 <br>
 
@@ -184,6 +202,11 @@
 <br>
 
 ## 📍결과 화면
+
+### admin
+<details>
+   <summary>공지사항 삭제</summary>
+</details>
 
 <br>
 
