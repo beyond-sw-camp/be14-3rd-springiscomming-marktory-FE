@@ -853,173 +853,173 @@
 
 <details>
    <summary>카테고리 등록</summary>
-   <img src="docs/result/admin/카테고리생성-1.gif" width=700>
+   <img src="./docs/result/admin/카테고리생성-1.gif" width=700>
 </details>
 
 <details>
    <summary>카테고리 수정</summary>
-   <img src="docs/result/admin/카테고리 수정-1.gif" width=700>
+   <img src="./docs/result/admin/카테고리 수정-1.gif" width=700>
 </details>
 
 <details>
    <summary>카테고리 삭제</summary>
-   <img src="docs/result/admin/카테고리삭제-1.gif" width=700>
+   <img src="./docs/result/admin/카테고리삭제-1.gif" width=700>
 </details>
 
 ### Comment
 <details>
    <summary>댓글쓰기</summary>
-   <img src="docs/result/admin/댓글쓰기.gif" width=700>
+   <img src="./docs/result/admin/댓글쓰기.gif" width=700>
 </details>
 
 ### Member
 
 <details>
    <summary>이메일인증 예외처리</summary>
-   <img src="docs/result/admin/이메일예외처리.gif" width=700>
+   <img src="./docs/result/admin/이메일예외처리.gif" width=700>
 </details>
 
 <details>
    <summary>회원가입 이메일 받기</summary>
-   <img src="docs/result/admin/회원가입 이메일 받기-1.gif" width=700>
+   <img src="./docs/result/admin/회원가입 이메일 받기-1.gif" width=700>
 </details>
 
 <details>
    <summary>회원가입</summary>
-   <img src="docs/result/admin/회원가입완료-1.gif" width=700>
+   <img src="./docs/result/admin/회원가입완료-1.gif" width=700>
 </details>
 
 <details>
    <summary>일반 회원 로그인</summary>
-   <img src="docs/result/admin/일반 회원 로그인-1.gif" width=700>
+   <img src="./docs/result/admin/일반 회원 로그인-1.gif" width=700>
 </details>
 
 <details>
    <summary>비밀번호 불일치 </summary>
-   <img src="docs/result/admin/비밀번호불일치-1.gif" width=700>
+   <img src="./docs/result/admin/비밀번호불일치-1.gif" width=700>
 </details>
 
 <details>
    <summary>회원 이메일 찾기</summary>
-   <img src="docs/result/admin/회원 이메일 찾기-1.gif" width=700>
+   <img src="./docs/result/admin/회원 이메일 찾기-1.gif" width=700>
 </details>
 
 <details>
    <summary>비밀번호 찾기</summary>
-   <img src="docs/result/admin/비밀번호 찾고 재로그인-1.gif" width=700>
+   <img src="./docs/result/admin/비밀번호 찾고 재로그인-1.gif" width=700>
 </details>
 
 <details>
    <summary>로그아웃</summary>
-   <img src="docs/result/admin/회원 로그아웃-1.gif" width=700>
+   <img src="./docs/result/admin/회원 로그아웃-1.gif" width=700>
 </details>
 
 ### Myactivity
 
 <details>
    <summary>내가 작성한 댓글 조회</summary>
-   <img src="docs/result/admin/내가작성한댓글-1.gif" width=700>
+   <img src="./docs/result/admin/내가작성한댓글-1.gif" width=700>
 </details>
 
 <details>
    <summary>내가 좋아요한 게시글 조회</summary>
-   <img src="./docs/t글stcase/admin/내가좋아요한게시-1.gif" width=700>
+   <img src="./docs/result/admin/내가좋아요한게시-1.gif" width=700>
 </details>
 
 <details>
    <summary>내가 좋아요한 댓글 조회</summary>
-   <img src="docs/result/admin/내가좋아요한댓글-1.gif" width=700>
+   <img src="./docs/result/admin/내가좋아요한댓글-1.gif" width=700>
 </details>
 
 ### Mypage
 
 <details>
    <summary>내가 작성한 게시글 조회</summary>
-   <img src="docs/result/admin/내가작성한게시글-1.gif" width=700>
+   <img src="./docs/result/admin/내가작성한게시글-1.gif" width=700>
 </details>
 
 <details>
    <summary>내가 작성한 템플릿 조회</summary>
-   <img src="docs/result/admin/내가작성한템플릿-1.gif" width=700>
+   <img src="./docs/result/admin/내가작성한템플릿-1.gif" width=700>
 </details>
 
 <details>
    <summary>다른 사람의 마이페이지 방문</summary>
-   <img src="docs/result/admin/다른사람의마이페이지방문-1.gif" width=700>
+   <img src="./docs/result/admin/다른사람의마이페이지방문-1.gif" width=700>
 </details>
 
 <details>
    <summary>다른사람이 작성한 게시글 조회</summary>
-   <img src="docs/result/admin/다른사람이작성한게시글조회-1.gif" width=700>
+   <img src="./docs/result/admin/다른사람이작성한게시글조회-1.gif" width=700>
 </details>
 
 <details>
    <summary>다른사람이 작성한 템플릿 조회</summary>
-   <img src="docs/result/admin/다른사람이작성한템플릿조회-1.gif" width=700>
+   <img src="./docs/result/admin/다른사람이작성한템플릿조회-1.gif" width=700>
 </details>
 
 <details>
    <summary>팔로워 조회</summary>
-   <img src="docs/result/admin/팔로워조회-1.gif" width=700>
+   <img src="./docs/result/admin/팔로워조회-1.gif" width=700>
 </details>
 
 <details>
    <summary>팔로잉 조회</summary>
-   <img src="docs/result/admin/팔로잉조회-1.gif" width=700>
+   <img src="./docs/result/admin/팔로잉조회-1.gif" width=700>
 </details>
 
 ### Post
 <details>
    <summary>게시글 작성</summary>
-   <img src="docs/result/admin/글쓰기.gif" width=700>
+   <img src="./docs/result/admin/글쓰기.gif" width=700>
 </details>
 
 <details>
    <summary>전체 게시글 조회</summary>
-   <img src="docs/result/admin/게시글전체.gif" width=700>
+   <img src="./docs/result/admin/게시글전체.gif" width=700>
 </details>
 
 <details>
    <summary>게시글 좋아요순 조회</summary>
-   <img src="docs/result/admin/게시글좋아요.gif" width=700>
+   <img src="./docs/result/admin/게시글좋아요.gif" width=700>
 </details>
 
 <details>
    <summary>게시글 최신순 조회</summary>
-   <img src="docs/result/admin/게시글최신순.gif" width=700>
+   <img src="./docs/result/admin/게시글최신순.gif" width=700>
 </details>
 
 ### Template
 <details>
    <summary>템플릿 전체 조회</summary>
-   <img src="docs/result/admin/템플릿전체.gif" width=700>
+   <img src="./docs/result/admin/템플릿전체.gif" width=700>
 </details>
 
 <details>
    <summary>템플릿 사용순 조회</summary>
-   <img src="docs/result/admin/템플릿사용순.gif" width=700>
+   <img src="./docs/result/admin/템플릿사용순.gif" width=700>
 </details>
 
 <details>
    <summary>템플릿 최신순 조회</summary>
-   <img src="docs/result/admin/템플릿최신순.gif" width=700>
+   <img src="./docs/result/admin/템플릿최신순.gif" width=700>
 </details>
 
 ### Setting
 
 <details>
    <summary>회원 설정페이지 조회</summary>
-   <img src="docs/result/admin/설정방문.gif" width=700>
+   <img src="./docs/result/admin/설정방문.gif" width=700>
 </details>
 
 <details>
    <summary>설정페이지 내 회원탈퇴</summary>
-   <img src="docs/result/admin/회원탈퇴-1 복사본.gif" width=700>
+   <img src="./docs/result/admin/회원탈퇴-1 복사본.gif" width=700>
 </details>
 
 <details>
    <summary>회원탈퇴시 비밀번호 작성 예외처리 </summary>
-   <img src="docs/result/admin/회원탈퇴비밀번호틀림-1 복사본.gif" width=700>
+   <img src="./docs/result/admin/회원탈퇴비밀번호틀림-1 복사본.gif" width=700>
 </details>
 
 <br>
