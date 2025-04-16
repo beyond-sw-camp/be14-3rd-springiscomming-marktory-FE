@@ -842,7 +842,7 @@
 
 ## [📍Test Case](https://docs.google.com/spreadsheets/d/1_wK79gFhs6kM5uMWQg5YFL_vusLwLg0lMSjNjLFVfWg/edit?gid=1748785766#gid=1748785766)
 
-![WBS.png](docs/image/WBS/WBS.png)
+![WBS.png](docs/image/testcase/테스트케이스.png)
 
 
 <br>
